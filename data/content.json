@@ -737,7 +737,7 @@
     "specs": "Das Paradoxon der Kunstvermittlung in den sozialen Medien",
     "institution": "appropriate! Journal, Issue 1",
     "link": "https://www.appropriate-journal.art/schamborski",
-    "image": "assets/images/IDÖK4.pdf"
+    "image": null
   },
   {
     "id": "testing-trixi-2020",
@@ -1153,7 +1153,7 @@
     "specs": "Essay on Anton Wilhelm Amo exhibition at Kunstverein Braunschweig",
     "institution": "Der Freitag",
     "link": "https://www.freitag.de/autoren/peter-nowak/wer-kennt-diesen-bedeutenden-philosophen",
-    "image": "assets/images/IMG_20201117_0002.pdf",
+    "image": null,
     "description": "Critical essay examining the exhibition on Anton Wilhelm Amo at Kunstverein Braunschweig.",
     "csl": {
       "type": "article-newspaper",
