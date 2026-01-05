@@ -466,6 +466,30 @@
     "image_credit": "Image: EMAF"
   },
   {
+    "id": "bundeskunstpreis-2021",
+    "title": "Federal Art Prize for Students",
+    "year": "2021",
+    "categories": [
+      "fellowships"
+    ],
+    "type": "Award",
+    "specs": "Bundeskunstpreis",
+    "institution": "Federal Ministry of Education and Research, Germany",
+    "link": "http://imperia.hbk-bs.de/hbk/aktuell/details/26148/",
+    "image": "assets/images/kunspreisVerleihung-24.jpg",
+    "images": [
+      "assets/images/kunspreisVerleihung-24.jpg",
+      "assets/images/kunspreisVerleihung-25.jpg",
+      "assets/images/kunspreisVerleihung-26.jpg"
+    ],
+    "related_links": [
+      {
+        "title": "Jury Statements",
+        "url": "assets/images/Texte/Jury Statements Preisträger_innen.pdf"
+      }
+    ]
+  },
+  {
     "id": "bundeskunsthalle-2022",
     "title": "25th Federal Prize for Art Students",
     "year": "2022",
@@ -592,30 +616,6 @@
       "assets/images/Scope/I3B1218.jpg",
       "assets/images/Scope/I3B1232-1.jpg",
       "assets/images/Scope/I3B1306-1.jpg"
-    ]
-  },
-  {
-    "id": "bundeskunstpreis-2021",
-    "title": "Federal Art Prize for Students",
-    "year": "2021",
-    "categories": [
-      "fellowships"
-    ],
-    "type": "Award",
-    "specs": "Bundeskunstpreis",
-    "institution": "Federal Ministry of Education and Research, Germany",
-    "link": "http://imperia.hbk-bs.de/hbk/aktuell/details/26148/",
-    "image": "assets/images/kunspreisVerleihung-24.jpg",
-    "images": [
-      "assets/images/kunspreisVerleihung-24.jpg",
-      "assets/images/kunspreisVerleihung-25.jpg",
-      "assets/images/kunspreisVerleihung-26.jpg"
-    ],
-    "related_links": [
-      {
-        "title": "Jury Statements",
-        "url": "assets/images/Texte/Jury Statements Preisträger_innen.pdf"
-      }
     ]
   },
   {
