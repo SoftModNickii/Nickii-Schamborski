@@ -737,7 +737,7 @@
     "specs": "Das Paradoxon der Kunstvermittlung in den sozialen Medien",
     "institution": "appropriate! Journal, Issue 1",
     "link": "https://www.appropriate-journal.art/schamborski",
-    "image": "assets/images/Texte/schamborski_katalogtext_37dokfest.jpg"
+    "image": "assets/images/IDÖK4.pdf"
   },
   {
     "id": "testing-trixi-2020",
@@ -887,7 +887,7 @@
     "specs": null,
     "institution": "Braunschweig, Germany",
     "link": null,
-    "image": "assets/images/create-your-surrounding-2017.jpeg"
+    "image": null
   },
   {
     "id": "busan-iff-2019",
@@ -900,7 +900,7 @@
     "specs": null,
     "institution": "Busan, South Korea",
     "link": null,
-    "image": "assets/images/create-your-surrounding-2017.jpeg"
+    "image": null
   },
   {
     "id": "continous-2019",
@@ -1106,7 +1106,7 @@
     "specs": null,
     "institution": "Braunschweig, Germany",
     "link": null,
-    "image": "assets/images/kombi-5-2017.jpg"
+    "image": null
   },
   {
     "id": "kunstkoffer-2016-2018",
@@ -1154,7 +1154,7 @@
     "specs": "Essay on Anton Wilhelm Amo exhibition at Kunstverein Braunschweig",
     "institution": "Der Freitag",
     "link": "https://www.freitag.de/autoren/peter-nowak/wer-kennt-diesen-bedeutenden-philosophen",
-    "image": "assets/images/Texte/schamborski_katalogtext_37dokfest.jpg",
+    "image": "assets/images/IMG_20201117_0002.pdf",
     "description": "Critical essay examining the exhibition on Anton Wilhelm Amo at Kunstverein Braunschweig.",
     "csl": {
       "type": "article-newspaper",
