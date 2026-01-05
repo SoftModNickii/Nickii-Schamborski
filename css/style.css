@@ -18,8 +18,8 @@ body {
 /* Construction Notice */
 .construction-notice {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    bottom: 20px;
+    left: 20px;
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid #C026D3;
     padding: 8px 16px;
@@ -36,6 +36,79 @@ body {
 
 .construction-icon {
     font-size: 1.2rem;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #C026D3;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(192, 38, 211, 0.1);
+}
+
+.menu-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.menu-dots span {
+    width: 4px;
+    height: 4px;
+    background: #C026D3;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Dropdown Menu */
+.menu-dropdown {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #C026D3;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+.menu-dropdown.active {
+    display: block;
+}
+
+.menu-dropdown a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.menu-dropdown a:hover {
+    background: rgba(192, 38, 211, 0.1);
+    color: #C026D3;
 }
 
 /* Header */

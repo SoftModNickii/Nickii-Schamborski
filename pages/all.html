@@ -39,6 +39,24 @@
             </div>
         </div>
         
+        <!-- Mobile Menu -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="menu-dropdown" id="menuDropdown">
+            <a href="all.html?filter=all">All</a>
+            <a href="all.html?filter=works">Works</a>
+            <a href="all.html?filter=shows">Shows</a>
+            <a href="all.html?filter=practice">Practice & Teachings</a>
+            <a href="all.html?filter=fellowships">Fellowships & Awards</a>
+            <a href="all.html?filter=press">Press</a>
+            <a href="cv.html">CV</a>
+        </div>
+        
         <nav class="horizontal-nav">
             <a href="#" data-filter="all" class="filter-btn active">All</a>
             <a href="#" data-filter="works" class="filter-btn">Works</a>
@@ -547,6 +565,21 @@
     document.addEventListener('click', (e) => {
         if (!searchTool.contains(e.target)) {
             searchTool.classList.remove('expanded');
+        }
+    });
+    
+    // Menu toggle
+    function toggleMenu() {
+        const menu = document.getElementById('menuDropdown');
+        menu.classList.toggle('active');
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('menuDropdown');
+        const toggle = document.querySelector('.menu-toggle');
+        if (toggle && !toggle.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.remove('active');
         }
     });
 </script>
