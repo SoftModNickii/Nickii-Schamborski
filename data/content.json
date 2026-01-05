@@ -492,10 +492,10 @@
       "assets/images/kunspreisVerleihung-28.jpg",
       "assets/images/kunspreisVerleihung-29.jpg",
       "assets/images/kunspreisVerleihung-30.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle2.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle4.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle5.jpg"
+      "assets/images/Memaerchen_Bundeskunsthalle.jpg",
+      "assets/images/Memaerchen_Bundeskunsthalle2.jpg",
+      "assets/images/Memaerchen_Bundeskunsthalle4.jpg",
+      "assets/images/Memaerchen_Bundeskunsthalle5.jpg"
     ],
     "image_credit": "Image: Bundeskunsthalle Bonn"
   },
@@ -555,7 +555,7 @@
   },
   {
     "id": "memaerchen-2021",
-    "title": "MeMärchen",
+    "title": "MeMaerchen",
     "year": "2021",
     "categories": [
       "works"
@@ -564,26 +564,26 @@
     "specs": "In collaboration with Paulina Estrada. Series of 5 digital prints on fabric (2 x 2 m), hanging on aluminium tubes",
     "institution": null,
     "link": null,
-    "description": "\"MeMärchen\" questions the construction of morality in fairy tales and on the internet. The title combines \"meme\" and \"Märchen\" [\"fairy tale\"], exploring who propagates hegemonic narratives and who is accused of moralism. Created as graphic memes, printed on fabric, the series of images highlight the intersection of moralism, power, and social discourse.",
-    "image": "assets/images/MeMärchen/Memärchen_Bundeskunsthalle.jpg",
+    "description": "\"MeMaerchen\" questions the construction of morality in fairy tales and on the internet. The title combines \"meme\" and \"Märchen\" [\"fairy tale\"], exploring who propagates hegemonic narratives and who is accused of moralism. Created as graphic memes, printed on fabric, the series of images highlight the intersection of moralism, power, and social discourse.",
+    "image": "assets/images/MeMaerchen/Memaerchen_Bundeskunsthalle.jpg",
     "images": [
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle.jpg",
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle2.jpg",
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle4.jpg",
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle5.jpg",
-      "assets/images/MeMärchen/Bildschirmfoto 2018-05-28 um 22.33.31.png",
-      "assets/images/MeMärchen/Bildschirmfoto 2018-05-28 um 22.34.55.png",
-      "assets/images/MeMärchen/Bildschirmfoto 2018-06-06 um 22.04.06.png",
-      "assets/images/MeMärchen/Still00.png"
+      "assets/images/MeMaerchen/Memaerchen_Bundeskunsthalle.jpg",
+      "assets/images/MeMaerchen/Memaerchen_Bundeskunsthalle2.jpg",
+      "assets/images/MeMaerchen/Memaerchen_Bundeskunsthalle4.jpg",
+      "assets/images/MeMaerchen/Memaerchen_Bundeskunsthalle5.jpg",
+      "assets/images/MeMaerchen/Bildschirmfoto 2018-05-28 um 22.33.31.png",
+      "assets/images/MeMaerchen/Bildschirmfoto 2018-05-28 um 22.34.55.png",
+      "assets/images/MeMaerchen/Bildschirmfoto 2018-06-06 um 22.04.06.png",
+      "assets/images/MeMaerchen/Still00.png"
     ],
     "related_links": [
       {
         "title": "Katalog Blickkontakt",
-        "url": "assets/images/MeMärchen/Katalog Blickkontakt digital.pdf"
+        "url": "assets/images/MeMaerchen/Katalog Blickkontakt digital.pdf"
       },
       {
         "title": "Flyer BIFF Breitz",
-        "url": "assets/images/MeMärchen/FlyerBiffBreitzPreview3.pdf"
+        "url": "assets/images/MeMaerchen/FlyerBiffBreitzPreview3.pdf"
       }
     ]
   },
@@ -844,7 +844,7 @@
     "image": "assets/images/Verwehrte%20Zuflucht/3Z9G0330cccc.jpg",
     "images": [
       "assets/images/Verwehrte%20Zuflucht/3Z9G0330cccc.jpg",
-      "assets/images/Verwehrte%20Zuflucht/Göttingenready.png",
+      "assets/images/Verwehrte%20Zuflucht/Goettingenready.png",
       "assets/images/Verwehrte%20Zuflucht/Hannover.png",
       "assets/images/Verwehrte%20Zuflucht/Stendensen.png",
       "assets/images/Verwehrte%20Zuflucht/Wolfsburg.png"
@@ -987,13 +987,13 @@
     "institution": null,
     "link": null,
     "description": "\"The Instrument of Public Critique\" invites viewers to reimagine the interplay between digital narratives and physical landscapes. This autonomous sculpture, a hybrid of raw materials and 360 degree video technology offers a poetic juxtaposition: the industrial materiality of aluminum and wood meet the intangible expanse of virtual reality. Peering through its lens, audiences are transported into location-specific VR films. Each location transforms the view from the lens into a stage for reflection on the socio-political and historical undercurrents of the space it occupies.",
-    "image": "assets/images/Instrument%20der%20öffentlichen%20Kritik/DSC_0198.JPG",
+    "image": "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0198.JPG",
     "images": [
-      "assets/images/Instrument%20der%20öffentlichen%20Kritik/DSC_0198.JPG",
-      "assets/images/Instrument%20der%20öffentlichen%20Kritik/DSC_0203.JPG",
-      "assets/images/Instrument%20der%20öffentlichen%20Kritik/DSC_0223.JPG",
-      "assets/images/Instrument%20der%20öffentlichen%20Kritik/_MG_2604.JPG",
-      "assets/images/Instrument%20der%20öffentlichen%20Kritik/_MG_2618.JPG"
+      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0198.JPG",
+      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0203.JPG",
+      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0223.JPG",
+      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/_MG_2604.JPG",
+      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/_MG_2618.JPG"
     ]
   },
   {
