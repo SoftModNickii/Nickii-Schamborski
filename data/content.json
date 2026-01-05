@@ -737,7 +737,7 @@
     "specs": "Das Paradoxon der Kunstvermittlung in den sozialen Medien",
     "institution": "appropriate! Journal, Issue 1",
     "link": "https://www.appropriate-journal.art/schamborski",
-    "image": null
+    "image": "assets/images/Texte/schamborski_katalogtext_37dokfest.jpg"
   },
   {
     "id": "testing-trixi-2020",
@@ -887,7 +887,7 @@
     "specs": null,
     "institution": "Braunschweig, Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/create-your-surrounding-2017.jpeg"
   },
   {
     "id": "busan-iff-2019",
@@ -900,7 +900,7 @@
     "specs": null,
     "institution": "Busan, South Korea",
     "link": null,
-    "image": null
+    "image": "assets/images/create-your-surrounding-2017.jpeg"
   },
   {
     "id": "continous-2019",
@@ -926,7 +926,7 @@
     "specs": null,
     "institution": "Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/bundeskunsthalle.jpg"
   },
   {
     "id": "hbk-lecture-fascism-2019",
@@ -1003,7 +1003,7 @@
     "institution": null,
     "link": null,
     "description": "\"Wolfsburg\" is a site-specific VR film set at Schloss Wolfsburg that raises historical and cultural questions about Wolfsburg's fascist origins. The immersive film reflects on the role of Volkswagen production and the construction of a new shopping mall on the last remnants of former camps, once inhabited both by concentration camp prisoners and later by so-called guest workers or migrant laborers. The work addresses the ghostly return of suppressed history: how beneath the gleaming surface of consumer culture, the unresolved Nazi past continues to operate and returns in the form of \"cultural zombism.\" The film focuses on the way historical amnesia and commercial development create a haunting double presence.",
-    "image": "assets/images/Wolfsburg%201933-2018/Bild2Stripecc.jpg",
+    "image": "assets/images/wolfsburg-1933-2018.jpeg",
     "images": [
       "assets/images/Wolfsburg%201933-2018/Bild2Stripecc.jpg",
       "assets/images/Wolfsburg%201933-2018/Bildschirmfoto%202018-05-21%20um%2019.02.13.png",
@@ -1022,11 +1022,10 @@
     "institution": null,
     "link": null,
     "description": "\"Angels Tutorial\" is a video artwork that subverts the familiar format of Photoshop tutorials to deliver a pointed critique of digital manipulation and nationalism. Through step-by-step demonstrations of erasing German flags from photographs, the work shows how easily national symbols and historical records can be altered in our digital age. By appropriating the tools and terminology of Photoshop, typically used to 'perfect' images, the piece questions the software's underlying attitudes to reality and truth. Usually associated with aesthetic retouching or technical instruction, the tutorial format becomes a form of political iconoclasm, challenging both the permanence of nationalist symbols and the software industry's role in shaping our relationship to images.",
-    "image": "assets/images/Angels%20Tutorial/AngelsTutorialStill.tiffcc.jpg",
+    "image": "assets/images/angels-tutorial-2018.jpeg",
     "images": [
-      "assets/images/Angels%20Tutorial/AngelsTutorialStill.tiffcc.jpg",
-      "assets/images/Angels%20Tutorial/AngelstutorialLVN.png",
-      "assets/images/Angels%20Tutorial/IMG_5071gerade.jpg"
+      "assets/images/angels-tutorial-2018.jpeg",
+      "assets/images/angels-tutorial-2018-still-1.jpeg"
     ]
   },
   {
@@ -1036,7 +1035,7 @@
     "link": null,
     "description": "In this performative video work, students gain unauthorized access to their former school building where a refugee shelter – fully equipped with kitchens, washing machines, and bedrooms, was built but remained unused and empty due to the 2016 EU-Turkey agreement while refugees died seeking shelter. The student bodies activate these abandoned halls and document them, capturing graffitied swastikas alongside prepared refugee beds revealing the years of institutional negligence. Occupying this now abandoned space, they transform their intrusion into artistic protest and expose the absurdity of idle wealth amid humanitarian crisis.",
     "type": "Installation",
-    "image": "assets/images/unusedcapacity/unused%20capacity.tiffcc.jpg",
+    "image": "assets/images/unusedcapacity.jpeg",
     "images": [
       "assets/images/unusedcapacity/unused%20capacity.tiffcc.jpg",
       "assets/images/unusedcapacity/unused%20capacity-1.tiffcc.jpg",
@@ -1062,7 +1061,7 @@
     "specs": "European Media Art Festival",
     "institution": "Osnabrück, Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/Emaf-2018.jpg"
   },
   {
     "id": "create-your-surrounding-2017",
@@ -1076,11 +1075,11 @@
     "institution": null,
     "link": null,
     "description": "Over a two-year period, I documented and observed this construction site, developing a work that explores determination and external control in urban space. Through flashy aesthetics, aggressive soundscapes, and digital collaging of advertisement imagery, the multi-channel video installation addresses transformation in public space. Possibilities of influence and powerlessness are questioned based on the observation of a reconstruction area.",
-    "image": "assets/images/We%20Create%20Our%20Surrounding/_MG_0337cccc.jpg",
+    "image": "assets/images/create-your-surrounding-2017.jpeg",
     "images": [
-      "assets/images/We%20Create%20Our%20Surrounding/_MG_0337cccc.jpg",
-      "assets/images/We%20Create%20Our%20Surrounding/IMG_2307.jpg",
-      "assets/images/We%20Create%20Our%20Surrounding/OrganicanarchyStill1.0.jpg"
+      "assets/images/create-your-surrounding-2017.jpeg",
+      "assets/images/create-your-surrounding-2017-still-1.jpeg",
+      "assets/images/create-your-surrounding-2017-still-2.jpeg"
     ]
   },
   {
@@ -1094,7 +1093,7 @@
     "specs": "Meisterschüler:innen",
     "institution": "Kunsthaus Bethanien, Berlin",
     "link": "https://www.bpigs.com/openings/kombi-5",
-    "image": null
+    "image": "assets/images/kombi-5-2017.jpg"
   },
   {
     "id": "biff-braunschweig-2017",
@@ -1107,7 +1106,7 @@
     "specs": null,
     "institution": "Braunschweig, Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/kombi-5-2017.jpg"
   },
   {
     "id": "kunstkoffer-2016-2018",
@@ -1138,7 +1137,7 @@
     "institution": null,
     "link": null,
     "description": "A collage to take part in featuring photographed objects from my home. The colours on the backs refer to the particular country of production. A mobile, interactive overview of global connections in a private household.",
-    "image": "assets/images/Verstricke%20Verantwortung/IMG_7970.JPG",
+    "image": "assets/images/entangled-responsibility-2016.jpeg",
     "images": [
       "assets/images/Verstricke%20Verantwortung/IMG_7970.JPG",
       "assets/images/Verstricke%20Verantwortung/IMG_9814.JPG"
@@ -1155,7 +1154,7 @@
     "specs": "Essay on Anton Wilhelm Amo exhibition at Kunstverein Braunschweig",
     "institution": "Der Freitag",
     "link": "https://www.freitag.de/autoren/peter-nowak/wer-kennt-diesen-bedeutenden-philosophen",
-    "image": null,
+    "image": "assets/images/Texte/schamborski_katalogtext_37dokfest.jpg",
     "description": "Critical essay examining the exhibition on Anton Wilhelm Amo at Kunstverein Braunschweig.",
     "csl": {
       "type": "article-newspaper",
