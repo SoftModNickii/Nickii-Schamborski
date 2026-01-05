@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Refresh Test</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; }
+        .test { 
+            width: 200px; 
+            height: 200px; 
+            border: 2px solid black;
+            position: relative;
+            background: white;
+            isolation: isolate;
+        }
+        .test::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            z-index: -1;
+        }
+        .test h3 {
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Variable Background Test</h1>
+    <div class="test" style="--bg-image: url(assets/images/cybercindy-2025-full.jpeg);">
+        <h3>CyberCindy 2025</h3>
+    </div>
+    <p>If you see a pale background image behind the text, CSS variables work!</p>
+    <p><a href="pages/all.html">Go to main page</a></p>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* CV Page Specific Styles */
+
+.cv-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4vh 6vw 8vh;
+}
+
+.cv-content {
+    font-family: 'Source Serif Pro', serif;
+    line-height: 1.6;
+}
+
+.cv-section {
+    margin-bottom: 3rem;
+}
+
+.cv-section h2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C026D3;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #000;
+}
+
+.cv-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cv-year {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.cv-details {
+    font-size: 1rem;
+}
+
+.cv-details strong {
+    font-weight: 400;
+}
+
+.cv-contact {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.cv-contact a {
+    color: #C026D3;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.cv-contact a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cv-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .cv-year {
+        font-weight: 400;
+        color: #C026D3;
+    }
+}

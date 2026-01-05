@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Test</title>
+    <style>
+        body {
+            padding: 2rem;
+            font-family: sans-serif;
+        }
+        .test-card {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+            margin: 2rem;
+            position: relative;
+            background-color: white;
+        }
+        .test-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            z-index: 0;
+        }
+        .test-card h3 {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+        }
+        .direct-img {
+            max-width: 300px;
+            border: 2px solid green;
+            margin: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    
+    <h2>1. Direct IMG tag:</h2>
+    <img class="direct-img" src="assets/images/cybercindy-2025-full.jpeg" alt="Test">
+    
+    <h2>2. CSS Variable Background:</h2>
+    <div class="test-card" style="--bg-image: url(assets/images/cybercindy-2025-full.jpeg);">
+        <h3>CyberCindy 2025</h3>
+    </div>
+    
+    <h2>3. Check paths:</h2>
+    <ul>
+        <li>Image path: <code>assets/images/cybercindy-2025-full.jpeg</code></li>
+        <li>Full URL: <code id="full-url"></code></li>
+    </ul>
+    
+    <script>
+        document.getElementById('full-url').textContent = 
+            new URL('assets/images/cybercindy-2025-full.jpeg', window.location.href).href;
+    </script>
+</body>
+</html>

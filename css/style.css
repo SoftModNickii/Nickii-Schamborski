@@ -1,0 +1,117 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #fff;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Construction Notice */
+.construction-notice {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #C026D3;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.construction-icon {
+    font-size: 1.2rem;
+}
+
+/* Header */
+header {
+    padding: 8vh 8vw 4vh;
+}
+
+header h1 {
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C026D3;
+}
+
+header h1 a {
+    color: #C026D3;
+    text-decoration: none;
+}
+
+/* Main Navigation (Index Page) */
+main {
+    padding: 0 8vw 8vh;
+    flex-grow: 1;
+}
+
+main nav {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+main nav a {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+main nav a:hover {
+    color: #C026D3;
+}
+
+/* Footer */
+footer {
+    padding: 4vh 8vw;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #C026D3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 6vh 6vw 3vh;
+    }
+    
+    main {
+        padding: 0 6vw 6vh;
+    }
+    
+    footer {
+        padding: 3vh 6vw;
+    }
+}

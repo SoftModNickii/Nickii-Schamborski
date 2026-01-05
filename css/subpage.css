@@ -1,0 +1,749 @@
+/* === RESET & BASICS === */
+.subpage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #FAFAF8;
+}
+
+/* === HEADER === */
+.subpage-header {
+    padding: 4vh 8vw 3vh 8vw;
+    border-bottom: 1px solid #E8E8E6;
+    background: #FAFAF8;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.subpage-header h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.subpage-header h1 a {
+    color: #C8A2D0;
+    text-decoration: none;
+    transition: opacity 0.5s ease;
+}
+
+.subpage-header h1 a:hover {
+    opacity: 0.6;
+}
+
+/* Header actions - CV and Email */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cv-btn {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    transition: opacity 0.3s ease;
+}
+
+.cv-btn:hover {
+    opacity: 0.5;
+}
+
+.email-icon {
+    color: #C8A2D0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.email-icon:hover {
+    opacity: 0.6;
+}
+
+/* === HORIZONTAL NAV === */
+.horizontal-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.horizontal-nav a {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #999;
+    text-decoration: none;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.horizontal-nav a:hover {
+    color: #000;
+}
+
+.horizontal-nav a.active {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+/* === MAIN GRID PAGE === */
+.grid-page {
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8vh 8vw;
+}
+
+/* === GRID CONTAINER - 3 COLUMNS FIXED === */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    width: 100%;
+}
+
+/* === INDIVIDUAL CARD === */
+.grid-card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #F5F5F3;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* === CARD FRONT === */
+.card-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: transparent;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card-front h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    text-align: center;
+    line-height: 1.4;
+    color: #000;
+    margin: 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 2;
+}
+
+/* === CARD BACK - SLIDE UP OVERLAY === */
+.card-back {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 250, 248, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #000;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.grid-card:hover .card-back {
+    transform: translateY(0);
+}
+
+.card-back * {
+    background-color: transparent;
+}
+
+.card-year {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+    color: #666;
+    letter-spacing: 0.1em;
+}
+
+.card-type,
+.card-specs,
+.card-institution {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 0.4rem;
+    color: #000;
+    letter-spacing: 0.05em;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C026D3;
+    text-decoration: none;
+    border-bottom: 1px solid #C026D3;
+    padding-bottom: 2px;
+    transition: opacity 0.4s ease;
+}
+
+.card-link:hover {
+    opacity: 0.6;
+}
+
+/* === DETAIL/CITE BUTTONS === */
+.detail-btn,
+.cite-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #000;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 0.3rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.detail-btn:hover,
+.cite-btn:hover {
+    opacity: 0.5;
+}
+
+.cite-btn {
+    border-bottom: 1px solid #999;
+    color: #999;
+    margin-left: 1rem;
+}
+
+.cite-btn:hover {
+    border-color: #C026D3;
+    color: #C026D3;
+    background: transparent;
+}
+
+/* === DETAIL MODAL === */
+.detail-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 4vh 4vw;
+    overflow-y: auto;
+}
+
+.detail-content {
+    position: relative;
+    background: #fff;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 4rem;
+    box-sizing: border-box;
+}
+
+.detail-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.detail-close:hover {
+    color: #C026D3;
+}
+
+#detail-body h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #C026D3;
+    margin-bottom: 1rem;
+}
+
+.detail-year,
+.detail-type {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* === IMAGE GALLERY === */
+.detail-gallery {
+    margin: 2rem 0;
+}
+
+.gallery-main {
+    position: relative;
+    width: 100%;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.gallery-image {
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.gallery-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.gallery-prev,
+.gallery-next {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    background: #C026D3;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    background: #9333EA;
+    transform: scale(1.1);
+}
+
+.gallery-counter {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    letter-spacing: 0.1em;
+}
+
+.gallery-thumbnails {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.gallery-thumb:hover {
+    opacity: 1;
+    border-color: #C026D3;
+}
+
+.gallery-thumb.active {
+    opacity: 1;
+    border-color: #C026D3;
+}
+
+.image-credit {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    border: 1px solid #e0e0e0;
+}
+
+.detail-description {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 2rem 0;
+}
+
+.lang-section {
+    margin-bottom: 2rem;
+}
+
+.lang-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C026D3;
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+}
+
+.lang-section p {
+    margin: 0;
+}
+
+.detail-specs,
+.detail-institution {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 1rem 0;
+}
+
+.detail-collaborators,
+.detail-credits,
+.detail-exhibitions,
+.detail-works {
+    margin: 2rem 0;
+}
+
+.detail-collaborators strong,
+.detail-credits strong,
+.detail-exhibitions strong,
+.detail-works strong {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #C026D3;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.detail-collaborators ul,
+.detail-credits ul,
+.detail-exhibitions ul,
+.detail-works ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-collaborators li,
+.detail-credits li,
+.detail-exhibitions li,
+.detail-works li {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #333;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.detail-collaborators li:before,
+.detail-credits li:before,
+.detail-exhibitions li:before,
+.detail-works li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #C026D3;
+}
+
+.detail-tags {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #f5f5f5;
+    color: #666;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+}
+
+.detail-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C026D3;
+    text-decoration: none;
+    border: 2px solid #C026D3;
+    padding: 1rem 2rem;
+    transition: all 0.4s ease;
+}
+
+.detail-link:hover {
+    background: #C026D3;
+    color: #fff;
+}
+
+/* Video link styling */
+.video-link-container {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid #C026D3;
+    text-align: center;
+}
+
+.video-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #C026D3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-all;
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+.video-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .horizontal-nav {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .horizontal-nav a {
+        font-size: 0.65rem;
+    }
+    
+    .grid-page {
+        padding: 4vh 2vw;
+    }
+    
+    .grid-card {
+        aspect-ratio: 1 / 1;
+    }
+    
+    .card-front h3 {
+        font-size: 0.5rem;
+        letter-spacing: 0.05em;
+        padding: 0 0.3rem;
+        line-height: 1.4;
+    }
+    
+    .card-front,
+    .card-back {
+        padding: 1rem;
+    }
+    
+    .card-year {
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-type,
+    .card-specs,
+    .card-institution {
+        font-size: 0.5rem;
+        line-height: 1.4;
+        margin-bottom: 0.3rem;
+    }
+    
+    .detail-btn,
+    .cite-btn {
+        font-size: 0.55rem;
+        padding: 0.4rem 0.8rem;
+        margin-top: 0.5rem;
+    }
+}
+/* === SEARCH TOOL (Expanding from Side) === */
+.search-tool {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-toggle {
+    width: 44px;
+    height: 44px;
+    background: rgba(200, 162, 208, 0.15);
+    border: 1px solid rgba(200, 162, 208, 0.3);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #C8A2D0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.search-toggle:hover {
+    background: rgba(200, 162, 208, 0.25);
+    color: #9B7AA3;
+}
+
+.search-panel {
+    position: absolute;
+    right: 44px;
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-tool.expanded .search-panel {
+    width: 250px;
+    opacity: 1;
+}
+
+#search-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 1rem;
+    border: 1px solid rgba(200, 162, 208, 0.3);
+    border-right: none;
+    background: rgba(250, 250, 248, 0.95);
+    backdrop-filter: blur(10px);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#search-input::placeholder {
+    color: rgba(200, 162, 208, 0.5);
+}
+
+#search-input:focus {
+    background: rgba(250, 250, 248, 1);
+    border-color: rgba(200, 162, 208, 0.5);
+}
+
+@media (max-width: 768px) {
+    .search-tool.expanded .search-panel {
+        width: 180px;
+    }
+    
+    .search-toggle {
+        width: 38px;
+        height: 38px;
+    }
+    
+    #search-input {
+        height: 38px;
+        font-size: 0.8rem;
+    }
+}
