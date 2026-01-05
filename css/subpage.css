@@ -314,7 +314,6 @@
     margin-bottom: 0.8rem;
     color: #666;
     letter-spacing: 0.1em;
-    display: none; /* Hide year on cards */
 }
 
 .card-type,
@@ -733,9 +732,14 @@
         line-height: 1.4;
     }
     
-    .card-front,
-    .card-back {
+    .card-front {
         padding: 0.8rem;
+    }
+    
+    .card-back {
+        padding: 1rem;
+        justify-content: flex-start;
+        padding-top: 1.5rem;
     }
     
     .card-year {
