@@ -38,6 +38,24 @@
         Website under construction
     </div>
     
+    <!-- Mobile Menu -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="menu-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="menu-dropdown" id="menuDropdown">
+        <a href="pages/all.html?filter=all">All</a>
+        <a href="pages/all.html?filter=works">Works</a>
+        <a href="pages/all.html?filter=shows">Shows</a>
+        <a href="pages/all.html?filter=practice">Practice & Teachings</a>
+        <a href="pages/all.html?filter=fellowships">Fellowships & Awards</a>
+        <a href="pages/all.html?filter=press">Press</a>
+        <a href="pages/cv.html">CV</a>
+    </div>
+    
     <header>
         <h1>Nickii Schamborski</h1>
     </header>
@@ -59,5 +77,21 @@
         <a href="datenschutz.html">Datenschutz</a> | 
         <a href="mailto:studio@schamborski.com">Contact</a>
     </footer>
+    
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menuDropdown');
+        menu.classList.toggle('active');
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('menuDropdown');
+        const toggle = document.querySelector('.menu-toggle');
+        if (!toggle.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.remove('active');
+        }
+    });
+    </script>
 </body>
 </html>
