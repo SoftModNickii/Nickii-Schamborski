@@ -985,13 +985,10 @@
     "institution": null,
     "link": null,
     "description": "\"The Instrument of Public Critique\" invites viewers to reimagine the interplay between digital narratives and physical landscapes. This autonomous sculpture, a hybrid of raw materials and 360 degree video technology offers a poetic juxtaposition: the industrial materiality of aluminum and wood meet the intangible expanse of virtual reality. Peering through its lens, audiences are transported into location-specific VR films. Each location transforms the view from the lens into a stage for reflection on the socio-political and historical undercurrents of the space it occupies.",
-    "image": "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0198.JPG",
+    "image": "assets/images/instrument-public-critique-2018.jpeg",
     "images": [
-      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0198.JPG",
-      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0203.JPG",
-      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/DSC_0223.JPG",
-      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/_MG_2604.JPG",
-      "assets/images/Instrument%20der%20oeffentlichen%20Kritik/_MG_2618.JPG"
+      "assets/images/instrument-public-critique-2018.jpeg",
+      "assets/images/instrument-public-critique-2018-still-1.jpeg"
     ]
   },
   {
@@ -1203,7 +1200,7 @@
     "specs": "Text by Maria Ines Plaza Lazo",
     "institution": "Bundeskunsthalle Bonn",
     "link": null,
-    "image": null
+    "image": "assets/images/bundeskunsthalle.jpg"
   },
   {
     "id": "scope-catalog-2021",
@@ -1216,7 +1213,7 @@
     "specs": "Photography and Media Art Biennale",
     "institution": "Hannover, Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/Scope/I3B1218.jpg"
   },
   {
     "id": "kassel-doc-fest-catalog-2020",
@@ -1229,7 +1226,7 @@
     "specs": "Soft Power",
     "institution": "Kassel, Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/Texte/schamborski_katalogtext_37dokfest.jpg"
   },
   {
     "id": "emaf-catalog-2022",
@@ -1242,7 +1239,7 @@
     "specs": "Speak—so that I may see you",
     "institution": "Osnabrück, Germany",
     "link": "https://www.emaf.de",
-    "image": null
+    "image": "assets/images/bundeskunsthalle.jpg"
   },
   {
     "id": "hbk-meisterschueler-2021-2022",
@@ -1292,7 +1289,7 @@
     "specs": "Intermedia Contemporary Art program",
     "institution": "Institut Teknologi Bandung (ITB), Indonesia",
     "link": "https://www.itb.ac.id",
-    "image": "assets/images/matara/DSC01531.JPG",
+    "image": "assets/images/itb-bandung.jpg",
     "description": "International exchange semester exploring intermedia art practices in Indonesian contemporary art context.",
     "collaborators": [],
     "credits": {},
