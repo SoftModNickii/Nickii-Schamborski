@@ -11,7 +11,7 @@
     "institution": "School of the Art Institute of Chicago",
     "link": "https://engage.saic.edu/news/331098",
     "image": "assets/images/saic-ai-aesthetics-2025.png",
-    "description": "This lecture focused on how AI-generated images are utilized in social contexts to influence audience mentality and judgment. Using AI-generated images styled after Studio Ghibli as a sample, the talk explored how AI visuals manipulate audiences through stylistic manipulation in political communication. The lecture examined how political actors hollow out aesthetics like the Ghibli style, stripping it of its original narrative and ethical context to decorate violence, whitewash power, or reshape the image of authority. Drawing on Walter Benjamin's concept of 'aestheticization of politics' and Hans Belting's 'Anthropological Image Theory,' the talk addressed how AI-generated imagery represents not reality but synthesized stereotypes, and how this 'beautification' differs fundamentally from traditional artistic choices."
+    "description": 
   },
   {
     "id": "voltaje-festival-2025",
@@ -25,7 +25,8 @@
     "institution": "Bogotá, Colombia",
     "link": null,
     "image": "assets/images/Voltaje.jpeg",
-    "description": "International festival for art and technology featuring video art, installations, and new media works.",
+    "description": "Voltaje is a cultural initiative that provides an overview of the way Colombian and foreign artists explore, confront and assume the multiple relationships between Art and Technology. Voltaje was also created to make this field known to a wider public, a field in which Colombia has been a pioneer country in Latin America since the seventies.
+    The event is an initiative from La Feria del Millón in a partnership with Universidad de los Andes and Fundación Telefónica, with the support of the French Embassy, Sci Arc and the City of Bogotá. (Text: https://voltaje.co/artandtechnologysalon/ (01.01.2026)",
     "exhibited_works": [
       "cybercindy-2025"
     ],
@@ -66,18 +67,16 @@
       "practice"
     ],
     "type": "Academic Position",
-    "specs": "AI-related courses with Prof. Doug Rosman",
+    "specs": "Artificial Intelligience with Prof. Doug Rosman",
     "institution": "School of the Art Institute of Chicago",
     "link": "https://www.saic.edu/profiles/faculty/douglas-rosman",
     "image": "assets/images/TA-SAIC.JPG",
     "images": [
-      "assets/images/saic-ta-portrait-2025.jpeg",
-      "assets/images/saic-ta-studio-2025.jpeg",
-      "assets/images/saic-studio-workspace-2025.jpeg",
-      "assets/images/saic-studio-view-2025.jpeg"
+      "assets/images/TA-SAIC.JPG",
+    
     ],
-    "image_credit": "Image: School of the Art Institute of Chicago",
-    "description": "Course description (Prof. Doug Rosman): 'Artificial Intelligence' (AI) has infiltrated many corners of our lives. Once used primarily to identify, track, and predict things in the world, AI–a convenient shorthand for machine learning–has now become generative: producing images, language, and anything else that can be parsed as data. Through a hands-on curriculum, students will explore AI tools to create images, video, audio and more, and will approach these AI systems as tools to augment a creative practice, as well as a medium and material in themselves. This course foregrounds experimentation and play as a means to develop a critical understanding of AI and the ethical implications of its use in creative production (and beyond), engaging in discourse around ideas of authenticity, authorship, and labor."
+    "image_credit": "Doug Rosman",
+    "description": "Course descrtiption: ''Artificial Intelligence' (AI) has infiltrated many corners of our lives. Once used primarily to identify, track, and predict things in the world, AI (a convenient shorthand for 'machine learning') has now become generative - producing images, language, and anything else that can be parsed as data. Through a hands-on curriculum, students will explore AI tools to create images, video, audio and more, and will approach these AI systems as tools to augment a creative practice, as well as a medium and material in themselves. This course foregrounds experimentation and play as a means to develop a critical understanding of AI and the ethical implications of its use in creative production (and beyond), engaging in discourse around ideas of authenticity, authorship, and labor. Ultimately, students will leave this class with a broad understanding of how AI operates in the world today, and what it means to incorporate this technology into a creative practice.(Doug Rosman:https://www.saic.edu/profiles/faculty/douglas-rosman)''"
   },
   {
     "id": "saic-mfa-2025-2028",
@@ -87,12 +86,12 @@
       "education"
     ],
     "type": "Graduate Studies",
-    "specs": "DAAD Graduate Scholarship; New Society Scholarship (100% tuition coverage)",
+    "specs": "Art and Technology /Sound Practices",
     "institution": "School of the Art Institute of Chicago",
     "link": "https://www.saic.edu/academics/departments/art-and-technology-studies",
     "image": "assets/images/SAIC_Studio.jpeg",
     "image_credit": "Image: School of the Art Institute of Chicago",
-    "description": "MFA program focusing on the intersection of art, technology, and critical theory. Exploring AI, digital culture, and contemporary media practices.",
+    "description": "",
     "collaborators": [],
     "credits": {
       "advisors": null
@@ -115,12 +114,12 @@
     "categories": [
       "press"
     ],
-    "type": "Magazine Feature",
-    "specs": "Profile feature in SAIC Magazine",
+    "type": "Magazine",
+    "specs": "Introduction in SAIC Magazine",
     "institution": "School of the Art Institute of Chicago",
     "link": "https://www.saic.edu/magazine/fall25/meet-the-class",
     "image": "assets/images/Meettheclass.jpg",
-    "description": "Featured profile in SAIC Magazine's Fall 2025 'Meet the Class' series, introducing incoming MFA students in Art and Technology Studies.",
+    "description": "",
     "csl": {
       "type": "webpage",
       "author": [
@@ -164,7 +163,7 @@
       "fellowships"
     ],
     "type": "Fellowship",
-    "specs": "Full funding for MFA at SAIC (2025-2028)",
+    "specs": "For MFA at SAIC (2025-2028)",
     "institution": "German Academic Exchange Service",
     "link": "https://www.daad.de",
     "image": "assets/images/DAAD-Sholarship.jpeg",
@@ -178,7 +177,7 @@
       "fellowships"
     ],
     "type": "Scholarship",
-    "specs": "100% tuition coverage for MFA at SAIC",
+    "specs": "Tuition coverage for MFA at SAIC",
     "institution": "School of the Art Institute of Chicago",
     "link": null,
     "image": "assets/images/SAIC.jpeg",
