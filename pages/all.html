@@ -109,10 +109,24 @@
     let currentFilter = 'all';
 
     // Load JSON data
-    fetch('../data/content.json')
-        .then(response => response.json())
-        .then(data => {
-            allContent = data;
+    fetch('../data/content.json?v=' + Date.now())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('HTTP error! status: ' + response.status);
+            }
+            return response.text();
+        })
+        .then(text => {
+            console.log('Received text length:', text.length);
+            console.log('First 100 chars:', text.substring(0, 100));
+            try {
+                allContent = JSON.parse(text);
+                console.log('Successfully parsed', allContent.length, 'items');
+            } catch (e) {
+                console.error('JSON parse error:', e);
+                console.error('Error at position:', e.message);
+                throw e;
+            }
             
             // Check URL for initial filter
             const urlParams = new URLSearchParams(window.location.search);
@@ -126,7 +140,7 @@
         })
         .catch(error => {
             console.error('Error loading content:', error);
-            document.getElementById('grid-container').innerHTML = '<p>Error loading content. Check console.</p>';
+            document.getElementById('grid-container').innerHTML = '<p>Error loading content: ' + error.message + '</p>';
         });
 
     // NEUE SMOOTH TRANSITION LOGIC!
