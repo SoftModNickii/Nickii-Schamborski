@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Test</title>
+</head>
+<body>
+    <h1>JSON Loading Test</h1>
+    <div id="result"></div>
+    <pre id="raw"></pre>
+    
+    <script>
+    fetch('data/content.json?v=' + Date.now())
+        .then(response => {
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+            return response.text();
+        })
+        .then(text => {
+            document.getElementById('raw').textContent = text.substring(0, 500);
+            console.log('Received text, length:', text.length);
+            console.log('First 200 chars:', text.substring(0, 200));
+            
+            // Check for BOM
+            if (text.charCodeAt(0) === 0xFEFF) {
+                console.warn('⚠ BOM detected!');
+                text = text.substring(1);
+            }
+            
+            // Try parsing
+            try {
+                const data = JSON.parse(text);
+                document.getElementById('result').innerHTML = '✓ SUCCESS: Loaded ' + data.length + ' items';
+                console.log('✓ Parsed successfully');
+            } catch (e) {
+                document.getElementById('result').innerHTML = '✗ ERROR: ' + e.message;
+                console.error('✗ Parse error:', e);
+                console.error('Error message:', e.message);
+                
+                // Find the position
+                if (e.message.includes('position')) {
+                    const match = e.message.match(/position (\d+)/);
+                    if (match) {
+                        const pos = parseInt(match[1]);
+                        console.error('Problem at position', pos);
+                        console.error('Context:', text.substring(pos-50, pos+50));
+                        console.error('Char at position:', text[pos], 'code:', text.charCodeAt(pos));
+                    }
+                }
+            }
+        })
+        .catch(error => {
+            document.getElementById('result').innerHTML = '✗ FETCH ERROR: ' + error.message;
+            console.error('Fetch error:', error);
+        });
+    </script>
+</body>
+</html>
