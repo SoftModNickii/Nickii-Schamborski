@@ -511,7 +511,7 @@
   },
   {
     "id": "bundeskunstpreis-2021",
-    "title": "Federal Art Prize for Students",
+    "title": "25th Federal Art Prize for Students",
     "year": "2021",
     "categories": ["fellowships"],
     "type": "Award",
@@ -639,7 +639,7 @@
     "link": null,
     "image": "assets/images/Testing%20Trixi/schamborski_katalogtext_37dokfest.jpg",
     "related_links": [
-      {"title": "dokfest Katalog", "url": "assets/images/dokfest.pdf"}
+      {"title": "dokfest Katalog", "url": "assets/pdfs/dokfest.pdf"}
     ]
   },
   {
@@ -969,7 +969,10 @@
       "URL": "https://www.freitag.de/autoren/peter-nowak/wer-kennt-diesen-bedeutenden-philosophen",
       "accessed": {"date-parts": [[2026, 1, 3]]}
     },
-    "related_works": ["amo-exhibition-2020"]
+    "related_works": ["amo-exhibition-2020"],
+    "related_links": [
+      {"title": "Amo Afer Guinea Exhibition Info", "url": "assets/pdfs/Amo Afer Guinea Kunstverein Braunschweig.pdf"}
+    ]
   },
   {
     "id": "bundeskunstpreis-catalog-2022",
@@ -1046,7 +1049,7 @@
     "specs": "Intermedia Contemporary Art program",
     "institution": "Institut Teknologi Bandung (ITB), Indonesia",
     "link": "https://www.itb.ac.id",
-    "image": "assets/images/matara/DSC01531.JPG",
+    "image": "assets/images/institut-teknologi-bandung-itb.jpg",
     "description": "International exchange semester exploring intermedia art practices in Indonesian contemporary art context.",
     "collaborators": [],
     "credits": {},
@@ -1058,11 +1061,11 @@
     "title": "Fine Arts Diploma with Honors",
     "year": "2014/2021",
     "categories": ["education"],
-    "type": "Undergraduate Diploma",
+    "type": "Diploma",
     "specs": "Spatial Concept with Prof. Candice Breitz and interim Professors Julieta Aranda, Eli Cortinas and Agnieszka Polska. Additional diploma in art education. Thesis: 'Queer Digital Art Education' rewarded with honors",
     "institution": "Braunschweig University of Art (HBK)",
     "link": "https://www.hbk-bs.de",
-    "image": "assets/images/TutorCandiceBreitz/71138886_542161736541756_4748176548869166736_n.jpg",
+    "image": "assets/images/HBK_BS_2021_Schamborski_002.jpg",
     "description": "Fine Arts diploma with specialization in Spatial Concept. Completed with honors, including additional qualification in art education. Thesis on queer digital art education recognized with distinction.",
     "collaborators": [
       {"name": "Prof. Candice Breitz", "role": "Primary Professor"},
