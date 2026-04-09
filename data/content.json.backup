@@ -1,5 +1,19 @@
 [
-  {
+  
+  {"id": "Nickii-AI",
+    "title": "Performance: Nickii AI",
+    "year": "2026",
+    "categories": ["practice"],
+    "type": "works", "shows",
+    "specs": "Exhibited at Ars Electronica 2026",
+    "institution": "School of the Art Institute of Chicago",
+    "link": "assets/images/Nickii_AI/nickii_ai_photo.png",
+    "image": "assets/images/saic-ai-aesthetics-2025.png",
+    "description": "‘Nickii Ai’ is a hybrid performance that allows visitors in a room to ask an AI questions: Without realizing the AI is me streaming from another room.
+    I have designed looping videos of my face, a thinking animation, and an entire user interface to create the illusion of artificial intelligence. 
+    This performance questions what it means to be an artist in times of AI, and how our perception of humanity, empathy, and connection, suddenly change when we can simply prompt a machine for conversation. 
+    The performance has an uncanny quality, as spectators slowly realize that I might be human - Sweating, stuttering, and synthesizing answers without a database."
+    
     "id": "saic-lecture-2025",
     "title": "Lecture: The Politics of AI Aesthetics",
     "year": "2025",
