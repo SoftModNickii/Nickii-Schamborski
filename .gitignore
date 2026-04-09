@@ -1,0 +1,31 @@
+# Large source files - prevent re-adding
+*.psd
+*.tif
+*.tiff 
+*.CR2
+*.cr2
+*.raw
+*.RAW
+
+# Large documents
+*.docx
+*-hq.pdf
+
+# System files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Large media backups
+*-backup.*
+*-original.*
+*-source.*
+
+# Logs
+*.log
+
+# Temporary directories
+temp/
+tmp/
+backup/
