@@ -1,4 +1,5 @@
 [
+
   {
     "id": "Nickii-AI",
     "title": "Performance: Nickii AI",
@@ -373,15 +374,12 @@
     "specs": "6K, Dolby surround, 08:32 min",
     "institution": "Kunstverein Braunschweig",
     "link": null,
-    "image": "assets/images/represent/Schamborski_represent.png",
-    "images": [
-      "assets/images/represent/Schamborski_represent.png",
-      "assets/images/represent/vlcsnap-2022-11-14-20h04m45s646.png",
+    "image": "assets/images/represent/Image13.png",
+    "images": ["assets/images/represent/vlcsnap-2022-11-14-20h04m45s646.png",
       "assets/images/represent/vlcsnap-2022-11-14-20h05m38s287.png",
       "assets/images/represent/vlcsnap-2022-11-14-20h09m46s795.png",
-      "assets/images/represent/vlcsnap-2022-11-14-20h11m10s182.png",
-      "assets/images/represent/Image13.png",
-      "assets/images/represent/Image24.png"
+      "assets/images/represent/vlcsnap-2022-11-14-20h14m50s782.png",
+      "assets/images/represent/vlcsnap-2022-11-14-20h11m10s182.png"
     ],
     "description_de": "Anhand von Shirley, einem 3D Model für Architektursimulationen, stellt diese Arbeit Fragen nach Macht und Repräsentation. In der Kurzgeschichte ergreift Shirley die Flucht vor ihrer Funktion und verkündet ihren Widerstand gegen das herrschende System der Architektur und die inherente Machtverteilung. Während sie dem politischen Ziel nachgeht, sich selbst und ihre Repräsentation auszulöschen, steht sie vor dem Paradoxon, gleichzeitig nicht vergessen werden zu wollen. Die Handlung des Films spielt sich hauptsächlich im Innenraum des Kunstverein Braunschweigs ab; ergänzt wird die Geschichte durch Digitaldrucke mit Außenansichten des Kunstvereins.",
     "related_links": [
@@ -482,16 +480,13 @@
     "link": null,
     "description": "\"MeMärchen\" questions the construction of morality in fairy tales and on the internet. The title combines \"meme\" and \"Märchen\" [\"fairy tale\"], exploring who propagates hegemonic narratives and who is accused of moralism. Created as graphic memes, printed on fabric, the series of images highlight the intersection of moralism, power, and social discourse.",
     "description_de": "MeMärchen untersucht die Konstruktion von Moral in Märchen und im Internet. Der Titel verbindet Meme und Märchen und hinterfragt, wer hegemoniale Narrative verbreitet und wem Moralismus vorgeworfen wird. Die Serie beleuchtet die Verflechtung von Moralismus, Macht und sozialen Debatten.",
-    "image": "assets/images/MeMärchen/Memärchen_Bundeskunsthalle.jpg",
+    "image": "assets/images/Memarchen/Memärchen_Bundeskunsthalle.jpg",
     "images": [
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle.jpg",
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle2.jpg",
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle4.jpg",
-      "assets/images/MeMärchen/Memärchen_Bundeskunsthalle5.jpg",
-      "assets/images/MeMärchen/Bildschirmfoto 2018-05-28 um 22.33.31.png",
-      "assets/images/MeMärchen/Bildschirmfoto 2018-05-28 um 22.34.55.png",
-      "assets/images/MeMärchen/Bildschirmfoto 2018-06-06 um 22.04.06.png",
-      "assets/images/MeMärchen/Still00.png"
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle2.jpg",
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle3.jpg",
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle4.jpg",
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle5.jpg"
+
     ],
     "related_links": [
       {"title": "Katalog Blickkontakt", "url": "assets/images/MeMärchen/Katalog Blickkontakt digital.pdf"},
@@ -507,11 +502,8 @@
     "specs": "Photography and Media Art",
     "institution": "Hannover, Germany",
     "link": null,
-    "image": "assets/images/Scope/_I3B1218.jpg",
-    "images": [
-      "assets/images/Scope/_I3B1218.jpg",
-      "assets/images/Scope/_I3B1232-1.jpg",
-      "assets/images/Scope/_I3B1306-1.jpg"
+    "image": "assets/images/Festivals/Biennials/Screen+Shot+2021-07-13+at+1.54.18+PM.webp",
+    "images": [null
     ]
   },
   {
@@ -522,7 +514,7 @@
     "type": "Award",
     "specs": "Bundeskunstpreis",
     "institution": "Federal Ministry of Education and Research, Germany",
-    "link": "http://imperia.hbk-bs.de/hbk/aktuell/details/26148/",
+    "link": "https://imperia.hbk-bs.de/hbk/aktuell/details/26148/",
     "image": "assets/images/kunspreisVerleihung-24.jpg",
     "images": [
       "assets/images/kunspreisVerleihung-24.jpg",
@@ -590,7 +582,9 @@
     "specs": "Das Paradoxon der Kunstvermittlung in den sozialen Medien",
     "institution": "appropriate! Journal, Issue 1",
     "link": "https://www.appropriate-journal.art/schamborski",
-    "image": null
+    "image": "assets/images/appropriate.png",
+    "description": "In this essay, I explore the paradox of art mediation on social media platforms, where the desire for critical engagement and social change is often at odds with the algorithms and dynamics of these platforms. I discuss how artists and mediators navigate this tension, using social media as a tool for activism while also critiquing its limitations and potential harms.",
+    "description_de": "In diesem Essay untersuche ich das Paradoxon der Kunstvermittlung auf sozialen Medien, wo der Wunsch nach kritischem Engagement und sozialem Wandel oft im Widerspruch zu den Algorithmen und Dynamiken dieser Plattformen steht. Ich diskutiere, wie Künstler*innen und Vermittler*innen mit dieser Spannung umgehen, indem sie soziale Medien als Werkzeug für Aktivismus nutzen und gleichzeitig ihre Einschränkungen und potenziellen Schäden kritisieren."
   },
   {
     "id": "testing-trixi-2020",
@@ -641,10 +635,10 @@
     "type": "Film Festival",
     "specs": "37th Kassel Documentary Film and Video Festival",
     "institution": "Kassel, Germany",
-    "link": null,
-    "image": "assets/images/Testing%20Trixi/schamborski_katalogtext_37dokfest.jpg",
+    "link": "https://documenta-fifteen.de/en/news/window-display-37-kasseler-dokfest-as-guest-at-ruruhaus/",
+    "image": "assets/images/testing-trixi-2020-still-1.jpeg",
     "related_links": [
-      {"title": "dokfest Katalog", "url": "assets/pdfs/dokfest.pdf"}
+      {"title": "dokfest Katalog"}
     ]
   },
   {
@@ -656,7 +650,7 @@
     "specs": null,
     "institution": "Gallerie vom Zufall und vom Glueck, Hannover",
     "link": null,
-    "image": "assets/images/flyer#3.jpg"
+    "image": "assets/images/Festivals/Biennials/gallerie.jpg"
   },
   {
     "id": "daad-promos-2020",
@@ -721,8 +715,8 @@
     "type": "Film Festival",
     "specs": null,
     "institution": "Braunschweig, Germany",
-    "link": null,
-    "image": null
+    "link": "https://www.filmfest-braunschweig.de/en/the-festival/filmarchive/programmes-and-events/details/familycare-9170?user_fifmoviedb_controller%5Byear%5D=2019&cHash=92990e20bc71a72fd8657ea72372d383",
+    "image": "assets/images/Festivals/Biennials/Filmfest-Braunschweig-2019-Poster-212x300.jpg"
   },
   {
     "id": "busan-iff-2019",
@@ -733,7 +727,7 @@
     "specs": null,
     "institution": "Busan, South Korea",
     "link": null,
-    "image": null
+    "image": "assets/images/Festivals/Biennials/busan film fest.jpg"
   },
   {
     "id": "continous-2019",
@@ -755,7 +749,7 @@
     "specs": null,
     "institution": "Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/Festivals/Biennials/daad.jpg"
   },
   {
     "id": "hbk-lecture-fascism-2019",
@@ -823,15 +817,13 @@
     "categories": ["works"],
     "type": "Single-channel 360° VR-video",
     "specs": "01:54 min",
-    "institution": null,
+    "institution": "Schloss Wolfsburg",
     "link": null,
     "description": "\"Wolfsburg\" is a site-specific VR film set at Schloss Wolfsburg that raises historical and cultural questions about Wolfsburg's fascist origins. The immersive film reflects on the role of Volkswagen production and the construction of a new shopping mall on the last remnants of former camps, once inhabited both by concentration camp prisoners and later by so-called guest workers or migrant laborers. The work addresses the ghostly return of suppressed history: how beneath the gleaming surface of consumer culture, the unresolved Nazi past continues to operate and returns in the form of \"cultural zombism.\" The film focuses on the way historical amnesia and commercial development create a haunting double presence.",
     "description_de": "Wolfsburg ist ein ortsspezifischer VR-Film, der im Schloss Wolfsburg spielt und historische und kulturelle Fragen über die faschistischen Ursprünge Wolfsburgs aufwirft. Der immersive Film reflektiert die Rolle der Volkswagen-Produktion und den Bau eines neuen Einkaufszentrums auf den letzten Überresten ehemaliger Lager, die einst sowohl von KZ-Häftlingen als auch später von sogenannten 'Gastarbeitern' oder 'Wanderarbeitern' bewohnt wurden. Die Arbeit befasst sich mit der gespenstischen Rückkehr der verdrängten Geschichte - damit, wie unter der glänzenden Oberfläche der Konsumkultur die unbewältigte Nazi-Vergangenheit weiterwirkt und in Form von kulturellem Zombismus wiederkehrt.",
-    "image": "assets/images/Wolfsburg%201933-2018/Bild2Stripecc.jpg",
-    "images": [
-      "assets/images/Wolfsburg%201933-2018/Bild2Stripecc.jpg",
-      "assets/images/Wolfsburg%201933-2018/Bildschirmfoto%202018-05-21%20um%2019.02.13.png",
-      "assets/images/Wolfsburg%201933-2018/Bildschirmfoto%202018-06-27%20um%2016.56.30.png"
+    "image": "assets/images/wolfsburg-1933-1945-still-1.jpeg",
+    "images": ["assets/images/wolfsburg-1933-1945-still-2.jpeg",
+      "assets/images/wolfsburg-1933-1945.jpeg"
     ]
   },
   {
@@ -863,12 +855,10 @@
     "link": null,
     "description": "In this performative video work, students gain unauthorized access to their former school building where a refugee shelter - fully equipped with kitchens, washing machines, and bedrooms, was built but remained unused and empty due to the 2016 EU-Turkey agreement while refugees died seeking shelter. The student bodies activate these abandoned halls and document them, capturing graffitied swastikas alongside prepared refugee beds revealing the years of institutional negligence. Occupying this now abandoned space, they transform their intrusion into artistic protest and expose the absurdity of idle wealth amid humanitarian crisis.",
     "description_de": "In dieser performativen Videoarbeit dringen Schüler*innen unbefugt in ihr ehemaliges Schulgebäude ein und erkunden die Räume einer voll ausgestatteten Geflüchteten Unterkunft, die wegen des EU-Türkei-Abkommens von 2016 nie ihren Zweck erfüllte und ungenutzt blieb, während Menschen auf der Flucht sterben. Die Körper der Schüler*innen beleben diese verlassenen Hallen, in denen Hakenkreuze neben den für Geflüchtete vorbereiteten Betten von der Oberflächlichkeit der Planung zeugen. In verschiedenen performativen Akten der Aneignung verwandeln sie ihr Eindringen in künstlerischen Protest und legen die Absurdität des brachliegenden Reichtums inmitten der humanitären Krise offen.",
-    "image": "assets/images/unusedcapacity/unused%20capacity.tiffcc.jpg",
-    "images": [
-      "assets/images/unusedcapacity/unused%20capacity.tiffcc.jpg",
-      "assets/images/unusedcapacity/unused%20capacity-1.tiffcc.jpg",
-      "assets/images/unusedcapacity/unused%20capacity-2.tiffcc.jpg",
-      "assets/images/unusedcapacity/unused%20capacity-3.tiffcc.jpg"
+    "image": "assets/images/unused capacity-1.tiffcc.jpg",
+    "images": ["assets/images/unused capacity-2.tiffcc.jpg",
+      "assets/images/unused capacity-3.tiffcc.jpg",
+      "assets/images/unused capacity-4.tiff"
     ]
   },
   {
@@ -880,7 +870,7 @@
     "specs": "European Media Art Festival",
     "institution": "Osnabrück, Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/Festivals/Biennials/emaf.jpg"
   },
   {
     "id": "create-your-surrounding-2017",
@@ -893,11 +883,10 @@
     "link": null,
     "description": "Over a two-year period, I documented and observed this construction site, developing a work that explores determination and external control in urban space. Through flashy aesthetics, aggressive soundscapes, and digital collaging of advertisement imagery, the multi-channel video installation addresses transformation in public space. Possibilities of influence and powerlessness are questioned based on the observation of a reconstruction area.",
     "description_de": "Über einen Zeitraum von zwei Jahren habe ich dieses Baustellengebiet besucht und dokumentiert, woraus sich eine Arbeit entwickelte, die sich mit der Determinierung und Fremdbestimmung im Stadtraum auseinandersetzt. Durch plakative Ästhetik, aggressive Klanglandschaften und digitale Collagen von Werbeinhalten adressiert die mehrkanalige Videoinstallation die eigene Ohnmacht angesichts Veränderungen des öffentlichen Raum. Die Einflussmöglichkeiten jedes*r Einzelnen werden anhand der Beobachtung eines Umbaugebietes hinterfragt.",
-    "image": "assets/images/We%20Create%20Our%20Surrounding/_MG_0337cccc.jpg",
-    "images": [
-      "assets/images/We%20Create%20Our%20Surrounding/_MG_0337cccc.jpg",
-      "assets/images/We%20Create%20Our%20Surrounding/IMG_2307.jpg",
-      "assets/images/We%20Create%20Our%20Surrounding/OrganicanarchyStill1.0.jpg"
+    "image": "assets/images/create-your-surrounding-2017-still-1.jpeg",
+    "images": ["assets/images/create-your-surrounding-2017-still-2.jpeg",
+      "assets/images/create-your-surrounding-2017-still-2.jpeg",
+      "assets/images/create-your-surrounding-2017.jpeg"
     ]
   },
   {
@@ -909,7 +898,7 @@
     "specs": "Meisterschüler:innen",
     "institution": "Kunsthaus Bethanien, Berlin",
     "link": "https://www.bpigs.com/openings/kombi-5",
-    "image": null
+    "image": "assets/images/Festivals/Biennials/kombi.jpg"
   },
   {
     "id": "biff-braunschweig-2017",
@@ -919,8 +908,8 @@
     "type": "Film Festival",
     "specs": null,
     "institution": "Braunschweig, Germany",
-    "link": null,
-    "image": null
+    "link": "assets/images/Festivals/Biennials/cover_photo.webp",
+    "image": "assets/images/Festivals/Biennials/cover_photo.webp"
   },
   {
     "id": "kunstkoffer-2016-2018",
@@ -949,9 +938,7 @@
     "description": "A collage to take part in featuring photographed objects from my home. The colours on the backs refer to the particular country of production. A mobile, interactive overview of global connections in a private household.",
     "description_de": "Eine Collage zum Mitmachen mit abfotografierten Gegenständen aus meinem Zuhause. Die Farben auf den Rückseiten verweisen auf das jeweilige Produktionsland. Eine bewegliche Übersicht der globalen Zusammenhänge im privaten Haushalt.",
     "image": "assets/images/Verstricke%20Verantwortung/IMG_7970.JPG",
-    "images": [
-      "assets/images/Verstricke%20Verantwortung/IMG_7970.JPG",
-      "assets/images/Verstricke%20Verantwortung/IMG_9814.JPG"
+    "images": ["assets/images/Festivals/Biennials/entangled responsibility.png"
     ]
   },
   {
@@ -963,7 +950,7 @@
     "specs": "Essay on Anton Wilhelm Amo exhibition at Kunstverein Braunschweig",
     "institution": "Der Freitag",
     "link": "https://www.freitag.de/autoren/peter-nowak/wer-kennt-diesen-bedeutenden-philosophen",
-    "image": null,
+    "image": "assets/images/Festivals/Biennials/image-1000-a943f6a41a1a3b8865aafe59598c8303.jpeg",
     "description": "Critical essay examining the exhibition on Anton Wilhelm Amo at Kunstverein Braunschweig.",
     "csl": {
       "type": "article-newspaper",
@@ -988,7 +975,7 @@
     "specs": "Text by Maria Ines Plaza Lazo",
     "institution": "Bundeskunsthalle Bonn",
     "link": null,
-    "image": null
+    "image": "assets/images/Various-artists-Federal-prize-for-art-students-exhibition-view-Courtesy-of-Bundeskunsthalle.jpg"
   },
   {
     "id": "scope-catalog-2021",
@@ -999,7 +986,7 @@
     "specs": "Photography and Media Art Biennale",
     "institution": "Hannover, Germany",
     "link": null,
-    "image": null
+    "image": "assets/images/Festivals/Biennials/images.jpg"
   },
   {
     "id": "kassel-doc-fest-catalog-2020",
@@ -1009,8 +996,8 @@
     "type": "Catalog",
     "specs": "Soft Power",
     "institution": "Kassel, Germany",
-    "link": null,
-    "image": null
+    "link": "https://documenta-fifteen.de/en/news/window-display-37-kasseler-dokfest-as-guest-at-ruruhaus/",
+    "image": "assets/images/Festivals/Biennials/soft power pic.jpg"
   },
   {
     "id": "emaf-catalog-2022",
