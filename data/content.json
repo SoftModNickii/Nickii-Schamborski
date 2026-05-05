@@ -35,6 +35,66 @@
     "related_links": []
   },
   {
+    "id": "fnews-whitney-biennial-2026",
+    "title": "Whitney Biennial 2026",
+    "title_subtitle": "An international perspective",
+    "year": "2026",
+    "categories": ["press"],
+    "type": "Article / Photo Essay",
+    "specs": "Co-authored with Janjaa (Helen S. Lee), F Newsmagazine, May 4, 2026",
+    "institution": "F Newsmagazine",
+    "link": "https://fnewsmagazine.com/2026/05/whitney-biennial-2026/",
+    "image": "https://images.fnewsmagazine.com/2026/05/Nickii-Schamborski-and-Helen-S.-Lee-at-the-Whitney-Biennial-New-York-March-3-2026.jpeg",
+    "images": [
+      "https://images.fnewsmagazine.com/2026/05/Nickii-Schamborski-and-Helen-S.-Lee-at-the-Whitney-Biennial-New-York-March-3-2026.jpeg",
+      "https://images.fnewsmagazine.com/2026/05/Press-opening-Whitney-Biennial-New-York-March-3-2026.jpg",
+      "https://images.fnewsmagazine.com/2026/05/Zach-Blas-_CULTUS_-Whitney-Biennial-New-York-March-3-2026.jpg",
+      "https://images.fnewsmagazine.com/2026/05/Nickii-Schamborski-playing-_Camoflux-Recall-Grotto_-by-Leo-Castaneda-Whitney-Biennial-New-York-March-3-2026.jpeg"
+    ],
+    "description": "Co-authored report on the Whitney Biennial 2026, written from the perspective of two international graduate students — one from South Korea, one from Germany — attending the press opening on March 3, 2026. The article covers works by Zach Blas (CULTUS), Sung Tieu (System's Void), Andrea Fraser, Leo Castañeda (Camoflux Recall Grotto), Gabriela Ruiz (Homo Machina), Ignacio Gatica (Sanhattan), and Joshua Citarella (Doomscroll), with interviews conducted with Citarella, Gatica, and Ruiz. The piece examines questions of institutional relevance, digital culture, and the decreasing prominence of American institutions on the global art stage.",
+    "collaborators": [
+      { "name": "Janjaa (Helen S. Lee)", "role": "Co-author" }
+    ],
+    "csl": {
+      "type": "article-journal",
+      "author": [
+        { "family": "Lee", "given": "Helen S.", "literal": "Janjaa (Helen S. Lee)" },
+        { "family": "Schamborski", "given": "Nickii" }
+      ],
+      "title": "Whitney Biennial 2026",
+      "container-title": "F Newsmagazine",
+      "issued": { "date-parts": [[2026, 5, 4]] },
+      "URL": "https://fnewsmagazine.com/2026/05/whitney-biennial-2026/",
+      "accessed": { "date-parts": [[2026, 5, 5]] }
+    },
+    "tags": ["Whitney Biennial", "exhibition review", "photo essay", "New York", "Zach Blas", "Sung Tieu", "Joshua Citarella", "Gabriela Ruiz"]
+  },
+  {
+    "id": "fnews-artificial-intelligence-2026",
+    "title": "(Art)ificial Intelligence",
+    "title_subtitle": "How SAIC artists are critically approaching AI in their work",
+    "year": "2026",
+    "categories": ["press"],
+    "type": "Press Feature",
+    "specs": "Featured in F Newsmagazine, April 29, 2026. Author: Sivan Gilbert",
+    "institution": "F Newsmagazine",
+    "link": "https://fnewsmagazine.com/2026/04/artificial-intelligence/",
+    "image": "https://images.fnewsmagazine.com/2025/03/web-illo-template-Aditi-02-scaled-1.jpg",
+    "description": "Feature article by Sivan Gilbert on how SAIC artists critically approach AI in their practice. Nickii Schamborski is featured with extended quotes on both CyberCindy — a film following its titular character reimagining their childhood through AI, exploring queer belonging and exposing AI's role as a contemporary oracle concealing its military origins — and Nickii AI, the performance where audiences interact with what they believe to be an AI, unaware that Schamborski is streaming live from another room.",
+    "csl": {
+      "type": "article-journal",
+      "author": [
+        { "family": "Gilbert", "given": "Sivan" }
+      ],
+      "title": "(Art)ificial Intelligence",
+      "container-title": "F Newsmagazine",
+      "issued": { "date-parts": [[2026, 4, 29]] },
+      "URL": "https://fnewsmagazine.com/2026/04/artificial-intelligence/",
+      "accessed": { "date-parts": [[2026, 5, 5]] }
+    },
+    "tags": ["AI", "SAIC", "CyberCindy", "Nickii AI", "press feature", "May 2026 Print Issue"]
+  },
+  {
     "id": "saic-lecture-2025",
     "title": "Lecture: The Politics of AI Aesthetics",
     "year": "2025",
