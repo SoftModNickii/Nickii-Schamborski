@@ -5,6 +5,7 @@
     "title": "Performance: Nickii AI",
     "year": "2026",
     "sort_year": 2026,
+    "sort_date": "2026-04",
     "categories": ["practice", "works", "shows"],
     "type": "works",
     "specs": "Exhibited at Ars Electronica 2026",
@@ -80,7 +81,7 @@
     "title_subtitle": "How SAIC artists are critically approaching AI in their work",
     "year": "2026",
     "sort_year": 2026,
-    "sort_date": "2026-04",
+    "sort_date": "2026-07",
     "categories": ["press"],
     "type": "Press Feature",
     "specs": "Featured in F Newsmagazine, April 29, 2026. Author: Sivan Gilbert",
@@ -242,7 +243,8 @@
     "institution": "German Academic Exchange Service",
     "link": "https://www.daad.de",
     "image": "assets/images/DAAD-Sholarship.jpeg",
-    "image_credit": "Image: DAAD"
+    "image_credit": "Image: DAAD",
+    "description": "German Academic Exchange Service (DAAD) Graduate Scholarship for the MFA at the School of the Art Institute of Chicago, 2025–2027."
   },
   {
     "id": "new-society-scholarship-2025",
@@ -259,7 +261,8 @@
     "images": [
       "assets/images/Meettheclass.jpg"
     ],
-    "image_credit": "Image: School of the Art Institute of Chicago"
+    "image_credit": "Image: School of the Art Institute of Chicago",
+    "description": "New Society Scholarship at the School of the Art Institute of Chicago — 100% tuition coverage for the MFA program, 2025–2027."
   },
   {
     "id": "cybercindy-2025",
@@ -318,7 +321,8 @@
       "assets/images/Transmediale.jpeg",
       "assets/images/Trsansmediale2.jpeg"
     ],
-    "image_credit": "Image: Transmediale"
+    "image_credit": "Image: Transmediale",
+    "description": "Volunteer at transmediale '(near) near but — far', Berlin, January 2025."
   },
   {
     "id": "untitled-resilience-2024",
@@ -385,7 +389,8 @@
     "specs": "Way Of The Forest",
     "institution": "Colomboscope, Sri Lanka",
     "link": null,
-    "image": "assets/images/Colombosocope.jpeg"
+    "image": "assets/images/Colombosocope.jpeg",
+    "description": "Volunteer at Colomboscope festival 'Way Of The Forest', Sri Lanka, January 2024."
   },
   {
     "id": "coming-home-2023",
@@ -398,7 +403,8 @@
     "specs": "Testing Trixi (2020)",
     "institution": "Kunstverein Wolfsburg",
     "link": "https://kunstverein-wolfsburg.de/exhibition/coming-home/",
-    "image": "assets/images/KVWOB_CH_Plakat.jpeg"
+    "image": "assets/images/KVWOB_CH_Plakat.jpeg",
+    "description": "Group exhibition 'Coming Home — Das Ende postkolonialer Phantasmen' at Kunstverein Wolfsburg, May 26 – August 6, 2023. The show brought together artistic positions critically reflecting on cultural colonialism, coinciding with a moment of increased restitution activity in Germany — including the return of Benin Bronzes to Nigeria in December 2022."
   },
   {
     "id": "wolfsburg-workshop-2023",
@@ -411,7 +417,8 @@
     "specs": null,
     "institution": "Kunstverein Wolfsburg",
     "link": null,
-    "image": "assets/images/Wolfsburg.png"
+    "image": "assets/images/Wolfsburg.png",
+    "description": "Workshop 'How to deal with colonial memorials in Germany?' at Kunstverein Wolfsburg, June 2023."
   },
   {
     "id": "hbk-lecture-exhibition-2023",
@@ -502,7 +509,8 @@
     "institution": "Osnabrück, Germany",
     "link": "https://www.emaf.de",
     "image": "assets/images/IMG_2616.JPG",
-    "image_credit": "Image: EMAF"
+    "image_credit": "Image: EMAF",
+    "description": "Campus exhibition 'Speak—so that I may see you' at hase29 venue, European Media Art Festival, Osnabrück, April 20–24, 2022. Curated by Nickii Schamborski, presenting works by fellow Meisterschüler:innen from the class of Prof. Candice Breitz, HBK Braunschweig."
   },
   {
     "id": "bundeskunsthalle-2022",
@@ -529,7 +537,8 @@
       "assets/images/Memärchen_Bundeskunsthalle4.jpg",
       "assets/images/Memärchen_Bundeskunsthalle5.jpg"
     ],
-    "image_credit": "Image: Bundeskunsthalle Bonn"
+    "image_credit": "Image: Bundeskunsthalle Bonn",
+    "description": "Group exhibition of the 25 winners of the 25th Bundespreis für Kunststudierende at Bundeskunsthalle Bonn, November 12, 2021 – January 30, 2022. Jury statement: 'Die Arbeiten von Nick Schamborski sind auf eine humorvolle Art didaktisch. Sie holen uns dort ab wo wir stehen. Sie sind kritisch, indem sie historische Erzählungen und aktuelle gesellschaftliche Zustände direkt befragen.' Prize includes €30,000 prize money and €18,000 production stipends."
   },
   {
     "id": "documenta-fifteen-2022",
@@ -547,6 +556,7 @@
       "assets/images/documneta/documenta2.JPG"
     ],
     "image_credit": "Image: documenta fifteen",
+    "description": "Mediator at documenta fifteen, curated by the Jakarta-based collective ruangrupa, June 18 – September 25, 2022, Kassel. The edition was organized around the Indonesian concept of lumbung (communal rice barn) — principles of collectivity, resource building, and equitable distribution. Role involved expert talks and guided meetups with specialist audiences as part of the CAMP mediation program.",
     "related_links": [
       {"title": "BZ Kultur Article", "url": "assets/images/documneta/BZ Kultur 23.09.pdf"}
     ]
@@ -636,7 +646,8 @@
     ],
     "related_links": [
       {"title": "Jury Statements", "url": "assets/images/Texte/Jury Statements Preisträger_innen.pdf"}
-    ]
+    ],
+    "description": "Recipient of the 25th Federal Art Prize for Students (Bundeskunstpreis), awarded by the Federal Ministry of Education and Research together with the Bundeskunsthalle Bonn and the Deutsches Studentenwerk. One of 8 selected from more than 50 nominated students across all 24 German art academies."
   },
   {
     "id": "zkm-workshops-2021",
@@ -648,7 +659,8 @@
     "specs": "Digital Feelings, Artivism im Netz, Feminismus & Memes, Faking News Fabrik",
     "institution": "ZKM Center for Art and Media, Karlsruhe",
     "link": "https://zkm.de/de/personen/nick-schamborski",
-    "image": "assets/images/ZKM.png"
+    "image": "assets/images/ZKM.png",
+    "description": "Series of workshops as Masterclass Teacher at ZKM | Center for Art and Media Karlsruhe, March–June 2021: Digital Feelings (March), Artivism: Right-wing Extremism and Hate (March), Artivism: Tracking and Surveillance (April), Faking News Factory (April), Feminism and Memes (May), Artivism: Beauty Filters and Gender Roles (May), Artivism: (Post-)colonial digital worlds (June)."
   },
   {
     "id": "verlernen-lernen-2021",
@@ -758,7 +770,9 @@
     "image": "assets/images/testing-trixi-2020-still-1.jpeg",
     "related_links": [
       {"title": "dokfest Katalog"}
-    ]
+    ],
+    "description": "Screening at the 37th Kassel Documentary Film and Video Festival, November 2020. Festival catalog published.",
+    "description": "Screening at the 37th Kassel Documentary Film and Video Festival, November 2020. Festival catalog published."
   },
   {
     "id": "on-desire-2020",
@@ -770,7 +784,8 @@
     "specs": null,
     "institution": "Gallerie vom Zufall und vom Glueck, Hannover",
     "link": null,
-    "image": "assets/images/Festivals/Biennials/gallerie.jpg"
+    "image": "assets/images/Festivals/Biennials/gallerie.jpg",
+    "description": "Group exhibition 'on_desire' at Gallerie vom Zufall und vom Glück, Hannover, 2020."
   },
   {
     "id": "daad-promos-2020",
@@ -782,7 +797,9 @@
     "specs": null,
     "institution": "German Academic Exchange Service",
     "link": null,
-    "image": "assets/images/DAAD-Sholarship.jpeg"
+    "image": "assets/images/DAAD-Sholarship.jpeg",
+    "description": "DAAD Promos short-term scholarship for a study-related stay abroad, 2020.",
+    "description": "DAAD Promos short-term scholarship for a study-related stay abroad, 2020."
   },
   {
     "id": "denied-refuge-2019",
@@ -840,7 +857,8 @@
     "specs": null,
     "institution": "Braunschweig, Germany",
     "link": "https://www.filmfest-braunschweig.de/en/the-festival/filmarchive/programmes-and-events/details/familycare-9170?user_fifmoviedb_controller%5Byear%5D=2019&cHash=92990e20bc71a72fd8657ea72372d383",
-    "image": "assets/images/Festivals/Biennials/Filmfest-Braunschweig-2019-Poster-212x300.jpg"
+    "image": "assets/images/Festivals/Biennials/Filmfest-Braunschweig-2019-Poster-212x300.jpg",
+    "description": "Screening at the Braunschweig International Film Festival. Catalog published."
   },
   {
     "id": "busan-iff-2019",
@@ -852,7 +870,8 @@
     "specs": null,
     "institution": "Busan, South Korea",
     "link": null,
-    "image": "assets/images/Festivals/Biennials/busan film fest.jpg"
+    "image": "assets/images/Festivals/Biennials/busan film fest.jpg",
+    "description": "Screening at the Busan International Film Festival, October 2019, South Korea. Catalog published."
   },
   {
     "id": "continous-2019",
@@ -864,7 +883,8 @@
     "specs": null,
     "institution": "Lower Saxony State Representation, Berlin",
     "link": null,
-    "image": "assets/images/IMG_5071gerade.jpg"
+    "image": "assets/images/IMG_5071gerade.jpg",
+    "description": "Group exhibition 'Continous' at the Lower Saxony State Representation (Niedersächsische Landesvertretung), Berlin, 2019."
   },
   {
     "id": "germany-scholarship-2019",
@@ -876,7 +896,8 @@
     "specs": null,
     "institution": "Germany",
     "link": null,
-    "image": "assets/images/Festivals/Biennials/daad.jpg"
+    "image": "assets/images/Festivals/Biennials/daad.jpg",
+    "description": "Deutschlandstipendium — Germany Scholarship, 2019. National scholarship co-funded by private donors and the Federal Government of Germany."
   },
   {
     "id": "hbk-lecture-fascism-2019",
@@ -888,7 +909,8 @@
     "specs": "Leni Riefenstahl and fascist aesthetics - strategies of New (alt)-right movements",
     "institution": "HBK Braunschweig",
     "link": null,
-    "image": "assets/images/nick_schamborski_450.jpg"
+    "image": "assets/images/nick_schamborski_450.jpg",
+    "description": "Lecture at HBK Braunschweig, February 2019, seminar 'Leni Riefenstahl und faschistische Ästhetik' — aesthetic strategies of new (alt)-right movements."
   },
   {
     "id": "candice-breitz-tutor-2018-2020",
@@ -905,8 +927,9 @@
       "assets/images/TutorCandiceBreitz/71138886_542161736541756_4748176548869166736_n.jpg",
       "assets/images/TutorCandiceBreitz/73039226_894809994246546_6574415024666533579_n.jpg",
       "assets/images/TutorCandiceBreitz/45708233_576222259515445_7102434439586827717_n.jpg",
-      "assets/images/TutorCandiceBreitz/44858418_257687988242928_5152362549725938126_n.jpg"
-    ]
+      "assets/images/TutorCandiceBreitz/44858418_257687998242928_5152362549725938126_n.jpg"
+    ],
+    "description": "Tutor for Prof. Candice Breitz, Eli Cortiñas, and Agnieszka Polska at Braunschweig University of Art, 2018–2020."
   },
   {
     "id": "media-studio-tutor-2015-2020",
@@ -918,7 +941,8 @@
     "specs": "Project planning, technical assistance and advice",
     "institution": "HBK Braunschweig",
     "link": null,
-    "image": "assets/images/nick_schamborski_450.jpg"
+    "image": "assets/images/nick_schamborski_450.jpg",
+    "description": "Tutor at the Media Studio, Braunschweig University of Art, 2015–2020."
   },
   {
     "id": "instrument-public-critique-2018",
@@ -1005,7 +1029,8 @@
     "specs": "European Media Art Festival",
     "institution": "Osnabrück, Germany",
     "link": null,
-    "image": "assets/images/Festivals/Biennials/emaf.jpg"
+    "image": "assets/images/Festivals/Biennials/emaf.jpg",
+    "description": "Campus exhibition at the European Media Art Festival Osnabrück, April 2018. HBK Braunschweig campus presentation. Catalog published."
   },
   {
     "id": "create-your-surrounding-2017",
@@ -1035,7 +1060,8 @@
     "specs": "Meisterschüler:innen",
     "institution": "Kunsthaus Bethanien, Berlin",
     "link": "https://www.bpigs.com/openings/kombi-5",
-    "image": "assets/images/Festivals/Biennials/kombi.jpg"
+    "image": "assets/images/Festivals/Biennials/kombi.jpg",
+    "description": "Group exhibition 'Kombi 5' at Künstlerhaus Bethanien, Berlin, 2017. Graduating Meisterschüler:innen show, class of Prof. Candice Breitz, HBK Braunschweig."
   },
   {
     "id": "biff-braunschweig-2017",
@@ -1047,7 +1073,8 @@
     "specs": null,
     "institution": "Braunschweig, Germany",
     "link": "assets/images/Festivals/Biennials/cover_photo.webp",
-    "image": "assets/images/Festivals/Biennials/cover_photo.webp"
+    "image": "assets/images/Festivals/Biennials/cover_photo.webp",
+    "description": "Screening at the Braunschweig International Film Festival. Catalog published."
   },
   {
     "id": "kunstkoffer-2016-2018",
@@ -1063,7 +1090,8 @@
     "images": [
       "assets/images/Kunstkoffer/_MG_8624.JPG",
       "assets/images/Kunstkoffer/_MG_8631.JPG"
-    ]
+    ],
+    "description": "Art education facilitator for 'Kunstkoffer' in economically disadvantaged regions of Braunschweig, 2016–2018."
   },
   {
     "id": "entangled-responsibility-2016",
@@ -1117,7 +1145,8 @@
     "specs": "Text by Maria Ines Plaza Lazo",
     "institution": "Bundeskunsthalle Bonn",
     "link": null,
-    "image": "assets/images/Various-artists-Federal-prize-for-art-students-exhibition-view-Courtesy-of-Bundeskunsthalle.jpg"
+    "image": "assets/images/Various-artists-Federal-prize-for-art-students-exhibition-view-Courtesy-of-Bundeskunsthalle.jpg",
+    "description": "Catalog for the 25th Bundespreis für Kunststudierende, Bundeskunsthalle Bonn, 2022. Designed by Weißensee Kunsthochschule Berlin. Available at Walther König."
   },
   {
     "id": "scope-catalog-2021",
@@ -1129,7 +1158,8 @@
     "specs": "Photography and Media Art Biennale",
     "institution": "Hannover, Germany",
     "link": null,
-    "image": "assets/images/Festivals/Biennials/images.jpg"
+    "image": "assets/images/Festivals/Biennials/images.jpg",
+    "description": "Exhibition catalog, S.C.O.P.E. Biennale for Photography and Media Art, Hannover 2021."
   },
   {
     "id": "kassel-doc-fest-catalog-2020",
@@ -1141,7 +1171,8 @@
     "specs": "Soft Power",
     "institution": "Kassel, Germany",
     "link": "https://documenta-fifteen.de/en/news/window-display-37-kasseler-dokfest-as-guest-at-ruruhaus/",
-    "image": "assets/images/Festivals/Biennials/soft power pic.jpg"
+    "image": "assets/images/Festivals/Biennials/soft power pic.jpg",
+    "description": "Catalog of the 37th Kassel Documentary Film and Video Festival, November 2020."
   },
   {
     "id": "emaf-catalog-2022",
@@ -1153,7 +1184,8 @@
     "specs": "Speak-so that I may see you",
     "institution": "Osnabrück, Germany",
     "link": "https://www.emaf.de",
-    "image": null
+    "image": null,
+    "description": "Catalog of the European Media Art Festival 2022, Osnabrück."
   },
   {
     "id": "hbk-meisterschueler-2021-2022",
