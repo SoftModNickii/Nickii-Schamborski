@@ -930,3 +930,50 @@
         font-size: 0.8rem;
     }
 }
+
+/* === EXTERNAL PRESS LINK STYLES === */
+.external-press-link {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(192, 38, 211, 0.02);
+    border: 1px solid rgba(192, 38, 211, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.external-press-link p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.external-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 24px;
+    background: #C026D3;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.external-link-btn:hover {
+    background: #9333EA;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192, 38, 211, 0.3);
+}
+
+.external-icon {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
