@@ -193,6 +193,50 @@
         const card = document.createElement('div');
         card.className = 'grid-card';
         
+        // Check if this should be a link preview card
+        const isLinkPreview = item.categories.includes('press') && 
+                             item.link && 
+                             (!item.image || item.image.startsWith('http'));
+        
+        if (isLinkPreview) {
+            // Create link preview card
+            card.classList.add('link-preview-card');
+            
+            // Extract domain from link
+            let domain = '';
+            try {
+                domain = new URL(item.link).hostname;
+            } catch (e) {
+                domain = item.link.split('/')[2] || '';
+            }
+            
+            card.innerHTML = `
+                <div class="link-preview-content">
+                    <div class="link-preview-header">
+                        <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" 
+                             class="link-preview-favicon" 
+                             alt="${domain} favicon"
+                             onerror="this.style.display='none'">
+                        <span class="link-preview-domain">${item.institution || domain}</span>
+                    </div>
+                    <div class="link-preview-title">${item.title}</div>
+                    ${item.specs ? `<div class="link-preview-specs">${item.specs}</div>` : ''}
+                    
+                    <div class="link-preview-actions">
+                        ${(item.description || item.collaborators || item.exhibited_works || item.exhibited_at) 
+                          ? `<button class="detail-btn" data-id="${item.id}">Full Details →</button>` 
+                          : ''}
+                        ${(item.categories.includes('press') && item.csl) 
+                          ? `<button class="cite-btn" data-id="${item.id}">Cite this →</button>` 
+                          : ''}
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        // Regular card logic (unchanged)
         // Set background image directly on card
         if (item.image) {
             card.style.backgroundImage = `url(../${item.image})`;
