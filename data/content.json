@@ -1,12 +1,15 @@
 [
-
   {
     "id": "Nickii-AI",
     "title": "Performance: Nickii AI",
     "year": "2026",
     "sort_year": 2026,
     "sort_date": "2026-04",
-    "categories": ["practice", "works", "shows"],
+    "categories": [
+      "practice",
+      "works",
+      "shows"
+    ],
     "type": "works",
     "specs": "Exhibited at Ars Electronica 2026",
     "institution": "School of the Art Institute of Chicago",
@@ -20,7 +23,9 @@
     "year": "2026",
     "sort_year": 2026,
     "sort_date": "2026-01",
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Screening & Performance",
     "specs": "January 16, 6:00-8:30 PM",
     "institution": "The Flats at East-West University, Chicago",
@@ -31,7 +36,9 @@
       "assets/images/MoreThanMeetsAi/613136968_18522501427070776_4298669757324064257_n.jpg"
     ],
     "description": "A generative evening of screenings and performances exploring human/AI interaction, embodiment, and hybrid creative processes. Co-organized by Lake Forest College, the Center for Digital Narrative in Norway, and the Art and Technology / Sound Practices department at the School of the Art Institute of Chicago. Featuring works by Judd Morrissey, Ava Aviva Avnisan & Doug Rosman, David Jhave Johnson, Nickii Schamborski, Scott Rettberg, and Doug Rosman.",
-    "exhibited_works": ["cybercindy-2025"],
+    "exhibited_works": [
+      "cybercindy-2025"
+    ],
     "credits": {
       "venue": "The Flats at East-West University, 829 S Wabash Ave, Chicago",
       "organizers": "Lake Forest College, Center for Digital Narrative (Norway), SAIC Art and Technology / Sound Practices"
@@ -45,7 +52,9 @@
     "year": "2026",
     "sort_year": 2026,
     "sort_date": "2026-05",
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Article / Photo Essay",
     "specs": "Co-authored with Janjaa (Helen S. Lee), F Newsmagazine, May 4, 2026",
     "institution": "F Newsmagazine",
@@ -59,21 +68,56 @@
     ],
     "description": "Co-authored report on the Whitney Biennial 2026, written from the perspective of two international graduate students — one from South Korea, one from Germany — attending the press opening on March 3, 2026. The article covers works by Zach Blas (CULTUS), Sung Tieu (System's Void), Andrea Fraser, Leo Castañeda (Camoflux Recall Grotto), Gabriela Ruiz (Homo Machina), Ignacio Gatica (Sanhattan), and Joshua Citarella (Doomscroll), with interviews conducted with Citarella, Gatica, and Ruiz. The piece examines questions of institutional relevance, digital culture, and the decreasing prominence of American institutions on the global art stage.",
     "collaborators": [
-      { "name": "Janjaa (Helen S. Lee)", "role": "Co-author" }
+      {
+        "name": "Janjaa (Helen S. Lee)",
+        "role": "Co-author"
+      }
     ],
     "csl": {
       "type": "article-journal",
       "author": [
-        { "family": "Lee", "given": "Helen S.", "literal": "Janjaa (Helen S. Lee)" },
-        { "family": "Schamborski", "given": "Nickii" }
+        {
+          "family": "Lee",
+          "given": "Helen S.",
+          "literal": "Janjaa (Helen S. Lee)"
+        },
+        {
+          "family": "Schamborski",
+          "given": "Nickii"
+        }
       ],
       "title": "Whitney Biennial 2026",
       "container-title": "F Newsmagazine",
-      "issued": { "date-parts": [[2026, 5, 4]] },
+      "issued": {
+        "date-parts": [
+          [
+            2026,
+            5,
+            4
+          ]
+        ]
+      },
       "URL": "https://fnewsmagazine.com/2026/05/whitney-biennial-2026/",
-      "accessed": { "date-parts": [[2026, 5, 5]] }
+      "accessed": {
+        "date-parts": [
+          [
+            2026,
+            5,
+            5
+          ]
+        ]
+      }
     },
-    "tags": ["Whitney Biennial", "exhibition review", "photo essay", "New York", "Zach Blas", "Sung Tieu", "Joshua Citarella", "Gabriela Ruiz"]
+    "tags": [
+      "Whitney Biennial",
+      "exhibition review",
+      "photo essay",
+      "New York",
+      "Zach Blas",
+      "Sung Tieu",
+      "Joshua Citarella",
+      "Gabriela Ruiz"
+    ]
   },
   {
     "id": "fnews-artificial-intelligence-2026",
@@ -82,7 +126,9 @@
     "year": "2026",
     "sort_year": 2026,
     "sort_date": "2026-07",
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Press Feature",
     "specs": "Featured in F Newsmagazine, April 29, 2026. Author: Sivan Gilbert",
     "institution": "F Newsmagazine",
@@ -92,22 +138,50 @@
     "csl": {
       "type": "article-journal",
       "author": [
-        { "family": "Gilbert", "given": "Sivan" }
+        {
+          "family": "Gilbert",
+          "given": "Sivan"
+        }
       ],
       "title": "(Art)ificial Intelligence",
       "container-title": "F Newsmagazine",
-      "issued": { "date-parts": [[2026, 4, 29]] },
+      "issued": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            29
+          ]
+        ]
+      },
       "URL": "https://fnewsmagazine.com/2026/04/artificial-intelligence/",
-      "accessed": { "date-parts": [[2026, 5, 5]] }
+      "accessed": {
+        "date-parts": [
+          [
+            2026,
+            5,
+            5
+          ]
+        ]
+      }
     },
-    "tags": ["AI", "SAIC", "CyberCindy", "Nickii AI", "press feature", "May 2026 Print Issue"]
+    "tags": [
+      "AI",
+      "SAIC",
+      "CyberCindy",
+      "Nickii AI",
+      "press feature",
+      "May 2026 Print Issue"
+    ]
   },
   {
     "id": "saic-lecture-2025",
     "title": "Lecture: The Politics of AI Aesthetics",
     "year": "2025",
     "sort_year": 2025,
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Lecture",
     "specs": "Invited by 11:11 Blooming Moment, November 14, 2025",
     "institution": "School of the Art Institute of Chicago",
@@ -122,14 +196,18 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-10",
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Festival",
     "specs": "11th Edition, Art and Technology Salon",
     "institution": "Bogotá, Colombia",
     "link": null,
     "image": "assets/images/Voltaje.jpeg",
     "description": "International festival for art and technology featuring video art, installations, and new media works.",
-    "exhibited_works": ["cybercindy-2025"],
+    "exhibited_works": [
+      "cybercindy-2025"
+    ],
     "credits": {
       "curator": null,
       "venue": "Bogotá, Colombia"
@@ -142,7 +220,10 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-11",
-    "categories": ["shows", "practice"],
+    "categories": [
+      "shows",
+      "practice"
+    ],
     "type": "Exhibition",
     "specs": "Fall 2025",
     "institution": "School of the Art Institute of Chicago",
@@ -164,14 +245,16 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-08",
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Academic Position",
     "specs": "AI-related courses with Prof. Doug Rosman",
     "institution": "School of the Art Institute of Chicago",
     "link": "https://www.saic.edu/profiles/faculty/douglas-rosman",
     "image": "assets/images/TA-SAIC.JPG",
     "images": [
-     "assets/images/AmongUs_UnterUns/UnterUns_amoungUs_bundeskunsthalle4.jpg"
+      "assets/images/AmongUs_UnterUns/UnterUns_amoungUs_bundeskunsthalle4.jpg"
     ],
     "image_credit": "Image: School of the Art Institute of Chicago",
     "description": "Course description (Prof. Doug Rosman): 'Artificial Intelligence' (AI) has infiltrated many corners of our lives. Once used primarily to identify, track, and predict things in the world, AI-a convenient shorthand for machine learning-has now become generative: producing images, language, and anything else that can be parsed as data. Through a hands-on curriculum, students will explore AI tools to create images, video, audio and more, and will approach these AI systems as tools to augment a creative practice, as well as a medium and material in themselves. This course foregrounds experimentation and play as a means to develop a critical understanding of AI and the ethical implications of its use in creative production (and beyond), engaging in discourse around ideas of authenticity, authorship, and labor."
@@ -182,7 +265,9 @@
     "year": "2025/2028",
     "sort_year": 2025,
     "sort_date": "2025-08",
-    "categories": ["education"],
+    "categories": [
+      "education"
+    ],
     "type": "Graduate Studies",
     "specs": "DAAD Graduate Scholarship; New Society Scholarship (100% tuition coverage)",
     "institution": "School of the Art Institute of Chicago",
@@ -203,8 +288,16 @@
     "credits": {
       "advisors": null
     },
-    "related_links": ["https://www.saic.edu"],
-    "tags": ["education", "MFA", "art and technology", "AI", "Chicago"]
+    "related_links": [
+      "https://www.saic.edu"
+    ],
+    "tags": [
+      "education",
+      "MFA",
+      "art and technology",
+      "AI",
+      "Chicago"
+    ]
   },
   {
     "id": "saic-magazine-fall25",
@@ -212,7 +305,9 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-09",
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Magazine Feature",
     "specs": "Profile feature in SAIC Magazine",
     "institution": "School of the Art Institute of Chicago",
@@ -221,15 +316,38 @@
     "description": "Featured profile in SAIC Magazine's Fall 2025 'Meet the Class' series, introducing incoming MFA students in Art and Technology Studies.",
     "csl": {
       "type": "webpage",
-      "author": [{"literal": "SAIC Magazine"}],
+      "author": [
+        {
+          "literal": "SAIC Magazine"
+        }
+      ],
       "title": "Meet the Class: Fall 2025",
       "container-title": "SAIC Magazine",
-      "issued": {"date-parts": [[2025]]},
+      "issued": {
+        "date-parts": [
+          [
+            2025
+          ]
+        ]
+      },
       "URL": "https://www.saic.edu/magazine/fall25/meet-the-class",
-      "accessed": {"date-parts": [[2026, 1, 3]]}
+      "accessed": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            3
+          ]
+        ]
+      }
     },
     "related_links": [],
-    "tags": ["profile", "SAIC", "MFA", "student feature"]
+    "tags": [
+      "profile",
+      "SAIC",
+      "MFA",
+      "student feature"
+    ]
   },
   {
     "id": "daad-graduate-2025",
@@ -237,7 +355,9 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-03",
-    "categories": ["fellowships"],
+    "categories": [
+      "fellowships"
+    ],
     "type": "Fellowship",
     "specs": "Full funding for MFA at SAIC (2025-2028)",
     "institution": "German Academic Exchange Service",
@@ -252,7 +372,9 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-03",
-    "categories": ["fellowships"],
+    "categories": [
+      "fellowships"
+    ],
     "type": "Scholarship",
     "specs": "100% tuition coverage for MFA at SAIC",
     "institution": "School of the Art Institute of Chicago",
@@ -270,7 +392,9 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-01",
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Single-channel video",
     "specs": "HD, stereo sound, 07:42 min, English",
     "institution": null,
@@ -301,9 +425,16 @@
       "camera": "Nickii Schamborski",
       "editing": "Nickii Schamborski"
     },
-    "exhibited_at": ["voltaje-festival-2025"],
+    "exhibited_at": [
+      "voltaje-festival-2025"
+    ],
     "related_links": [],
-    "tags": ["AI", "identity", "video art", "digital culture"]
+    "tags": [
+      "AI",
+      "identity",
+      "video art",
+      "digital culture"
+    ]
   },
   {
     "id": "transmediale-2025",
@@ -311,7 +442,9 @@
     "year": "2025",
     "sort_year": 2025,
     "sort_date": "2025-01",
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Volunteer",
     "specs": "(near) near but - far",
     "institution": "Transmediale, Berlin",
@@ -330,7 +463,10 @@
     "year": "2024",
     "sort_year": 2024,
     "sort_date": "2024-01",
-    "categories": ["works", "shows"],
+    "categories": [
+      "works",
+      "shows"
+    ],
     "type": "Single-channel video",
     "specs": "4K, stereo sound, 16:31 min",
     "institution": "Collaboration with Anastasiia Zakharova",
@@ -346,16 +482,25 @@
     "description_de": "'Untitled Resilience' ist ein auto fiktionaler Kurzfilm, der das Leben eines jungen Menschen ukrainisch-russischer Herkunft beleuchtet, der sich durch Kriege und politisch instabile Regionen in Sibirien, der Krim, Moskau und Deutschland bewegt. Anhand von Videoprotokollen und Handyaufnahmen im Social-Media-Stil erzählt das Werk von den Erfahrungen dieses Menschen, der verschiedenen Formen sexueller und politischer Objektivierung ausgesetzt wurde, und gipfelt in der Behauptung seiner Handlungsfähigkeit und Selbstermächtigung. Die in Zusammenarbeit mit Anastasiia Zakharova entstandene Arbeit stellt unser Konzept von Authentizität und der Urheberschaft digitaler Inhalte in Frage; gescriptete Dialoge und inszenierte Momente stehen hier für das, was sich nicht dokumentieren lässt.",
     "video_link": "https://www.untitledresilience.schamborski.com",
     "collaborators": [
-      {"name": "Anastasiia Zakharova", "role": "Co-creator"}
+      {
+        "name": "Anastasiia Zakharova",
+        "role": "Co-creator"
+      }
     ],
     "credits": {
       "direction": "Nickii Schamborski & Anastasiia Zakharova",
       "camera": "Nickii Schamborski & Anastasiia Zakharova",
       "editing": "Nickii Schamborski & Anastasiia Zakharova"
     },
-    "exhibited_at": ["matara-festival-2024"],
+    "exhibited_at": [
+      "matara-festival-2024"
+    ],
     "related_links": [],
-    "tags": ["collaboration", "video art", "resilience"]
+    "tags": [
+      "collaboration",
+      "video art",
+      "resilience"
+    ]
   },
   {
     "id": "matara-festival-2024",
@@ -363,7 +508,10 @@
     "year": "2024",
     "sort_year": 2024,
     "sort_date": "2024-02",
-    "categories": ["shows", "practice"],
+    "categories": [
+      "shows",
+      "practice"
+    ],
     "type": "Festival",
     "specs": "Participation in Venuri Perera's Passport Project",
     "institution": "University of Ruhuna, Sri Lanka",
@@ -371,12 +519,18 @@
     "image": "assets/images/Matara20231.JPG",
     "images": [
       "assets/images/Matara20231.JPG",
-      "assets/images/Matara20232.JPG"],
+      "assets/images/Matara20232.JPG"
+    ],
     "description": "During the Matara Art Festival I came as a guest, but after previous exchange with the performance artist Venuri Perera, she invited me to participate in her famous passport project. An experience I am extremely grateful for. The project is a postmodern assemblage of Buddhist spiritual practices, witchcraft, and political hierarchies and violences, showing the violence inhabited in passports, asking for the blessing of the spiritual object to gain access to other countries.",
     "collaborators": [
-      {"name": "Venuri Perera", "role": "Artist/Project Lead"}
+      {
+        "name": "Venuri Perera",
+        "role": "Artist/Project Lead"
+      }
     ],
-    "exhibited_works": ["untitled-resilience-2024"]
+    "exhibited_works": [
+      "untitled-resilience-2024"
+    ]
   },
   {
     "id": "colomboscope-2024",
@@ -384,7 +538,9 @@
     "year": "2024",
     "sort_year": 2024,
     "sort_date": "2024-01",
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Volunteer",
     "specs": "Way Of The Forest",
     "institution": "Colomboscope, Sri Lanka",
@@ -398,7 +554,9 @@
     "year": "2023",
     "sort_year": 2023,
     "sort_date": "2023-05",
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Group Exhibition",
     "specs": "Testing Trixi (2020)",
     "institution": "Kunstverein Wolfsburg",
@@ -412,7 +570,9 @@
     "year": "2023",
     "sort_year": 2023,
     "sort_date": "2023-06",
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Workshop",
     "specs": null,
     "institution": "Kunstverein Wolfsburg",
@@ -426,7 +586,9 @@
     "year": "2023",
     "sort_year": 2023,
     "sort_date": "2023-03",
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Lecture",
     "specs": "Creation of the nation state through culture",
     "institution": "HBK Braunschweig",
@@ -439,7 +601,9 @@
     "year": "2023",
     "sort_year": 2023,
     "sort_date": "2023-02",
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Workshop",
     "specs": "Or at least reduce discrimination",
     "institution": "HBK Braunschweig",
@@ -452,7 +616,9 @@
     "year": "2023",
     "sort_year": 2023,
     "sort_date": "2023-01",
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Consulting",
     "specs": "Organised by Stifterverband",
     "institution": "Berlin University of the Arts (UdK)",
@@ -464,13 +630,16 @@
     "title": "Kunstdienst",
     "year": "2022",
     "sort_year": 2022,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Performance",
     "specs": "24/7 telephone hotline, temporary shop",
     "institution": "Fulda, Germany",
     "link": null,
     "image": "assets/images/kunstdienst-2022-still-1.jpeg",
-    "images": ["assets/images/kunstdienst-2022-still-1.jpeg",
+    "images": [
+      "assets/images/kunstdienst-2022-still-1.jpeg",
       "assets/images/kunstdienst-2022-still-2.jpeg",
       "assets/images/kunstdienst-2022.jpeg"
     ]
@@ -480,13 +649,16 @@
     "title": "Represent",
     "year": "2022",
     "sort_year": 2022,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Three-channel video",
     "specs": "6K, Dolby surround, 08:32 min",
     "institution": "Kunstverein Braunschweig",
     "link": null,
     "image": "assets/images/represent/Image13.png",
-    "images": ["assets/images/represent/vlcsnap-2022-11-14-20h04m45s646.png",
+    "images": [
+      "assets/images/represent/vlcsnap-2022-11-14-20h04m45s646.png",
       "assets/images/represent/vlcsnap-2022-11-14-20h05m38s287.png",
       "assets/images/represent/vlcsnap-2022-11-14-20h09m46s795.png",
       "assets/images/represent/vlcsnap-2022-11-14-20h14m50s782.png",
@@ -494,7 +666,10 @@
     ],
     "description_de": "Anhand von Shirley, einem 3D Model für Architektursimulationen, stellt diese Arbeit Fragen nach Macht und Repräsentation. In der Kurzgeschichte ergreift Shirley die Flucht vor ihrer Funktion und verkündet ihren Widerstand gegen das herrschende System der Architektur und die inherente Machtverteilung. Während sie dem politischen Ziel nachgeht, sich selbst und ihre Repräsentation auszulöschen, steht sie vor dem Paradoxon, gleichzeitig nicht vergessen werden zu wollen. Die Handlung des Films spielt sich hauptsächlich im Innenraum des Kunstverein Braunschweigs ab; ergänzt wird die Geschichte durch Digitaldrucke mit Außenansichten des Kunstvereins.",
     "related_links": [
-      {"title": "Amo Afer Guinea Exhibition Info", "url": "assets/images/Amo Afer Guinea Kunstverein Braunschweig.pdf"}
+      {
+        "title": "Amo Afer Guinea Exhibition Info",
+        "url": "assets/images/Amo Afer Guinea Kunstverein Braunschweig.pdf"
+      }
     ]
   },
   {
@@ -503,7 +678,9 @@
     "year": "2022",
     "sort_year": 2022,
     "sort_date": "2022-04",
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Film Festival",
     "specs": "Speak-so that I may see you",
     "institution": "Osnabrück, Germany",
@@ -518,7 +695,10 @@
     "year": "2022",
     "sort_year": 2022,
     "sort_date": "2022-01",
-    "categories": ["shows", "fellowships"],
+    "categories": [
+      "shows",
+      "fellowships"
+    ],
     "type": "Group Exhibition & Award",
     "specs": "Among Us / Unter Uns (2021)",
     "institution": "Bundeskunsthalle Bonn",
@@ -545,7 +725,10 @@
     "title": "documenta fifteen Mediator",
     "year": "2022",
     "sort_year": 2022,
-    "categories": ["practice", "shows"],
+    "categories": [
+      "practice",
+      "shows"
+    ],
     "type": "Mediation",
     "specs": "Expert talks, guided meetups with specialist audiences",
     "institution": "documenta, Kassel",
@@ -558,7 +741,10 @@
     "image_credit": "Image: documenta fifteen",
     "description": "Mediator at documenta fifteen, curated by the Jakarta-based collective ruangrupa, June 18 – September 25, 2022, Kassel. The edition was organized around the Indonesian concept of lumbung (communal rice barn) — principles of collectivity, resource building, and equitable distribution. Role involved expert talks and guided meetups with specialist audiences as part of the CAMP mediation program.",
     "related_links": [
-      {"title": "BZ Kultur Article", "url": "assets/images/documneta/BZ Kultur 23.09.pdf"}
+      {
+        "title": "BZ Kultur Article",
+        "url": "assets/images/documneta/BZ Kultur 23.09.pdf"
+      }
     ]
   },
   {
@@ -566,7 +752,10 @@
     "title": "Among Us / Unter Uns",
     "year": "2021",
     "sort_year": 2021,
-    "categories": ["works", "shows"],
+    "categories": [
+      "works",
+      "shows"
+    ],
     "type": "Single-channel video",
     "specs": "4K, Dolby surround sound, 07:42 min, German. Cinematography: hitus Manleitner. Doorway, barrier tape",
     "institution": null,
@@ -594,7 +783,9 @@
     "title": "MeMärchen",
     "year": "2021",
     "sort_year": 2021,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Installation",
     "specs": "In collaboration with Paulina Estrada. Series of 5 digital prints on fabric (2 x 2 m), hanging on aluminium tubes",
     "institution": null,
@@ -607,11 +798,16 @@
       "assets/images/Memarchen/Memärchen_Bundeskunsthalle3.jpg",
       "assets/images/Memarchen/Memärchen_Bundeskunsthalle4.jpg",
       "assets/images/Memarchen/Memärchen_Bundeskunsthalle5.jpg"
-
     ],
     "related_links": [
-      {"title": "Katalog Blickkontakt", "url": "assets/images/MeMärchen/Katalog Blickkontakt digital.pdf"},
-      {"title": "Flyer BIFF Breitz", "url": "assets/images/MeMärchen/FlyerBiffBreitzPreview3.pdf"}
+      {
+        "title": "Katalog Blickkontakt",
+        "url": "assets/images/MeMärchen/Katalog Blickkontakt digital.pdf"
+      },
+      {
+        "title": "Flyer BIFF Breitz",
+        "url": "assets/images/MeMärchen/FlyerBiffBreitzPreview3.pdf"
+      }
     ]
   },
   {
@@ -619,21 +815,26 @@
     "title": "S.C.O.P.E. Biennale",
     "year": "2021",
     "sort_year": 2021,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Biennale",
     "specs": "Photography and Media Art",
     "institution": "Hannover, Germany",
     "link": null,
     "image": "assets/images/Festivals/Biennials/Screen+Shot+2021-07-13+at+1.54.18+PM.webp",
-    "images": [null
+    "images": [
+      null
     ]
   },
   {
     "id": "bundeskunstpreis-2021",
-    "title": "25th Federal Art Prize for Students",
-    "year": "2021",
+    "title": "24th Federal Art Prize for Students",
+    "year": "2020",
     "sort_year": 2021,
-    "categories": ["fellowships"],
+    "categories": [
+      "fellowships"
+    ],
     "type": "Award",
     "specs": "Bundeskunstpreis",
     "institution": "Federal Ministry of Education and Research, Germany",
@@ -645,16 +846,21 @@
       "assets/images/kunspreisVerleihung-26.jpg"
     ],
     "related_links": [
-      {"title": "Jury Statements", "url": "assets/images/Texte/Jury Statements Preisträger_innen.pdf"}
+      {
+        "title": "Jury Statements",
+        "url": "assets/images/Texte/Jury Statements Preisträger_innen.pdf"
+      }
     ],
-    "description": "Recipient of the 25th Federal Art Prize for Students (Bundeskunstpreis), awarded by the Federal Ministry of Education and Research together with the Bundeskunsthalle Bonn and the Deutsches Studentenwerk. One of 8 selected from more than 50 nominated students across all 24 German art academies."
+    "description": "Nominated for the 24th Federal Art Prize for Students (Bundespreis fuer Kunststudierende), by the Federal Ministry of Education and Research together with the Bundeskunsthalle Bonn and the Deutsches Studentenwerk. All art schools in Germany participate, only one student nominated per school. "
   },
   {
     "id": "zkm-workshops-2021",
     "title": "Workshop Series at ZKM",
     "year": "2021",
     "sort_year": 2021,
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Artist Internship & Workshops",
     "specs": "Digital Feelings, Artivism im Netz, Feminismus & Memes, Faking News Fabrik",
     "institution": "ZKM Center for Art and Media, Karlsruhe",
@@ -668,7 +874,9 @@
     "title_english": "Unlearning Learning",
     "year": "2021",
     "sort_year": 2021,
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Edited anthology/artist book",
     "specs": "Limited edition, 1/150, ISBN: 978-3-00-069277-2",
     "institution": "HBK Braunschweig",
@@ -677,22 +885,70 @@
     "description": "Collaborative publication examining intersectional feminism, anti-racism, anti-fascism, queer theory, and decolonial perspectives through texts and artworks. Alphabetical glossary combining critical theory, poetry, activism, and visual art.",
     "description_de": "Kollaborative Publikation, die intersektionalen Feminismus, Antirassismus, Antifaschismus, Queer-Theorie und dekoloniale Perspektiven durch Texte und Kunstwerke untersucht. Alphabetisches Glossar, das kritische Theorie, Poesie, Aktivismus und visuelle Kunst vereint.",
     "collaborators": [
-      {"name": "Lisa Blädtke", "role": "Layout & Design"},
-      {"name": "Paulina Estrada", "role": "Cover Image"},
-      {"name": "hitus t. manleitner", "role": "Illustrations"},
-      {"name": "Miriam Saladino", "role": "Contributor"},
-      {"name": "Sina Isabel Freund", "role": "Contributor"},
-      {"name": "Anne Meerpohl", "role": "Contributor"},
-      {"name": "Aaron Ziegler", "role": "Contributor"},
-      {"name": "Toum", "role": "Contributor"},
-      {"name": "Vidhi Todi", "role": "Contributor"},
-      {"name": "nimo", "role": "Contributor"},
-      {"name": "Natalie Wolf", "role": "Contributor"},
-      {"name": "Jana Doell", "role": "Contributor"},
-      {"name": "Johanna Johnen", "role": "Contributor"},
-      {"name": "Delia Naghavi Alhosini", "role": "Contributor"},
-      {"name": "Ulrike Bergermann", "role": "Contributor"},
-      {"name": "Elisa d'Augello", "role": "Contributor"}
+      {
+        "name": "Lisa Blädtke",
+        "role": "Layout & Design"
+      },
+      {
+        "name": "Paulina Estrada",
+        "role": "Cover Image"
+      },
+      {
+        "name": "hitus t. manleitner",
+        "role": "Illustrations"
+      },
+      {
+        "name": "Miriam Saladino",
+        "role": "Contributor"
+      },
+      {
+        "name": "Sina Isabel Freund",
+        "role": "Contributor"
+      },
+      {
+        "name": "Anne Meerpohl",
+        "role": "Contributor"
+      },
+      {
+        "name": "Aaron Ziegler",
+        "role": "Contributor"
+      },
+      {
+        "name": "Toum",
+        "role": "Contributor"
+      },
+      {
+        "name": "Vidhi Todi",
+        "role": "Contributor"
+      },
+      {
+        "name": "nimo",
+        "role": "Contributor"
+      },
+      {
+        "name": "Natalie Wolf",
+        "role": "Contributor"
+      },
+      {
+        "name": "Jana Doell",
+        "role": "Contributor"
+      },
+      {
+        "name": "Johanna Johnen",
+        "role": "Contributor"
+      },
+      {
+        "name": "Delia Naghavi Alhosini",
+        "role": "Contributor"
+      },
+      {
+        "name": "Ulrike Bergermann",
+        "role": "Contributor"
+      },
+      {
+        "name": "Elisa d'Augello",
+        "role": "Contributor"
+      }
     ],
     "credits": {
       "editor": "Nick Schamborski",
@@ -705,7 +961,9 @@
     "title": "Essay: Kritisch im Netz",
     "year": "2021",
     "sort_year": 2021,
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Publication",
     "specs": "Das Paradoxon der Kunstvermittlung in den sozialen Medien",
     "institution": "appropriate! Journal, Issue 1",
@@ -719,7 +977,9 @@
     "title": "Testing Trixi",
     "year": "2020",
     "sort_year": 2020,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Single-channel video",
     "specs": "HD, sound, 07:16 min, English. Cinematography: hitus Manleitner; Set operative: Thomas Depner",
     "institution": null,
@@ -742,7 +1002,9 @@
     "title": "Systemchange",
     "year": "2020",
     "sort_year": 2020,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Single-channel video",
     "specs": "4K, stereo sound, 18:04 min, German. Cinematography: hitus Manleitner; Set operators: Delia Samilia Naghavi Alhosini, İlayda Çakır; Script support: Vidhi Todi, Julia Zalewski",
     "institution": null,
@@ -762,16 +1024,19 @@
     "title": "Soft Power",
     "year": "2020",
     "sort_year": 2020,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Film Festival",
     "specs": "37th Kassel Documentary Film and Video Festival",
     "institution": "Kassel, Germany",
     "link": "https://documenta-fifteen.de/en/news/window-display-37-kasseler-dokfest-as-guest-at-ruruhaus/",
     "image": "assets/images/testing-trixi-2020-still-1.jpeg",
     "related_links": [
-      {"title": "dokfest Katalog"}
+      {
+        "title": "dokfest Katalog"
+      }
     ],
-    "description": "Screening at the 37th Kassel Documentary Film and Video Festival, November 2020. Festival catalog published.",
     "description": "Screening at the 37th Kassel Documentary Film and Video Festival, November 2020. Festival catalog published."
   },
   {
@@ -779,7 +1044,9 @@
     "title": "on_desire",
     "year": "2020",
     "sort_year": 2020,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Group Exhibition",
     "specs": null,
     "institution": "Gallerie vom Zufall und vom Glueck, Hannover",
@@ -792,13 +1059,14 @@
     "title": "DAAD Promos Scholarship",
     "year": "2020",
     "sort_year": 2020,
-    "categories": ["fellowships"],
+    "categories": [
+      "fellowships"
+    ],
     "type": "Scholarship",
     "specs": null,
     "institution": "German Academic Exchange Service",
     "link": null,
     "image": "assets/images/DAAD-Sholarship.jpeg",
-    "description": "DAAD Promos short-term scholarship for a study-related stay abroad, 2020.",
     "description": "DAAD Promos short-term scholarship for a study-related stay abroad, 2020."
   },
   {
@@ -806,7 +1074,9 @@
     "title": "Denied Refuge / Verwehrte Zuflucht",
     "year": "2019",
     "sort_year": 2019,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Photo Series",
     "specs": "Five-part photo series on MDF (2 x 1,3 m)",
     "institution": null,
@@ -827,7 +1097,9 @@
     "title": "Familycare",
     "year": "2017/2019",
     "sort_year": 2017,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Single-channel video",
     "specs": "4K cinemascope, stereo sound, 13:24 min. Cinematography / Set direction: hitus Manleitner; Dolly / Sound operator: Caterina Hein, Aaron Ziegler; Support: Christoph Janetzko, Uwe Schulz, Ole Plönnings, Claudia Malecka",
     "institution": null,
@@ -844,7 +1116,10 @@
       "assets/images/familycare/_DSC0029.jpeg"
     ],
     "related_links": [
-      {"title": "Familycare Full Version PDF", "url": "assets/images/familycare/nick_familycare_vollversion.pdf"}
+      {
+        "title": "Familycare Full Version PDF",
+        "url": "assets/images/familycare/nick_familycare_vollversion.pdf"
+      }
     ]
   },
   {
@@ -852,7 +1127,9 @@
     "title": "Braunschweig International Film Festival",
     "year": "2019",
     "sort_year": 2019,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Film Festival",
     "specs": null,
     "institution": "Braunschweig, Germany",
@@ -865,7 +1142,9 @@
     "title": "Busan International Film Festival",
     "year": "2019",
     "sort_year": 2019,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Film Festival",
     "specs": null,
     "institution": "Busan, South Korea",
@@ -878,7 +1157,9 @@
     "title": "Continous",
     "year": "2019",
     "sort_year": 2019,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Group Exhibition",
     "specs": null,
     "institution": "Lower Saxony State Representation, Berlin",
@@ -891,7 +1172,9 @@
     "title": "Germany Scholarship",
     "year": "2019",
     "sort_year": 2019,
-    "categories": ["fellowships"],
+    "categories": [
+      "fellowships"
+    ],
     "type": "Scholarship",
     "specs": null,
     "institution": "Germany",
@@ -904,7 +1187,9 @@
     "title": "Lecture: Fascist Aesthetics",
     "year": "2019",
     "sort_year": 2019,
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Lecture",
     "specs": "Leni Riefenstahl and fascist aesthetics - strategies of New (alt)-right movements",
     "institution": "HBK Braunschweig",
@@ -917,7 +1202,9 @@
     "title": "Tutor for Prof. Candice Breitz",
     "year": "2018-2020",
     "sort_year": 2018,
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Academic Position",
     "specs": "Organizing classes, assisting teaching, organizing guest lecturers",
     "institution": "HBK Braunschweig",
@@ -936,7 +1223,9 @@
     "title": "Media Studio Tutor",
     "year": "2015-2020",
     "sort_year": 2015,
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Academic Position",
     "specs": "Project planning, technical assistance and advice",
     "institution": "HBK Braunschweig",
@@ -949,7 +1238,9 @@
     "title": "Instrument of Public Critique",
     "year": "2018",
     "sort_year": 2018,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Interactive Sculpture",
     "specs": "Aluminium, wood, solar cells, 360° technology, rechargeable battery. Metal Operator: Mika Jetter",
     "institution": null,
@@ -970,7 +1261,9 @@
     "title": "Wolfsburg 1933-1945",
     "year": "2018",
     "sort_year": 2018,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Single-channel 360° VR-video",
     "specs": "01:54 min",
     "institution": "Schloss Wolfsburg",
@@ -978,7 +1271,8 @@
     "description": "\"Wolfsburg\" is a site-specific VR film set at Schloss Wolfsburg that raises historical and cultural questions about Wolfsburg's fascist origins. The immersive film reflects on the role of Volkswagen production and the construction of a new shopping mall on the last remnants of former camps, once inhabited both by concentration camp prisoners and later by so-called guest workers or migrant laborers. The work addresses the ghostly return of suppressed history: how beneath the gleaming surface of consumer culture, the unresolved Nazi past continues to operate and returns in the form of \"cultural zombism.\" The film focuses on the way historical amnesia and commercial development create a haunting double presence.",
     "description_de": "Wolfsburg ist ein ortsspezifischer VR-Film, der im Schloss Wolfsburg spielt und historische und kulturelle Fragen über die faschistischen Ursprünge Wolfsburgs aufwirft. Der immersive Film reflektiert die Rolle der Volkswagen-Produktion und den Bau eines neuen Einkaufszentrums auf den letzten Überresten ehemaliger Lager, die einst sowohl von KZ-Häftlingen als auch später von sogenannten 'Gastarbeitern' oder 'Wanderarbeitern' bewohnt wurden. Die Arbeit befasst sich mit der gespenstischen Rückkehr der verdrängten Geschichte - damit, wie unter der glänzenden Oberfläche der Konsumkultur die unbewältigte Nazi-Vergangenheit weiterwirkt und in Form von kulturellem Zombismus wiederkehrt.",
     "image": "assets/images/wolfsburg-1933-1945-still-1.jpeg",
-    "images": ["assets/images/wolfsburg-1933-1945-still-2.jpeg",
+    "images": [
+      "assets/images/wolfsburg-1933-1945-still-2.jpeg",
       "assets/images/wolfsburg-1933-1945.jpeg"
     ]
   },
@@ -987,7 +1281,9 @@
     "title": "Angels Tutorial",
     "year": "2018",
     "sort_year": 2018,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Single-channel video",
     "specs": "HD, stereo sound, 28:24 min, English. Displayed on LCD-Monitor",
     "institution": null,
@@ -1006,7 +1302,9 @@
     "title": "Unused Capacity",
     "year": "2018",
     "sort_year": 2018,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Single-channel video",
     "specs": "4K, stereo sound, 12:40 min. Production / Location manager: Aaron Ziegler; Cinematography: hitus Manleitner; School community: Marie Schirmacher, Jonathan Flindt, Felix Rodriguez Rasmussen, Nils Wetzel, Jonas Nicke",
     "institution": null,
@@ -1014,7 +1312,8 @@
     "description": "In this performative video work, students gain unauthorized access to their former school building where a refugee shelter - fully equipped with kitchens, washing machines, and bedrooms, was built but remained unused and empty due to the 2016 EU-Turkey agreement while refugees died seeking shelter. The student bodies activate these abandoned halls and document them, capturing graffitied swastikas alongside prepared refugee beds revealing the years of institutional negligence. Occupying this now abandoned space, they transform their intrusion into artistic protest and expose the absurdity of idle wealth amid humanitarian crisis.",
     "description_de": "In dieser performativen Videoarbeit dringen Schüler*innen unbefugt in ihr ehemaliges Schulgebäude ein und erkunden die Räume einer voll ausgestatteten Geflüchteten Unterkunft, die wegen des EU-Türkei-Abkommens von 2016 nie ihren Zweck erfüllte und ungenutzt blieb, während Menschen auf der Flucht sterben. Die Körper der Schüler*innen beleben diese verlassenen Hallen, in denen Hakenkreuze neben den für Geflüchtete vorbereiteten Betten von der Oberflächlichkeit der Planung zeugen. In verschiedenen performativen Akten der Aneignung verwandeln sie ihr Eindringen in künstlerischen Protest und legen die Absurdität des brachliegenden Reichtums inmitten der humanitären Krise offen.",
     "image": "assets/images/unused capacity-1.tiffcc.jpg",
-    "images": ["assets/images/unused capacity-2.tiffcc.jpg",
+    "images": [
+      "assets/images/unused capacity-2.tiffcc.jpg",
       "assets/images/unused capacity-3.tiffcc.jpg",
       "assets/images/unused capacity-4.tiff"
     ]
@@ -1024,7 +1323,9 @@
     "title": "The EMAF Experience",
     "year": "2018",
     "sort_year": 2018,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Film Festival",
     "specs": "European Media Art Festival",
     "institution": "Osnabrück, Germany",
@@ -1037,7 +1338,9 @@
     "title": "Create Your Surrounding!",
     "year": "2017",
     "sort_year": 2017,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Multi-channel video installation",
     "specs": "Single-channel video (4K, stereo sound, 12:27 min, English titles). Displayed on four LCD-Monitor",
     "institution": null,
@@ -1045,7 +1348,8 @@
     "description": "Over a two-year period, I documented and observed this construction site, developing a work that explores determination and external control in urban space. Through flashy aesthetics, aggressive soundscapes, and digital collaging of advertisement imagery, the multi-channel video installation addresses transformation in public space. Possibilities of influence and powerlessness are questioned based on the observation of a reconstruction area.",
     "description_de": "Über einen Zeitraum von zwei Jahren habe ich dieses Baustellengebiet besucht und dokumentiert, woraus sich eine Arbeit entwickelte, die sich mit der Determinierung und Fremdbestimmung im Stadtraum auseinandersetzt. Durch plakative Ästhetik, aggressive Klanglandschaften und digitale Collagen von Werbeinhalten adressiert die mehrkanalige Videoinstallation die eigene Ohnmacht angesichts Veränderungen des öffentlichen Raum. Die Einflussmöglichkeiten jedes*r Einzelnen werden anhand der Beobachtung eines Umbaugebietes hinterfragt.",
     "image": "assets/images/create-your-surrounding-2017-still-1.jpeg",
-    "images": ["assets/images/create-your-surrounding-2017-still-2.jpeg",
+    "images": [
+      "assets/images/create-your-surrounding-2017-still-2.jpeg",
       "assets/images/create-your-surrounding-2017-still-2.jpeg",
       "assets/images/create-your-surrounding-2017.jpeg"
     ]
@@ -1055,7 +1359,9 @@
     "title": "Kombi 5",
     "year": "2017",
     "sort_year": 2017,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Group Exhibition",
     "specs": "Meisterschüler:innen",
     "institution": "Kunsthaus Bethanien, Berlin",
@@ -1068,7 +1374,9 @@
     "title": "Braunschweig International Film Festival",
     "year": "2017",
     "sort_year": 2017,
-    "categories": ["shows"],
+    "categories": [
+      "shows"
+    ],
     "type": "Film Festival",
     "specs": null,
     "institution": "Braunschweig, Germany",
@@ -1081,7 +1389,9 @@
     "title": "Kunstkoffer Art Education Project",
     "year": "2016-2018",
     "sort_year": 2016,
-    "categories": ["practice"],
+    "categories": [
+      "practice"
+    ],
     "type": "Art Education",
     "specs": "Organisation of art project in economically disadvantaged regions",
     "institution": "Lower Saxony, Germany",
@@ -1098,7 +1408,9 @@
     "title": "Entangled Responsibility",
     "year": "2016",
     "sort_year": 2016,
-    "categories": ["works"],
+    "categories": [
+      "works"
+    ],
     "type": "Interactive installation",
     "specs": "Approx. 800 paper cards on table with chairs",
     "institution": null,
@@ -1106,7 +1418,8 @@
     "description": "A collage to take part in featuring photographed objects from my home. The colours on the backs refer to the particular country of production. A mobile, interactive overview of global connections in a private household.",
     "description_de": "Eine Collage zum Mitmachen mit abfotografierten Gegenständen aus meinem Zuhause. Die Farben auf den Rückseiten verweisen auf das jeweilige Produktionsland. Eine bewegliche Übersicht der globalen Zusammenhänge im privaten Haushalt.",
     "image": "assets/images/Verstricke%20Verantwortung/IMG_7970.JPG",
-    "images": ["assets/images/Festivals/Biennials/entangled responsibility.png"
+    "images": [
+      "assets/images/Festivals/Biennials/entangled responsibility.png"
     ]
   },
   {
@@ -1114,7 +1427,9 @@
     "title": "Article: Wer kennt diesen bedeutenden Philosophen?",
     "year": "2020",
     "sort_year": 2020,
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Publication",
     "specs": "Essay on Anton Wilhelm Amo exhibition at Kunstverein Braunschweig",
     "institution": "Der Freitag",
@@ -1123,16 +1438,40 @@
     "description": "Critical essay examining the exhibition on Anton Wilhelm Amo at Kunstverein Braunschweig.",
     "csl": {
       "type": "article-newspaper",
-      "author": [{"family": "Nowak", "given": "Peter"}],
+      "author": [
+        {
+          "family": "Nowak",
+          "given": "Peter"
+        }
+      ],
       "title": "Wer kennt diesen bedeutenden Philosophen?",
       "container-title": "Der Freitag",
-      "issued": {"date-parts": [[2020]]},
+      "issued": {
+        "date-parts": [
+          [
+            2020
+          ]
+        ]
+      },
       "URL": "https://www.freitag.de/autoren/peter-nowak/wer-kennt-diesen-bedeutenden-philosophen",
-      "accessed": {"date-parts": [[2026, 1, 3]]}
+      "accessed": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            3
+          ]
+        ]
+      }
     },
-    "related_works": ["amo-exhibition-2020"],
+    "related_works": [
+      "amo-exhibition-2020"
+    ],
     "related_links": [
-      {"title": "Amo Afer Guinea Exhibition Info", "url": "assets/pdfs/Amo Afer Guinea Kunstverein Braunschweig.pdf"}
+      {
+        "title": "Amo Afer Guinea Exhibition Info",
+        "url": "assets/pdfs/Amo Afer Guinea Kunstverein Braunschweig.pdf"
+      }
     ]
   },
   {
@@ -1140,7 +1479,9 @@
     "title": "Catalog: 25th Federal Prize for Art Students",
     "year": "2022",
     "sort_year": 2022,
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Catalog",
     "specs": "Text by Maria Ines Plaza Lazo",
     "institution": "Bundeskunsthalle Bonn",
@@ -1153,7 +1494,9 @@
     "title": "Catalog: S.C.O.P.E. Biennale",
     "year": "2021",
     "sort_year": 2021,
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Catalog",
     "specs": "Photography and Media Art Biennale",
     "institution": "Hannover, Germany",
@@ -1166,7 +1509,9 @@
     "title": "Catalog: 37th Kassel Documentary Film Festival",
     "year": "2020",
     "sort_year": 2020,
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Catalog",
     "specs": "Soft Power",
     "institution": "Kassel, Germany",
@@ -1179,7 +1524,9 @@
     "title": "Catalog: European Media Art Festival",
     "year": "2022",
     "sort_year": 2022,
-    "categories": ["press"],
+    "categories": [
+      "press"
+    ],
     "type": "Catalog",
     "specs": "Speak-so that I may see you",
     "institution": "Osnabrück, Germany",
@@ -1192,7 +1539,10 @@
     "title": "Meisterschüler of Prof. Candice Breitz",
     "year": "2021/2022",
     "sort_year": 2021,
-    "categories": ["education", "fellowships"],
+    "categories": [
+      "education",
+      "fellowships"
+    ],
     "type": "Master Student",
     "specs": "Mentored by Prof. Federica Bueti",
     "institution": "Braunschweig University of Art (HBK)",
@@ -1200,22 +1550,36 @@
     "image": "assets/images/TutorCandiceBreitz/73039226_894809994246546_6574415024666533579_n.jpg",
     "description": "Master student status with Prof. Candice Breitz, focusing on spatial concepts and contemporary art practices.",
     "collaborators": [
-      {"name": "Prof. Candice Breitz", "role": "Mentor"},
-      {"name": "Prof. Federica Bueti", "role": "Mentor"}
+      {
+        "name": "Prof. Candice Breitz",
+        "role": "Mentor"
+      },
+      {
+        "name": "Prof. Federica Bueti",
+        "role": "Mentor"
+      }
     ],
     "credits": {
       "primary_mentor": "Prof. Candice Breitz",
       "secondary_mentor": "Prof. Federica Bueti"
     },
     "related_links": [],
-    "tags": ["education", "Meisterschüler", "contemporary art", "Braunschweig"]
+    "tags": [
+      "education",
+      "Meisterschüler",
+      "contemporary art",
+      "Braunschweig"
+    ]
   },
   {
     "id": "itb-semester-2021-2022",
     "title": "International Semester, Intermedia Contemporary Art",
     "year": "2021/2022",
     "sort_year": 2021,
-    "categories": ["education", "practice"],
+    "categories": [
+      "education",
+      "practice"
+    ],
     "type": "Exchange Semester",
     "specs": "Intermedia Contemporary Art program",
     "institution": "Institut Teknologi Bandung (ITB), Indonesia",
@@ -1225,14 +1589,22 @@
     "collaborators": [],
     "credits": {},
     "related_links": [],
-    "tags": ["education", "exchange", "Indonesia", "intermedia art", "Bandung"]
+    "tags": [
+      "education",
+      "exchange",
+      "Indonesia",
+      "intermedia art",
+      "Bandung"
+    ]
   },
   {
     "id": "hbk-diploma-2014-2021",
     "title": "Fine Arts Diploma with Honors",
     "year": "2014/2021",
     "sort_year": 2014,
-    "categories": ["education"],
+    "categories": [
+      "education"
+    ],
     "type": "Diploma",
     "specs": "Spatial Concept with Prof. Candice Breitz and interim Professors Julieta Aranda, Eli Cortinas and Agnieszka Polska. Additional diploma in art education. Thesis: 'Queer Digital Art Education' rewarded with honors",
     "institution": "Braunschweig University of Art (HBK)",
@@ -1240,16 +1612,35 @@
     "image": "assets/images/HBK_BS_2021_Schamborski_002.jpg",
     "description": "Fine Arts diploma with specialization in Spatial Concept. Completed with honors, including additional qualification in art education. Thesis on queer digital art education recognized with distinction.",
     "collaborators": [
-      {"name": "Prof. Candice Breitz", "role": "Primary Professor"},
-      {"name": "Prof. Julieta Aranda", "role": "Interim Professor"},
-      {"name": "Prof. Eli Cortinas", "role": "Interim Professor"},
-      {"name": "Prof. Agnieszka Polska", "role": "Interim Professor"}
+      {
+        "name": "Prof. Candice Breitz",
+        "role": "Primary Professor"
+      },
+      {
+        "name": "Prof. Julieta Aranda",
+        "role": "Interim Professor"
+      },
+      {
+        "name": "Prof. Eli Cortinas",
+        "role": "Interim Professor"
+      },
+      {
+        "name": "Prof. Agnieszka Polska",
+        "role": "Interim Professor"
+      }
     ],
     "credits": {
       "thesis_title": "Queer Digital Art Education",
       "thesis_grade": "with honors"
     },
     "related_links": [],
-    "tags": ["education", "diploma", "fine arts", "spatial concept", "queer studies", "art education"]
+    "tags": [
+      "education",
+      "diploma",
+      "fine arts",
+      "spatial concept",
+      "queer studies",
+      "art education"
+    ]
   }
 ]
