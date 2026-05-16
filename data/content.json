@@ -1,5 +1,65 @@
 [
   {
+    "id": "new-entry-1778952939730",
+    "title": "We Stay Home",
+    "year": "2017",
+    "sort_date": "2017-07",
+    "sort_year": 2026,
+    "categories": [
+      "shows"
+    ],
+    "type": "",
+    "specs": "",
+    "institution": "R12",
+    "link": null,
+    "image": "assets/images/new-entry-1778952939730/new-entry-1778952939730-1778952983620-01.jpg",
+    "images": [
+      "assets/images/new-entry-1778952939730/new-entry-1778952939730-1778952983620-01.jpg"
+    ],
+    "description": "",
+    "related_links": []
+  },
+  {
+    "id": "new-entry-1778952795758",
+    "title": "Monuments for a Patch of Grass in Wolfsburg",
+    "year": "2018",
+    "sort_date": "2018-05",
+    "sort_year": 2026,
+    "categories": [
+      "shows"
+    ],
+    "type": "",
+    "specs": "",
+    "institution": "Städtische Galerie Wolfsburg Schlosspark",
+    "link": null,
+    "image": "assets/images/new-entry-1778952795758/new-entry-1778952795758-1778952800802-01.jpg",
+    "images": [
+      "assets/images/new-entry-1778952795758/new-entry-1778952795758-1778952800802-01.jpg"
+    ],
+    "description": "",
+    "related_links": []
+  },
+  {
+    "id": "new-entry-1778952221338",
+    "title": "Funplastic",
+    "year": "2017",
+    "sort_date": "2017-04",
+    "sort_year": 2026,
+    "categories": [],
+    "type": "",
+    "specs": "",
+    "institution": "Kunstverein Wolfsburg City Gallery in Alvar-Alto-House",
+    "link": null,
+    "image": "assets/images/new-entry-1778952221338/new-entry-1778952221338-1778952505173-01.jpg",
+    "images": [
+      "assets/images/new-entry-1778952221338/new-entry-1778952221338-1778952505173-01.jpg",
+      "assets/images/new-entry-1778952221338/new-entry-1778952221338-1778952505173-02.jpg",
+      "assets/images/new-entry-1778952221338/new-entry-1778952221338-1778952515411-01.jpg"
+    ],
+    "description": "",
+    "related_links": []
+  },
+  {
     "id": "Nickii-AI",
     "title": "Performance: Nickii AI",
     "year": "2026",
@@ -486,7 +546,7 @@
   },
   {
     "id": "untitled-resilience-2024",
-    "title": "Untitled Resilience",
+    "title": "Anastasiia",
     "year": "2024",
     "sort_year": 2024,
     "sort_date": "2024-01",
@@ -498,13 +558,8 @@
     "specs": "4K, stereo sound, 16:31 min",
     "institution": "Collaboration with Anastasiia Zakharova",
     "link": "https://www.untitledresilience.schamborski.com",
-    "image": "assets/images/StillsUntitledResilience/Still%202024-11-11%20145516_1.4.1.png",
-    "images": [
-      "assets/images/StillsUntitledResilience/Still%202024-11-11%20145516_1.4.1.png",
-      "assets/images/StillsUntitledResilience/Still%202024-11-11%20145601_1.4.2.png",
-      "assets/images/StillsUntitledResilience/Still%202024-11-11%20150048_1.6.1.png",
-      "assets/images/StillsUntitledResilience/Still%202024-11-11%20150155_1.6.1.png"
-    ],
+    "image": null,
+    "images": [],
     "description": "'Untitled Resilience' is an auto-fictional short film telling the story of a young individual of Ukrainian-Russian descent who navigates migration across wars and politically unstable regions in Siberia, Crimea, Moscow, and Germany. Through social-media style video-logs and cellphone footage, the work shares the protagonist's experience with various forms of sexual and political objectification, culminating in their assertion of agency and self-empowerment. Created in collaboration with Anastasiia Zakharova, the work challenges viewers' notions of authenticity and authorship of digital content, as scripted dialogs and staged moments stand in for what cannot be documented.",
     "description_de": "'Untitled Resilience' ist ein auto fiktionaler Kurzfilm, der das Leben eines jungen Menschen ukrainisch-russischer Herkunft beleuchtet, der sich durch Kriege und politisch instabile Regionen in Sibirien, der Krim, Moskau und Deutschland bewegt. Anhand von Videoprotokollen und Handyaufnahmen im Social-Media-Stil erzählt das Werk von den Erfahrungen dieses Menschen, der verschiedenen Formen sexueller und politischer Objektivierung ausgesetzt wurde, und gipfelt in der Behauptung seiner Handlungsfähigkeit und Selbstermächtigung. Die in Zusammenarbeit mit Anastasiia Zakharova entstandene Arbeit stellt unser Konzept von Authentizität und der Urheberschaft digitaler Inhalte in Frage; gescriptete Dialoge und inszenierte Momente stehen hier für das, was sich nicht dokumentieren lässt.",
     "video_link": "https://www.untitledresilience.schamborski.com",
@@ -774,7 +829,10 @@
     ],
     "image_credit": "Image: Bundeskunsthalle Bonn",
     "description": "Group exhibition of the 25 winners of the 25th Bundespreis für Kunststudierende at Bundeskunsthalle Bonn, November 12, 2021 – January 30, 2022. Jury statement: 'Die Arbeiten von Nick Schamborski sind auf eine humorvolle Art didaktisch. Sie holen uns dort ab wo wir stehen. Sie sind kritisch, indem sie historische Erzählungen und aktuelle gesellschaftliche Zustände direkt befragen.' Prize includes €30,000 prize money and €18,000 production stipends.",
-    "related_links": []
+    "related_links": [],
+    "pdfs": [
+      "assets/pdfs/Lexmark_Scan24-08-2021-092429-1.pdf"
+    ]
   },
   {
     "id": "documenta-fifteen-2022",
@@ -889,10 +947,8 @@
     "specs": "Bundeskunstpreis",
     "institution": "Federal Ministry of Education and Research, Germany",
     "link": "https://imperia.hbk-bs.de/hbk/aktuell/details/26148/",
-    "image": "assets/images/kunspreisVerleihung-24.jpg",
+    "image": "assets/images/kunspreisVerleihung-26.jpg",
     "images": [
-      "assets/images/kunspreisVerleihung-24.jpg",
-      "assets/images/kunspreisVerleihung-25.jpg",
       "assets/images/kunspreisVerleihung-26.jpg"
     ],
     "related_links": [
@@ -930,7 +986,7 @@
     ],
     "type": "Edited anthology/artist book",
     "specs": "Limited edition, 1/150, ISBN: 978-3-00-069277-2",
-    "institution": "HBK Braunschweig",
+    "institution": "UNIVERSITY OF FINE ART, Braunschweig",
     "link": null,
     "image": "assets/images/HBK-BS_2021_Schamborski_004.jpg",
     "description": "Collaborative publication examining intersectional feminism, anti-racism, anti-fascism, queer theory, and decolonial perspectives through texts and artworks. Alphabetical glossary combining critical theory, poetry, activism, and visual art.",
@@ -1243,9 +1299,12 @@
     "image": "assets/images/IMG_5071gerade.jpg",
     "description": "Group exhibition 'Continous' at the Lower Saxony State Representation (Niedersächsische Landesvertretung), Berlin, 2019.",
     "images": [
-      "assets/images/IMG_5071gerade.jpg"
+      "assets/images/IMG_5071gerade.jpg",
+      "assets/images/continous-2019/continous-2019-1778953073468-01.jpg",
+      "assets/images/continous-2019/continous-2019-1778953257988-01.jpg"
     ],
-    "related_links": []
+    "related_links": [],
+    "description_de": "Unter Leitung der mit dem „Preis der Nationalgalerie 2018“ ausgezeichneten Agnieszka Polska und ihrer Tutorin Nickii Schamborski zeigt die Klasse für Raumkonzepte der Hochschule für Bildende Künste (HBK) Braunschweig laufende Projekte und Arbeiten. Die Studierenden bespielen die verschie- densten Ecken und Winkel des gläsernen Baus am Potsdamer Platz. Einige von ihnen\nnur für einen Abend, eine von ihnen aber auch sehr viel länger. Alle eint ein wacher Blick auf die gegenwärtigen Umwälzungen und Bewegungen in Kunst und Gesellschaft.Ausstellung\n16. April bis 3. Mai 2019\nMo. bis Fr. 10:00 bis 18:00 Uhr"
   },
   {
     "id": "germany-scholarship-2019",
@@ -1639,12 +1698,15 @@
     "specs": "Soft Power",
     "institution": "Kassel, Germany",
     "link": "https://documenta-fifteen.de/en/news/window-display-37-kasseler-dokfest-as-guest-at-ruruhaus/",
-    "image": "assets/images/Festivals/Biennials/soft power pic.jpg",
+    "image": "assets/images/kassel-doc-fest-catalog-2020/kassel-doc-fest-catalog-2020-1778951805197-01.jpg",
     "description": "Catalog of the 37th Kassel Documentary Film and Video Festival, November 2020.",
     "images": [
-      "assets/images/Festivals/Biennials/soft power pic.jpg"
+      "assets/images/kassel-doc-fest-catalog-2020/kassel-doc-fest-catalog-2020-1778951805197-01.jpg"
     ],
-    "related_links": []
+    "related_links": [],
+    "pdfs": [
+      "assets/pdfs/IMG_20201117_0001.pdf"
+    ]
   },
   {
     "id": "emaf-catalog-2022",
@@ -1701,7 +1763,8 @@
     ],
     "images": [
       "assets/images/TutorCandiceBreitz/73039226_894809994246546_6574415024666533579_n.jpg"
-    ]
+    ],
+    "sort_date": "2021-09"
   },
   {
     "id": "itb-semester-2021-2022",
@@ -1730,7 +1793,8 @@
     ],
     "images": [
       "assets/images/institut-teknologi-bandung-itb.jpg"
-    ]
+    ],
+    "sort_date": "2021-09"
   },
   {
     "id": "hbk-diploma-2014-2021",
@@ -1778,7 +1842,10 @@
       "art education"
     ],
     "images": [
-      "assets/images/HBK_BS_2021_Schamborski_002.jpg"
-    ]
+      "assets/images/HBK_BS_2021_Schamborski_002.jpg",
+      "assets/images/hbk-diploma-2014-2021/hbk-diploma-2014-2021-1778952603481-01.jpg",
+      "assets/images/hbk-diploma-2014-2021/hbk-diploma-2014-2021-1778952603481-02.jpg"
+    ],
+    "sort_date": "2021-08"
   }
 ]
