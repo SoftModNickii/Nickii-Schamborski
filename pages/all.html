@@ -223,9 +223,7 @@
                     ${item.specs ? `<div class="link-preview-specs">${item.specs}</div>` : ''}
                     
                     <div class="link-preview-actions">
-                        ${(item.description || item.collaborators || item.exhibited_works || item.exhibited_at) 
-                          ? `<button class="detail-btn" data-id="${item.id}">Full Details →</button>` 
-                          : ''}
+                        <button class="detail-btn" data-id="${item.id}">Full Details →</button>
                         ${(item.categories.includes('press') && item.csl) 
                           ? `<button class="cite-btn" data-id="${item.id}">Cite this →</button>` 
                           : ''}
@@ -259,10 +257,8 @@
         if (item.specs) backHTML += `<p class="card-specs">${item.specs}</p>`;
         if (item.institution) backHTML += `<p class="card-institution">${item.institution}</p>`;
         
-        // Add "Full Details" button for items with descriptions
-        if (item.description || item.collaborators || item.exhibited_works || item.exhibited_at) {
-            backHTML += `<button class="detail-btn" data-id="${item.id}">Full Details →</button>`;
-        }
+        // Add "Full Details" button for all items
+        backHTML += `<button class="detail-btn" data-id="${item.id}">Full Details →</button>`;
         
         // Add CSL export button for press items
         if (item.categories.includes('press') && item.csl) {
@@ -464,6 +460,17 @@
         // Add video link at the bottom as plain text link
         if (item.video_link) {
             html += `<div class="video-link-container"><a href="${item.video_link}" target="_blank" class="video-link">${item.video_link}</a></div>`;
+        }
+
+        // PDFs
+        if (item.pdfs && item.pdfs.length > 0) {
+            html += `<div class="detail-pdfs"><strong>PDFs / Catalog Pages</strong><ul>`;
+            item.pdfs.forEach(path => {
+                const filename = path.split('/').pop();
+                const href = path.startsWith('http') ? path : '../' + path;
+                html += `<li><a href="${href}" target="_blank" class="detail-pdf-link">📄 ${filename}</a></li>`;
+            });
+            html += `</ul></div>`;
         }
         
         body.innerHTML = html;
