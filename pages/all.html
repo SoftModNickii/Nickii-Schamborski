@@ -172,78 +172,13 @@
             // Clear container
             container.innerHTML = '';
 
-            renderCardsIntoContainer(container, filtered, filter);
+            renderCardsIntoContainer(container, filtered);
             
         }, currentCards.length * 40 + 300);
     }
 
-    function createPressSectionHeader(title, isFirst) {
-        const header = document.createElement('div');
-        header.className = 'press-section-header' + (isFirst ? ' first' : '');
-        header.textContent = title;
-        return header;
-    }
-
-    function renderCardsIntoContainer(container, items, filter) {
+    function renderCardsIntoContainer(container, items) {
         let animationIndex = 0;
-
-        if (filter === 'press') {
-            const groups = {
-                written_by: [],
-                press_about: [],
-                institutional_profile: [],
-                other: []
-            };
-
-            items.forEach(item => {
-                const groupKey = item.press_group || 'other';
-                if (groups[groupKey]) {
-                    groups[groupKey].push(item);
-                } else {
-                    groups.other.push(item);
-                }
-            });
-
-            const orderedGroups = [
-                { key: 'written_by', label: 'Written by Nickii Schamborski' },
-                { key: 'press_about', label: 'Press & Features About Nickii Schamborski' },
-                { key: 'institutional_profile', label: 'Institutional Profiles' },
-                { key: 'other', label: 'Additional Press' }
-            ];
-
-            let hasRenderedHeader = false;
-            orderedGroups.forEach(group => {
-                const groupItems = groups[group.key];
-                if (!groupItems.length) return;
-
-                const header = createPressSectionHeader(group.label, !hasRenderedHeader);
-                hasRenderedHeader = true;
-                header.style.opacity = '0';
-                header.style.transform = 'translateY(8px)';
-                container.appendChild(header);
-
-                setTimeout(() => {
-                    header.style.opacity = '1';
-                    header.style.transform = 'translateY(0)';
-                }, animationIndex * 60);
-                animationIndex += 1;
-
-                groupItems.forEach(item => {
-                    const card = createCard(item);
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.9)';
-                    container.appendChild(card);
-
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, animationIndex * 60);
-                    animationIndex += 1;
-                });
-            });
-
-            return;
-        }
 
         items.forEach(item => {
             const card = createCard(item);
@@ -268,10 +203,14 @@
         const isLinkPreview = item.categories.includes('press') && 
                              item.link && 
                              (!item.image || item.image.startsWith('http'));
+        const isWrittenBy = item.categories.includes('press') && item.press_group === 'written_by';
         
         if (isLinkPreview) {
             // Create link preview card
             card.classList.add('link-preview-card');
+            if (isWrittenBy) {
+                card.innerHTML = '<span class="press-sticker">Written by Nickii Schamborski</span>';
+            }
             
             // Extract domain from link
             let domain = '';
@@ -281,7 +220,7 @@
                 domain = item.link.split('/')[2] || '';
             }
             
-            card.innerHTML = `
+            card.innerHTML += `
                 <div class="link-preview-content">
                     <div class="link-preview-header">
                         <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" 
@@ -313,6 +252,13 @@
         
         const inner = document.createElement('div');
         inner.className = 'card-inner';
+
+        if (isWrittenBy) {
+            const sticker = document.createElement('span');
+            sticker.className = 'press-sticker';
+            sticker.textContent = 'Written by Nickii Schamborski';
+            card.appendChild(sticker);
+        }
         
         // Front - Title overlay
         const front = document.createElement('div');
@@ -696,7 +642,7 @@
                 return;
             }
 
-            renderCardsIntoContainer(container, filtered, currentFilter);
+            renderCardsIntoContainer(container, filtered);
         }, currentCards.length * 40 + 300);
     });
 

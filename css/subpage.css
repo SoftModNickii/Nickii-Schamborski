@@ -219,24 +219,22 @@
     width: 100%;
 }
 
-.press-section-header {
-    grid-column: 1 / -1;
+.press-sticker {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 4;
     font-family: 'Manrope', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.58rem;
     font-weight: 400;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #666;
-    border-top: 1px solid #ddd;
-    padding-top: 0.9rem;
-    margin-top: 0.6rem;
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.press-section-header.first {
-    border-top: none;
-    padding-top: 0;
-    margin-top: 0;
+    color: #111;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid #111;
+    border-radius: 999px;
+    padding: 4px 8px;
+    pointer-events: none;
 }
 
 /* === INDIVIDUAL CARD === */
