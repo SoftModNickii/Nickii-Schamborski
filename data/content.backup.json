@@ -111,6 +111,40 @@
     "related_links": []
   },
   {
+    "id": "at-sp-ars-electronica-campus-exhibition-2026",
+    "title": "AT/SP x Ars Electronica Campus Exhibition",
+    "year": "2026",
+    "sort_year": 2026,
+    "categories": [
+      "shows"
+    ],
+    "type": "Campus Exhibition",
+    "specs": null,
+    "institution": "Ars Electronica, Linz, Austria",
+    "link": null,
+    "image": null,
+    "images": [],
+    "description": "AT/SP x Ars Electronica Campus Exhibition at Ars Electronica, Linz, Austria, 2026.",
+    "related_links": []
+  },
+  {
+    "id": "every-node-counts-workshop-2026",
+    "title": "Every Node Counts - Meshtastic Mesh Networking Workshop",
+    "year": "2026",
+    "sort_year": 2026,
+    "categories": [
+      "practice"
+    ],
+    "type": "Workshop",
+    "specs": "Hands-on workshop on decentralized off-grid LoRa mesh communication",
+    "institution": "School of the Art Institute of Chicago",
+    "link": null,
+    "image": null,
+    "images": [],
+    "description": "Hands-on workshop on decentralized off-grid LoRa mesh communication.",
+    "related_links": []
+  },
+  {
     "id": "fnews-whitney-biennial-2026",
     "title": "Whitney Biennial 2026",
     "title_subtitle": "An international perspective",
@@ -120,6 +154,8 @@
     "categories": [
       "press"
     ],
+    "press_group": "written_by",
+    "verification": "verified",
     "type": "Article / Photo Essay",
     "specs": "Co-authored with Janjaa (Helen S. Lee), F Newsmagazine, May 4, 2026",
     "institution": "F Newsmagazine",
@@ -195,6 +231,8 @@
     "categories": [
       "press"
     ],
+    "press_group": "press_about",
+    "verification": "verified",
     "type": "Press Feature",
     "specs": "Featured in F Newsmagazine, April 29, 2026. Author: Sivan Gilbert",
     "institution": "F Newsmagazine",
@@ -242,6 +280,26 @@
     "images": [
       "https://images.fnewsmagazine.com/2025/03/web-illo-template-Aditi-02-scaled-1.jpg"
     ],
+    "related_links": []
+  },
+  {
+    "id": "artfacts-profile-2026",
+    "title": "Artist Profile: Nick Schamborski",
+    "year": "2026",
+    "sort_year": 2026,
+    "sort_date": "2026-05",
+    "categories": [
+      "press"
+    ],
+    "press_group": "institutional_profile",
+    "verification": "verified",
+    "type": "Institutional Profile",
+    "specs": "Permanent artist index",
+    "institution": "ArtFacts",
+    "link": "https://artfacts.net/artist/nick-schamborski",
+    "image": null,
+    "images": [],
+    "description": "Permanent ArtFacts profile and exhibition index.",
     "related_links": []
   },
   {
@@ -337,6 +395,23 @@
     "related_links": []
   },
   {
+    "id": "caa-114th-annual-conference-volunteer-2025",
+    "title": "Volunteer, CAA 114th Annual Conference",
+    "year": "2025",
+    "sort_year": 2025,
+    "categories": [
+      "practice"
+    ],
+    "type": "Volunteer",
+    "specs": null,
+    "institution": "College Art Association, Chicago, IL",
+    "link": null,
+    "image": null,
+    "images": [],
+    "description": "Volunteer at the CAA 114th Annual Conference, College Art Association, Chicago, IL.",
+    "related_links": []
+  },
+  {
     "id": "saic-mfa-2025-2028",
     "title": "Master of Fine Arts (MFA), Art and Technology Studies",
     "year": "2025/2028",
@@ -385,6 +460,8 @@
     "categories": [
       "press"
     ],
+    "press_group": "press_about",
+    "verification": "verified",
     "type": "Magazine Feature",
     "specs": "Profile feature in SAIC Magazine",
     "institution": "School of the Art Institute of Chicago",
@@ -656,6 +733,46 @@
     "related_links": []
   },
   {
+    "id": "coming-home-hbk-press-2023",
+    "title": "Coming Home - Das Ende kolonialer Phantasmen",
+    "year": "2023",
+    "sort_year": 2023,
+    "sort_date": "2023-05",
+    "categories": [
+      "press"
+    ],
+    "press_group": "press_about",
+    "verification": "verified",
+    "type": "Press Release",
+    "specs": "Exhibition feature including Nickii Schamborski",
+    "institution": "HBK Braunschweig",
+    "link": "https://www.hbk-bs.de/aktuelles/news-pressemitteilungen/news-detailseite/ausstellung-coming-home-das-ende-kolonialer-phantasmen/",
+    "image": null,
+    "images": [],
+    "description": "Official HBK Braunschweig press release for the exhibition 'Coming Home - Das Ende kolonialer Phantasmen'.",
+    "related_links": []
+  },
+  {
+    "id": "kunstverein-artist-profile-2023",
+    "title": "Artist Profile: Nick Schamborski",
+    "year": "2023",
+    "sort_year": 2023,
+    "sort_date": "2023-05",
+    "categories": [
+      "press"
+    ],
+    "press_group": "institutional_profile",
+    "verification": "verified",
+    "type": "Institutional Profile",
+    "specs": "Permanent artist page",
+    "institution": "Kunstverein Wolfsburg",
+    "link": "https://kunstverein-wolfsburg.de/artist/nick-schamborski/",
+    "image": null,
+    "images": [],
+    "description": "Kunstverein Wolfsburg artist profile page.",
+    "related_links": []
+  },
+  {
     "id": "wolfsburg-workshop-2023",
     "title": "Workshop: How to Deal with Colonial Memorials",
     "year": "2023",
@@ -891,6 +1008,214 @@
     "related_links": []
   },
   {
+    "id": "familycare-solo-metavier-2021",
+    "title": "familycare",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-08",
+    "categories": [
+      "shows"
+    ],
+    "type": "Solo Exhibition",
+    "specs": "Satellite of S.C.O.P.E. Biennale, August 8-29, 2021",
+    "institution": "metavier - Galerie vom Anfang und vom Ende, Hannover, DE",
+    "link": "https://www.thethingsitellyou.com/read-nick-schamborski",
+    "image": "assets/images/familycare/25.Schamborski_familycare.png",
+    "images": [
+      "assets/images/familycare/25.Schamborski_familycare.png"
+    ],
+    "description": "Solo exhibition 'familycare' at metavier - Galerie vom Anfang und vom Ende, Hannover, August 8-29, 2021.",
+    "related_links": [
+      "https://www.thethingsitellyou.com/artists/nick-schamborski"
+    ]
+  },
+  {
+    "id": "bundeskunsthalle-video-youtube-2021",
+    "title": "Nick Schamborski - Bundespreis fur Kunststudierende (Video Portrait)",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-11",
+    "categories": [
+      "press"
+    ],
+    "press_group": "press_about",
+    "verification": "verified",
+    "same_piece_key": "bundeskunsthalle-video-portrait-2021",
+    "type": "Video Portrait",
+    "specs": "Bundeskunsthalle portrait; same piece also published on Facebook",
+    "institution": "Bundeskunsthalle / YouTube",
+    "link": "https://www.youtube.com/watch?v=F3IuoTS9gwM",
+    "image": null,
+    "images": [],
+    "description": "Official Bundeskunsthalle video portrait of Nick Schamborski.",
+    "related_links": [
+      "https://www.facebook.com/Bundeskunsthalle/videos/nick-schamborski-bundespreis-f%C3%BCr-kunststudierende/271572561577311/"
+    ]
+  },
+  {
+    "id": "bundeskunsthalle-video-facebook-2021",
+    "title": "Nick Schamborski - Bundespreis fur Kunststudierende (Video Portrait)",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-11",
+    "categories": [
+      "press"
+    ],
+    "press_group": "press_about",
+    "verification": "verified",
+    "same_piece_key": "bundeskunsthalle-video-portrait-2021",
+    "type": "Video Portrait",
+    "specs": "Bundeskunsthalle portrait; same piece also published on YouTube",
+    "institution": "Bundeskunsthalle / Facebook",
+    "link": "https://www.facebook.com/Bundeskunsthalle/videos/nick-schamborski-bundespreis-f%C3%BCr-kunststudierende/271572561577311/",
+    "image": null,
+    "images": [],
+    "description": "Official Bundeskunsthalle video portrait of Nick Schamborski.",
+    "related_links": [
+      "https://www.youtube.com/watch?v=F3IuoTS9gwM"
+    ]
+  },
+  {
+    "id": "hbk-bundespreis-news-2021",
+    "title": "HBK-Student Nick Schamborski erhalt Bundespreis fur Kunststudierende 2021",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-11",
+    "categories": [
+      "press"
+    ],
+    "press_group": "press_about",
+    "verification": "verified",
+    "type": "News",
+    "specs": "HBK Braunschweig announcement",
+    "institution": "HBK Braunschweig",
+    "link": "http://imperia.hbk-bs.de/hbk/aktuell/details/26148/",
+    "image": null,
+    "images": [],
+    "description": "HBK Braunschweig news post about receiving the Bundespreis fur Kunststudierende 2021.",
+    "related_links": []
+  },
+  {
+    "id": "shz-interview-2021",
+    "title": "Wie Nick Schamborski aus Osdorf der Sprung in die Welt der Kunst gelingt",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-11",
+    "categories": [
+      "press"
+    ],
+    "press_group": "press_about",
+    "verification": "verified",
+    "type": "Interview",
+    "specs": "Eckernforder Zeitung / shz.de",
+    "institution": "shz.de",
+    "link": "https://www.shz.de/lokales/schwansen/artikel/osdorf-nick-schamborski-erhaelt-bundespreis-fuer-kunststudierende-20992681",
+    "image": null,
+    "images": [],
+    "description": "Interview feature on Nick Schamborski and the Bundespreis fur Kunststudierende.",
+    "related_links": []
+  },
+  {
+    "id": "kunstforum-bundespreis-news-2021",
+    "title": "Bundespreis fur Kunststudierende vergeben",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-11",
+    "categories": [
+      "press"
+    ],
+    "press_group": "press_about",
+    "verification": "verified",
+    "type": "News",
+    "specs": "Includes Schamborski",
+    "institution": "Kunstforum International",
+    "link": "https://www.kunstforum.de/nachrichten/bundespreis-fuer-kunststudierende-vergeben/",
+    "image": null,
+    "images": [],
+    "description": "Kunstforum International news coverage of the Bundespreis fur Kunststudierende.",
+    "related_links": []
+  },
+  {
+    "id": "kunstforum-profile-2021",
+    "title": "Artist Profile: Nick Schamborski",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-11",
+    "categories": [
+      "press"
+    ],
+    "press_group": "institutional_profile",
+    "verification": "verified",
+    "type": "Institutional Profile",
+    "specs": "Artist profile and review index",
+    "institution": "Kunstforum International",
+    "link": "https://www.kunstforum.de/person/nick-schamborski/",
+    "image": null,
+    "images": [],
+    "description": "Kunstforum International artist profile page.",
+    "related_links": []
+  },
+  {
+    "id": "the-things-i-tell-you-text-2021",
+    "title": "familycare - solo exhibition text (The Things I Tell You Will Not Be Wrong)",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-08",
+    "categories": [
+      "press"
+    ],
+    "press_group": "press_about",
+    "verification": "verified",
+    "type": "Exhibition Text",
+    "specs": "familycare solo exhibition context",
+    "institution": "thethingsitellyou.com",
+    "link": "https://www.thethingsitellyou.com/read-nick-schamborski",
+    "image": null,
+    "images": [],
+    "description": "Exhibition text for the familycare solo exhibition context.",
+    "related_links": []
+  },
+  {
+    "id": "the-things-i-tell-you-artist-page-2021",
+    "title": "Artist Page: Nick Schamborski",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-08",
+    "categories": [
+      "press"
+    ],
+    "press_group": "institutional_profile",
+    "verification": "verified",
+    "type": "Institutional Profile",
+    "specs": "The Things I Tell You Will Not Be Wrong",
+    "institution": "thethingsitellyou.com",
+    "link": "https://www.thethingsitellyou.com/artists/nick-schamborski",
+    "image": null,
+    "images": [],
+    "description": "Artist page for Nick Schamborski on The Things I Tell You Will Not Be Wrong.",
+    "related_links": []
+  },
+  {
+    "id": "zkm-artist-profile-2021",
+    "title": "Artist Profile: Nick Schamborski",
+    "year": "2021",
+    "sort_year": 2021,
+    "sort_date": "2021-03",
+    "categories": [
+      "press"
+    ],
+    "press_group": "institutional_profile",
+    "verification": "verified",
+    "type": "Institutional Profile",
+    "specs": "Permanent profile",
+    "institution": "ZKM Karlsruhe",
+    "link": "https://zkm.de/de/personen/nick-schamborski",
+    "image": null,
+    "images": [],
+    "description": "Permanent ZKM Karlsruhe profile page.",
+    "related_links": []
+  },
+  {
     "id": "memaerchen-2021",
     "title": "MeMärchen",
     "year": "2021",
@@ -1075,6 +1400,8 @@
     "categories": [
       "press"
     ],
+    "press_group": "written_by",
+    "verification": "verified",
     "type": "Publication",
     "specs": "Das Paradoxon der Kunstvermittlung in den sozialen Medien",
     "institution": "appropriate! Journal, Issue 1",
@@ -1526,11 +1853,11 @@
       "shows"
     ],
     "type": "Group Exhibition",
-    "specs": "Meisterschüler:innen",
-    "institution": "Kunsthaus Bethanien, Berlin",
+    "specs": "November 24-29, 2017; Meisterschuler:innen",
+    "institution": "Kunstlerhaus Bethanien, Berlin, DE",
     "link": "https://www.bpigs.com/openings/kombi-5",
     "image": "assets/images/Festivals/Biennials/kombi.jpg",
-    "description": "Group exhibition 'Kombi 5' at Künstlerhaus Bethanien, Berlin, 2017. Graduating Meisterschüler:innen show, class of Prof. Candice Breitz, HBK Braunschweig.",
+    "description": "Group exhibition 'Kombi 5' at Kunstlerhaus Bethanien, Berlin, DE, November 24-29, 2017. Graduating Meisterschuler:innen show, class of Prof. Candice Breitz, HBK Braunschweig.",
     "images": [
       "assets/images/Festivals/Biennials/kombi.jpg"
     ],
@@ -1604,6 +1931,9 @@
     "categories": [
       "press"
     ],
+    "press_group": "written_by",
+    "verification": "verified",
+    "editorial_context": "community_blog_post",
     "type": "Publication",
     "specs": "Essay on Anton Wilhelm Amo exhibition at Kunstverein Braunschweig",
     "institution": "Der Freitag",

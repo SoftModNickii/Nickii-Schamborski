@@ -171,21 +171,92 @@
             
             // Clear container
             container.innerHTML = '';
-            
-            // 3. Add new cards (staggered fade in)
-            filtered.forEach((item, index) => {
-                const card = createCard(item);
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.9)';
-                container.appendChild(card);
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1)';
-                }, index * 60);
-            });
+
+            renderCardsIntoContainer(container, filtered, filter);
             
         }, currentCards.length * 40 + 300);
+    }
+
+    function createPressSectionHeader(title, isFirst) {
+        const header = document.createElement('div');
+        header.className = 'press-section-header' + (isFirst ? ' first' : '');
+        header.textContent = title;
+        return header;
+    }
+
+    function renderCardsIntoContainer(container, items, filter) {
+        let animationIndex = 0;
+
+        if (filter === 'press') {
+            const groups = {
+                written_by: [],
+                press_about: [],
+                institutional_profile: [],
+                other: []
+            };
+
+            items.forEach(item => {
+                const groupKey = item.press_group || 'other';
+                if (groups[groupKey]) {
+                    groups[groupKey].push(item);
+                } else {
+                    groups.other.push(item);
+                }
+            });
+
+            const orderedGroups = [
+                { key: 'written_by', label: 'Written by Nickii Schamborski' },
+                { key: 'press_about', label: 'Press & Features About Nickii Schamborski' },
+                { key: 'institutional_profile', label: 'Institutional Profiles' },
+                { key: 'other', label: 'Additional Press' }
+            ];
+
+            let hasRenderedHeader = false;
+            orderedGroups.forEach(group => {
+                const groupItems = groups[group.key];
+                if (!groupItems.length) return;
+
+                const header = createPressSectionHeader(group.label, !hasRenderedHeader);
+                hasRenderedHeader = true;
+                header.style.opacity = '0';
+                header.style.transform = 'translateY(8px)';
+                container.appendChild(header);
+
+                setTimeout(() => {
+                    header.style.opacity = '1';
+                    header.style.transform = 'translateY(0)';
+                }, animationIndex * 60);
+                animationIndex += 1;
+
+                groupItems.forEach(item => {
+                    const card = createCard(item);
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    container.appendChild(card);
+
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, animationIndex * 60);
+                    animationIndex += 1;
+                });
+            });
+
+            return;
+        }
+
+        items.forEach(item => {
+            const card = createCard(item);
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.9)';
+            container.appendChild(card);
+
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            }, animationIndex * 60);
+            animationIndex += 1;
+        });
     }
 
     // Create card element
@@ -624,19 +695,8 @@
                 container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #999;">No results found</p>';
                 return;
             }
-            
-            // Fade in
-            filtered.forEach((item, index) => {
-                const card = createCard(item);
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.9)';
-                container.appendChild(card);
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1)';
-                }, index * 60);
-            });
+
+            renderCardsIntoContainer(container, filtered, currentFilter);
         }, currentCards.length * 40 + 300);
     });
 

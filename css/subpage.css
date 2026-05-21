@@ -219,6 +219,26 @@
     width: 100%;
 }
 
+.press-section-header {
+    grid-column: 1 / -1;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding-top: 0.9rem;
+    margin-top: 0.6rem;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.press-section-header.first {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+
 /* === INDIVIDUAL CARD === */
 .grid-card {
     width: 100%;
