@@ -112,7 +112,7 @@
   },
   {
     "id": "at-sp-ars-electronica-campus-exhibition-2026",
-    "title": "AT/SP x Ars Electronica Campus Exhibition",
+    "title": "Upcoming: AT/SP x Ars Electronica Campus Exhibition",
     "year": "2026",
     "sort_year": 2026,
     "categories": [
@@ -122,9 +122,11 @@
     "specs": null,
     "institution": "Ars Electronica, Linz, Austria",
     "link": null,
-    "image": null,
-    "images": [],
-    "description": "AT/SP x Ars Electronica Campus Exhibition at Ars Electronica, Linz, Austria, 2026.",
+    "image": "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-1780351671312-01.jpg",
+    "images": [
+      "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-1780351671312-01.jpg"
+    ],
+    "description": "UpAT/SP x Ars Electronica Campus Exhibition at Ars Electronica, Linz, Austria, 2026.",
     "related_links": []
   },
   {
@@ -139,9 +141,13 @@
     "specs": "Hands-on workshop on decentralized off-grid LoRa mesh communication",
     "institution": "School of the Art Institute of Chicago",
     "link": null,
-    "image": null,
-    "images": [],
-    "description": "Hands-on workshop on decentralized off-grid LoRa mesh communication.",
+    "image": "assets/images/every-node-counts-workshop-2026/every-node-counts-workshop-2026-1780351526748-01.jpg",
+    "images": [
+      "assets/images/every-node-counts-workshop-2026/every-node-counts-workshop-2026-1780351526748-01.jpg",
+      "assets/images/every-node-counts-workshop-2026/every-node-counts-workshop-2026-1780351080783-01.jpg",
+      "assets/images/every-node-counts-workshop-2026/every-node-counts-workshop-2026-1780351602962-01.jpg"
+    ],
+    "description": "Hi everyone :) Dropping a late recap of our workshop!\n'Every Node Counts' was held on May 12th in the electronics lab, with wonderful people building Meshtastic nodes and connecting through LoRa networks together.\n\nThank you so much for joining!\nBringing this topic felt especially important to us in these precarious times.. it was not just about building a device, but about connecting with others, creating local community, and thinking about what it means to spend time outside of the big data networks we are placed in.\n\nThe rich conversations and the beautiful collaborative process were so inspiring and It was truly a beautiful afternoon :)\n\nThank you for the support to the Student Government Impact Grant and the ATSP faculty for their support and the facility. And a big thank you to Heltec and Seeed Studio for the material support :)",
     "related_links": []
   },
   {
@@ -159,7 +165,7 @@
     "type": "Article / Photo Essay",
     "specs": "Co-authored with Janjaa (Helen S. Lee), F Newsmagazine, May 4, 2026",
     "institution": "F Newsmagazine",
-    "link": "https://fnewsmagazine.com/2026/05/whitney-biennial-2026/",
+    "link": null,
     "image": "https://images.fnewsmagazine.com/2026/05/Nickii-Schamborski-and-Helen-S.-Lee-at-the-Whitney-Biennial-New-York-March-3-2026.jpeg",
     "images": [
       "https://images.fnewsmagazine.com/2026/05/Nickii-Schamborski-and-Helen-S.-Lee-at-the-Whitney-Biennial-New-York-March-3-2026.jpeg",
@@ -219,7 +225,9 @@
       "Joshua Citarella",
       "Gabriela Ruiz"
     ],
-    "related_links": []
+    "related_links": [
+      "https://fnewsmagazine.com/2026/05/whitney-biennial-2026/"
+    ]
   },
   {
     "id": "fnews-artificial-intelligence-2026",
@@ -406,8 +414,10 @@
     "specs": null,
     "institution": "College Art Association, Chicago, IL",
     "link": null,
-    "image": null,
-    "images": [],
+    "image": "assets/images/caa-114th-annual-conference-volunteer-2025/caa-114th-annual-conference-volunteer-2025-1780351970047-01.jpg",
+    "images": [
+      "assets/images/caa-114th-annual-conference-volunteer-2025/caa-114th-annual-conference-volunteer-2025-1780351970047-01.jpg"
+    ],
     "description": "Volunteer at the CAA 114th Annual Conference, College Art Association, Chicago, IL.",
     "related_links": []
   },
@@ -635,8 +645,14 @@
     "specs": "4K, stereo sound, 16:31 min",
     "institution": "Collaboration with Anastasiia Zakharova",
     "link": "https://www.untitledresilience.schamborski.com",
-    "image": null,
-    "images": [],
+    "image": "assets/images/untitled-resilience-2024/untitled-resilience-2024-1780352342318-01.jpg",
+    "images": [
+      "assets/images/untitled-resilience-2024/untitled-resilience-2024-1780352342318-01.jpg",
+      "assets/images/untitled-resilience-2024/untitled-resilience-2024-1780352342318-02.jpg",
+      "assets/images/untitled-resilience-2024/untitled-resilience-2024-1780352342318-03.jpg",
+      "assets/images/untitled-resilience-2024/untitled-resilience-2024-1780352342318-04.jpg",
+      "assets/images/untitled-resilience-2024/untitled-resilience-2024-1780352342318-05.jpg"
+    ],
     "description": "'Untitled Resilience' is an auto-fictional short film telling the story of a young individual of Ukrainian-Russian descent who navigates migration across wars and politically unstable regions in Siberia, Crimea, Moscow, and Germany. Through social-media style video-logs and cellphone footage, the work shares the protagonist's experience with various forms of sexual and political objectification, culminating in their assertion of agency and self-empowerment. Created in collaboration with Anastasiia Zakharova, the work challenges viewers' notions of authenticity and authorship of digital content, as scripted dialogs and staged moments stand in for what cannot be documented.",
     "description_de": "'Untitled Resilience' ist ein auto fiktionaler Kurzfilm, der das Leben eines jungen Menschen ukrainisch-russischer Herkunft beleuchtet, der sich durch Kriege und politisch instabile Regionen in Sibirien, der Krim, Moskau und Deutschland bewegt. Anhand von Videoprotokollen und Handyaufnahmen im Social-Media-Stil erzählt das Werk von den Erfahrungen dieses Menschen, der verschiedenen Formen sexueller und politischer Objektivierung ausgesetzt wurde, und gipfelt in der Behauptung seiner Handlungsfähigkeit und Selbstermächtigung. Die in Zusammenarbeit mit Anastasiia Zakharova entstandene Arbeit stellt unser Konzept von Authentizität und der Urheberschaft digitaler Inhalte in Frage; gescriptete Dialoge und inszenierte Momente stehen hier für das, was sich nicht dokumentieren lässt.",
     "video_link": "https://www.untitledresilience.schamborski.com",
