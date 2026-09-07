@@ -17,8 +17,8 @@ Das erste Bild eines Items wird zum Titelbild der Kachel.
 
 Diese Kacheln bleiben im Raster grau. Jeweils mindestens ein Bild noetig.
 
-- [ ] **GSpirit** (2026)
-      Ablage: `_inbox/gspirit-2026/`
+- [ ] **G-Spirit** (2026)
+      Ablage: `_inbox/g-spirit-2026/`
 
 - [ ] **Funke** (2026)
       Ablage: `_inbox/funke-2026/`
