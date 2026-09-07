@@ -1,0 +1,502 @@
+#!/usr/bin/env python3
+"""
+website.py - Wartungswerkzeug fuer schamborski.com
+
+Alle Befehle sind von der Repo-Wurzel aus zu starten:
+
+    python3 tools/website.py check      Prueft content.json und alle Bildpfade
+    python3 tools/website.py needs      Schreibt IMAGES-NEEDED.md (Bilder-Checkliste)
+    python3 tools/website.py intake     Holt Bilder aus _inbox/<slug>/ in die Seite
+    python3 tools/website.py serve      Startet lokale Vorschau auf Port 8000
+
+"intake" ist der Bilder-Workflow: Ordner _inbox/<item-id>/ anlegen, Fotos
+hineinlegen (beliebige Namen), Befehl starten. Die Bilder werden umbenannt,
+nach assets/images/<item-id>/ verschoben und in content.json eingetragen.
+"""
+
+import datetime
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import unicodedata
+import urllib.parse
+from collections import Counter, defaultdict
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONTENT = os.path.join(ROOT, "data", "content.json")
+BACKUP_DIR = os.path.join(ROOT, "data", ".backups")
+INBOX = os.path.join(ROOT, "_inbox")
+IMAGE_ROOT = os.path.join(ROOT, "assets", "images")
+NEEDS_FILE = os.path.join(ROOT, "IMAGES-NEEDED.md")
+
+IMAGE_EXT = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"}
+KNOWN_CATEGORIES = {"works", "shows", "practice", "education", "fellowships", "press"}
+
+# Felder, die jedes Item laut bestehendem Schema hat.
+REQUIRED_FIELDS = [
+    "id", "title", "year", "sort_year", "categories", "type",
+    "specs", "institution", "link", "image", "images", "related_links",
+]
+
+
+# ---------------------------------------------------------------- Hilfsmittel
+
+def load():
+    with open(CONTENT, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def save(items):
+    """Schreibt content.json atomar und legt vorher eine Sicherung an.
+
+    Die Sicherungen liegen in data/.backups/ und damit ausserhalb von Git,
+    damit sie den Diff eines Commits nicht aufblaehen.
+    """
+    os.makedirs(BACKUP_DIR, exist_ok=True)
+    stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    shutil.copyfile(CONTENT, os.path.join(BACKUP_DIR, f"content-{stamp}.json"))
+    # nur die letzten zehn Staende aufheben
+    old_backups = sorted(f for f in os.listdir(BACKUP_DIR) if f.endswith(".json"))
+    for stale in old_backups[:-10]:
+        os.remove(os.path.join(BACKUP_DIR, stale))
+    tmp = CONTENT + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(items, fh, indent=2, ensure_ascii=False)
+        fh.write("\n")
+    json.load(open(tmp, encoding="utf-8"))  # Gegenprobe vor dem Ersetzen
+    os.replace(tmp, CONTENT)
+
+
+def resolve(path):
+    """Findet die Datei zu einem content.json-Pfad.
+
+    Beruecksichtigt URL-Encoding (%20) und die beiden Unicode-Formen, in
+    denen macOS und Git Umlaute ablegen. Gibt den Pfad auf der Platte
+    zurueck oder None.
+    """
+    if not path or path.startswith("http"):
+        return path
+    for cand in dict.fromkeys([path, urllib.parse.unquote(path)]):
+        for form in ("NFC", "NFD"):
+            full = os.path.join(ROOT, unicodedata.normalize(form, cand))
+            if os.path.exists(full):
+                return cand
+    return None
+
+
+def asset_paths(item):
+    """Alle Datei-Referenzen eines Items als (feldname, pfad)."""
+    out = []
+    if item.get("image"):
+        out.append(("image", item["image"]))
+    for i, p in enumerate(item.get("images") or []):
+        out.append((f"images[{i}]", p))
+    for i, p in enumerate(item.get("pdfs") or []):
+        out.append((f"pdfs[{i}]", p))
+    return out
+
+
+def slugify(text):
+    text = unicodedata.normalize("NFKD", text)
+    text = text.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")
+    text = "".join(c for c in text if not unicodedata.combining(c))
+    text = re.sub(r"[^a-zA-Z0-9]+", "-", text).strip("-").lower()
+    return text
+
+
+# -------------------------------------------------------------------- check
+
+def tracked_files():
+    """Pfade, wie Git sie speichert. Genau die liefert GitHub Pages aus."""
+    try:
+        out = subprocess.run(
+            ["git", "-C", ROOT, "ls-files", "-z"],
+            capture_output=True, check=True,
+        ).stdout
+    except Exception:
+        return None
+    return {
+        unicodedata.normalize("NFC", p.decode("utf-8"))
+        for p in out.split(b"\0") if p
+    }
+
+
+def cmd_check(argv):
+    items = load()
+    errors, warnings = [], []
+
+    # Der Abgleich gegen Git faengt zwei Fallen, die lokal unsichtbar bleiben:
+    # macOS ignoriert Gross- und Kleinschreibung, der Server von GitHub nicht,
+    # und eine Datei, die nie eingecheckt wurde, existiert live schlicht nicht.
+    tracked = tracked_files()
+    lower = {t.lower(): t for t in tracked} if tracked else {}
+    ids = Counter(i.get("id") for i in items)
+
+    for dupe, n in ids.items():
+        if n > 1:
+            errors.append(f"Doppelte id '{dupe}' ({n}x)")
+
+    known_ids = set(ids)
+
+    for item in items:
+        iid = item.get("id", "<ohne id>")
+
+        for field in REQUIRED_FIELDS:
+            if field not in item:
+                errors.append(f"{iid}: Feld '{field}' fehlt")
+
+        # Typen, auf die sich all.html ungeprueft verlaesst. Ein String statt
+        # einer Liste laesst die Galerie ueber die Buchstaben laufen.
+        for field in ("categories", "images", "related_links", "pdfs",
+                      "tags", "exhibited_at", "exhibited_works"):
+            val = item.get(field)
+            if val is not None and not isinstance(val, list):
+                errors.append(
+                    f"{iid}: '{field}' muss eine Liste sein, ist aber "
+                    f"{type(val).__name__} ({val!r})"
+                )
+        if not isinstance(item.get("year"), str):
+            errors.append(f"{iid}: 'year' muss ein String sein, ist {item.get('year')!r}")
+
+        for field, path in asset_paths(item):
+            if resolve(path) is None:
+                errors.append(f"{iid}: {field} zeigt ins Leere -> {path}")
+            elif tracked is not None and not path.startswith("http"):
+                real = unicodedata.normalize("NFC", urllib.parse.unquote(path))
+                if real not in tracked:
+                    if real.lower() in lower:
+                        errors.append(
+                            f"{iid}: {field} Gross-/Kleinschreibung weicht ab, "
+                            f"live ein 404 -> {path} statt {lower[real.lower()]}"
+                        )
+                    else:
+                        errors.append(
+                            f"{iid}: {field} liegt lokal, ist aber nicht in Git, "
+                            f"live ein 404 -> {path}"
+                        )
+
+        cats = item.get("categories") or []
+        if not cats:
+            warnings.append(f"{iid}: keine Kategorie, taucht nur unter 'All' auf")
+        for cat in cats:
+            if cat not in KNOWN_CATEGORIES:
+                warnings.append(f"{iid}: unbekannte Kategorie '{cat}'")
+
+        # Presseeintraege mit Link und ohne Bild sind Absicht: all.html rendert
+        # sie als Link-Vorschaukachel mit Favicon statt als Bildkachel.
+        is_link_preview = "press" in cats and item.get("link") and not item.get("image")
+        if not item.get("image") and not is_link_preview:
+            warnings.append(f"{iid}: kein Titelbild, Kachel bleibt leer")
+        if not (item.get("description") or "").strip():
+            warnings.append(f"{iid}: keine Beschreibung")
+        if not (item.get("type") or "").strip():
+            warnings.append(f"{iid}: kein Typ")
+
+        # Das Raster sortiert nach 'year'. Weicht sort_year davon ab,
+        # steht das Item an einer anderen Stelle als erwartet.
+        year = str(item.get("year") or "")
+        head = year.split("/")[0].split("-")[0]
+        if head.isdigit() and item.get("sort_year") not in (None, int(head)):
+            warnings.append(
+                f"{iid}: sort_year {item['sort_year']} passt nicht zu year {year}"
+            )
+        if not head.isdigit():
+            errors.append(f"{iid}: year '{year}' ist nicht sortierbar")
+
+        for field in ("exhibited_at", "exhibited_works", "related_works"):
+            for ref in item.get(field) or []:
+                if ref not in known_ids:
+                    warnings.append(f"{iid}: {field} verweist auf unbekanntes '{ref}'")
+
+    # Bildordner ohne zugehoeriges Item
+    used_dirs = set()
+    for item in items:
+        for _, path in asset_paths(item):
+            r = resolve(path)
+            if r and not r.startswith("http"):
+                used_dirs.add(os.path.dirname(urllib.parse.unquote(r)))
+    if os.path.isdir(IMAGE_ROOT):
+        for name in sorted(os.listdir(IMAGE_ROOT)):
+            d = os.path.join(IMAGE_ROOT, name)
+            rel = os.path.relpath(d, ROOT)
+            if not os.path.isdir(d):
+                continue
+            has_images = any(
+                os.path.splitext(f)[1].lower() in IMAGE_EXT for f in os.listdir(d)
+            )
+            if not has_images:
+                continue
+            if name in known_ids and rel not in used_dirs:
+                warnings.append(f"Ordner '{rel}' gehoert zu '{name}', wird aber nicht verlinkt")
+            elif name.startswith("new-entry-") and name not in known_ids:
+                warnings.append(f"Ordner '{rel}' gehoert zu keinem Eintrag mehr")
+
+    print(f"{len(items)} Eintraege geprueft.")
+    print(f"\nFEHLER ({len(errors)}) - bricht die Seite sichtbar:")
+    for e in errors or ["  keine"]:
+        print(f"  {e}" if e != "  keine" else e)
+    print(f"\nHINWEISE ({len(warnings)}) - unvollstaendig, aber nicht kaputt:")
+    for w in warnings or ["  keine"]:
+        print(f"  {w}" if w != "  keine" else w)
+    return 1 if errors else 0
+
+
+# -------------------------------------------------------------------- needs
+
+def cmd_needs(argv):
+    """Schreibt eine Checkliste: welches Item braucht noch welche Bilder."""
+    items = load()
+    by_id = {i["id"]: i for i in items}
+
+    lines = [
+        "# Bilder-Checkliste",
+        "",
+        "Automatisch erzeugt mit `python3 tools/website.py needs`. Nicht von Hand pflegen.",
+        "",
+        "## So laeuft die Uebergabe",
+        "",
+        "1. Ordner `_inbox/<item-id>/` anlegen (die id steht unten bei jedem Punkt).",
+        "2. Fotos hineinlegen. Die Dateinamen sind egal.",
+        "3. Die gewuenschte Reihenfolge ueber eine fuehrende Zahl steuern:",
+        "   `1-hero.jpg`, `2-detail.jpg`, `3-install.jpg`.",
+        "4. `python3 tools/website.py intake` starten.",
+        "5. `python3 tools/website.py check` starten und das Ergebnis pruefen.",
+        "",
+        "Das erste Bild eines Items wird zum Titelbild der Kachel.",
+        "",
+    ]
+
+    def gallery_size(item):
+        """Zahl der tatsaechlich vorhandenen, verschiedenen Bilder."""
+        seen = set()
+        for field, path in asset_paths(item):
+            if field.startswith("pdfs"):
+                continue
+            r = resolve(path)
+            if r and not r.startswith("http"):
+                seen.add(os.path.normpath(urllib.parse.unquote(r)))
+        return len(seen)
+
+    def needs_own_image(item):
+        """Presseeintraege mit Link rendern als Link-Vorschau und brauchen keins."""
+        cats = item.get("categories") or []
+        if "press" in cats and item.get("link"):
+            return False
+        return True
+
+    # 1. Items ohne jedes Bild
+    no_image = [i for i in items if not i.get("image") and needs_own_image(i)]
+    # 2. Items mit kaputten Referenzen
+    broken = defaultdict(list)
+    for item in items:
+        for field, path in asset_paths(item):
+            if resolve(path) is None:
+                broken[item["id"]].append(path)
+    # 3. Items mit genau einem Bild - Galerie waere besser
+    thin = [i for i in items if gallery_size(i) == 1 and needs_own_image(i)]
+
+    def block(title, entries, hint):
+        lines.append(f"## {title}")
+        lines.append("")
+        if not entries:
+            lines.append("Nichts offen.")
+            lines.append("")
+            return
+        lines.append(hint)
+        lines.append("")
+        for item in entries:
+            lines.append(f"- [ ] **{item['title']}** ({item['year']})")
+            lines.append(f"      Ablage: `_inbox/{item['id']}/`")
+            if broken.get(item["id"]):
+                for p in broken[item["id"]]:
+                    lines.append(f"      fehlt bisher: `{p}`")
+            lines.append("")
+
+    block(
+        "Ohne Titelbild",
+        no_image,
+        "Diese Kacheln bleiben im Raster grau. Jeweils mindestens ein Bild noetig.",
+    )
+    block(
+        "Mit kaputten Verweisen",
+        [by_id[k] for k in broken if by_id[k].get("image")],
+        "Hier verweist content.json auf Dateien, die es nicht gibt.",
+    )
+    block(
+        "Nur ein einziges Bild",
+        thin,
+        "Funktioniert, aber die Detailansicht zeigt keine Galerie. Weitere Bilder waeren gut.",
+    )
+
+    # Bilder, die schon im Repo liegen, aber von keinem Eintrag verlinkt werden
+    used = set()
+    for item in items:
+        for _, path in asset_paths(item):
+            r = resolve(path)
+            if r and not r.startswith("http"):
+                used.add(os.path.normpath(urllib.parse.unquote(r)))
+    unused = defaultdict(list)
+    for dirpath, _dirs, files in os.walk(IMAGE_ROOT):
+        for f in files:
+            if os.path.splitext(f)[1].lower() not in IMAGE_EXT:
+                continue
+            rel = os.path.relpath(os.path.join(dirpath, f), ROOT)
+            if os.path.normpath(rel) not in used:
+                unused[os.path.relpath(dirpath, ROOT)].append(f)
+
+    lines.append("## Schon im Repo, aber nirgends eingebunden")
+    lines.append("")
+    if not unused:
+        lines.append("Nichts.")
+        lines.append("")
+    else:
+        lines.append(
+            "Diese Dateien liegen bereits im Repo, werden aber von keinem Eintrag "
+            "verlinkt. Entweder einbinden oder loeschen."
+        )
+        lines.append("")
+        for folder in sorted(unused):
+            lines.append(f"- `{folder}/` ({len(unused[folder])} Dateien)")
+        lines.append("")
+
+    # Beschriftete Ablageordner vorbereiten, damit die Uebergabe eindeutig ist
+    prepared = []
+    for item in no_image:
+        d = os.path.join(INBOX, item["id"])
+        if not os.path.isdir(d):
+            os.makedirs(d, exist_ok=True)
+            prepared.append(item["id"])
+
+    with open(NEEDS_FILE, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines))
+    print(f"Geschrieben: {os.path.relpath(NEEDS_FILE, ROOT)}")
+    print(f"  ohne Titelbild: {len(no_image)}")
+    print(f"  kaputte Verweise: {len(broken)}")
+    print(f"  nur ein Bild: {len(thin)}")
+    print(f"  ungenutzte Dateien im Repo: {sum(len(v) for v in unused.values())}")
+    if prepared:
+        print(f"\nAblageordner angelegt unter {os.path.relpath(INBOX, ROOT)}/:")
+        for pid in prepared:
+            print(f"  _inbox/{pid}/")
+        print("Fotos dort hineinlegen, dann: python3 tools/website.py intake")
+    return 0
+
+
+# ------------------------------------------------------------------- intake
+
+def cmd_intake(argv):
+    """Uebernimmt Bilder aus _inbox/<item-id>/ in die Seite."""
+    dry = "--dry-run" in argv
+    items = load()
+    by_id = {i["id"]: i for i in items}
+
+    if not os.path.isdir(INBOX):
+        os.makedirs(INBOX, exist_ok=True)
+        print(f"Ordner {os.path.relpath(INBOX, ROOT)}/ angelegt. Er ist noch leer.")
+        print("Lege darin einen Unterordner je Eintrag an, zum Beispiel:")
+        print("  _inbox/funke-2-geist-2026/")
+        return 0
+
+    folders = sorted(
+        d for d in os.listdir(INBOX)
+        if os.path.isdir(os.path.join(INBOX, d)) and not d.startswith(".")
+    )
+    if not folders:
+        print(f"{os.path.relpath(INBOX, ROOT)}/ enthaelt keine Unterordner.")
+        print("Erwartet wird ein Ordner je Eintrag, benannt wie die id in content.json.")
+        return 0
+
+    touched = False
+    for folder in folders:
+        src_dir = os.path.join(INBOX, folder)
+        files = sorted(
+            f for f in os.listdir(src_dir)
+            if os.path.splitext(f)[1].lower() in IMAGE_EXT and not f.startswith(".")
+        )
+        if not files:
+            print(f"[{folder}] leer, uebersprungen")
+            continue
+        if folder not in by_id:
+            print(f"[{folder}] KEIN Eintrag mit dieser id in content.json - uebersprungen")
+            print(f"          vorhandene ids beginnen z.B. mit: "
+                  f"{', '.join(sorted(by_id)[:3])} ...")
+            continue
+
+        item = by_id[folder]
+        dest_dir = os.path.join(IMAGE_ROOT, folder)
+        existing = []
+        if os.path.isdir(dest_dir):
+            existing = sorted(
+                f for f in os.listdir(dest_dir)
+                if os.path.splitext(f)[1].lower() in IMAGE_EXT
+            )
+        start = len(existing) + 1
+
+        added = []
+        for n, fname in enumerate(files, start=start):
+            ext = os.path.splitext(fname)[1].lower()
+            ext = ".jpg" if ext == ".jpeg" else ext
+            new_name = f"{folder}-{n:02d}{ext}"
+            rel = f"assets/images/{folder}/{new_name}"
+            print(f"[{folder}] {fname}  ->  {rel}")
+            if not dry:
+                os.makedirs(dest_dir, exist_ok=True)
+                shutil.move(os.path.join(src_dir, fname), os.path.join(dest_dir, new_name))
+            added.append(rel)
+
+        if not dry and added:
+            gallery = list(item.get("images") or [])
+            for rel in added:
+                if rel not in gallery:
+                    gallery.append(rel)
+            item["images"] = gallery
+            if not item.get("image"):
+                item["image"] = gallery[0]
+                print(f"[{folder}] Titelbild gesetzt: {gallery[0]}")
+            touched = True
+
+        if not dry and not os.listdir(src_dir):
+            os.rmdir(src_dir)
+
+    if dry:
+        print("\nProbelauf, nichts veraendert.")
+        return 0
+    if touched:
+        save(items)
+        print("\ncontent.json aktualisiert, vorheriger Stand in data/.backups/.")
+        print("Jetzt pruefen mit: python3 tools/website.py check")
+    else:
+        print("\nNichts zu tun.")
+    return 0
+
+
+# -------------------------------------------------------------------- serve
+
+def cmd_serve(argv):
+    port = argv[0] if argv else "8000"
+    print(f"Vorschau auf http://localhost:{port}/  (Abbruch mit Strg+C)")
+    os.chdir(ROOT)
+    subprocess.call([sys.executable, "-m", "http.server", port])
+    return 0
+
+
+COMMANDS = {
+    "check": cmd_check,
+    "needs": cmd_needs,
+    "intake": cmd_intake,
+    "serve": cmd_serve,
+}
+
+
+def main():
+    if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
+        print(__doc__)
+        return 1
+    return COMMANDS[sys.argv[1]](sys.argv[2:])
+
+
+if __name__ == "__main__":
+    sys.exit(main())

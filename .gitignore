@@ -29,3 +29,8 @@ Thumbs.db
 temp/
 tmp/
 backup/
+# Bilder-Ablage, wird von tools/website.py geleert
+_inbox/
+data/.backups/
+__pycache__/
+*.pyc

@@ -4,7 +4,7 @@
     "title": "We Stay Home",
     "year": "2017",
     "sort_date": "2017-07",
-    "sort_year": 2026,
+    "sort_year": 2017,
     "categories": [
       "shows"
     ],
@@ -24,7 +24,7 @@
     "title": "Monuments for a Patch of Grass in Wolfsburg",
     "year": "2018",
     "sort_date": "2018-05",
-    "sort_year": 2026,
+    "sort_year": 2018,
     "categories": [
       "shows"
     ],
@@ -44,8 +44,10 @@
     "title": "Funplastic",
     "year": "2017",
     "sort_date": "2017-04",
-    "sort_year": 2026,
-    "categories": [],
+    "sort_year": 2017,
+    "categories": [
+      "shows"
+    ],
     "type": "",
     "specs": "",
     "institution": "Kunstverein Wolfsburg City Gallery in Alvar-Alto-House",
@@ -78,7 +80,7 @@
     "description": "Nickii Ai is a hybrid performance that allows visitors in a room to ask an AI questions without realizing the AI is me streaming from another room. I have designed looping videos of my face, a thinking animation, and an entire user interface to create the illusion of artificial intelligence. This performance questions what it means to be an artist in times of AI, and how our perception of humanity, empathy, and connection suddenly changes when we can simply prompt a machine for conversation. The performance has an uncanny quality, as spectators slowly realize that I might be human - sweating, stuttering, and synthesizing answers without a database.",
     "images": [
       "assets/images/Nickii_AI/nickii_ai_photo.png",
-      "assets/images/nickii-ai/nickii-ai-1778948691684-01.jpg"
+      "assets/images/nickii-ai/nickii-ai-1778948253396.jpg"
     ],
     "related_links": []
   },
@@ -165,9 +167,9 @@
     "type": "Article / Photo Essay",
     "specs": "Co-authored with Janjaa (Helen S. Lee), F Newsmagazine, May 4, 2026",
     "institution": "F Newsmagazine",
-    "link": null,
+    "link": "https://fnewsmagazine.com/2026/05/whitney-biennial-2026/",
     "image": "https://images.fnewsmagazine.com/2026/05/Nickii-Schamborski-and-Helen-S.-Lee-at-the-Whitney-Biennial-New-York-March-3-2026.jpeg",
-    "images": "",
+    "images": [],
     "description": "Co-authored report on the Whitney Biennial 2026, written from the perspective of two international graduate students — one from South Korea, one from Germany — attending the press opening on March 3, 2026. The article covers works by Zach Blas (CULTUS), Sung Tieu (System's Void), Andrea Fraser, Leo Castañeda (Camoflux Recall Grotto), Gabriela Ruiz (Homo Machina), Ignacio Gatica (Sanhattan), and Joshua Citarella (Doomscroll), with interviews conducted with Citarella, Gatica, and Ruiz. The piece examines questions of institutional relevance, digital culture, and the decreasing prominence of American institutions on the global art stage.",
     "collaborators": [
       {
@@ -432,10 +434,6 @@
     "image": "assets/images/SAIC_Studio.jpeg",
     "images": [
       "assets/images/SAIC_Studio.jpeg",
-      "assets/images/saic-studio-view-2025.jpeg",
-      "assets/images/saic-ta-portrait-2025.jpeg",
-      "assets/images/saic-ta-studio-2025.jpeg",
-      "assets/images/saic-studio-workspace-2025.jpeg",
       "assets/images/TA-SAIC.JPG",
       "assets/images/SAIC.jpeg"
     ],
@@ -571,7 +569,6 @@
     "images": [
       "assets/images/CyberCindy/cybercindy-2025.jpg",
       "assets/images/CyberCindy/cybercindy-2025-1.png",
-      "assets/images/CyberCindy/cybercindy-2025-2.png",
       "assets/images/CyberCindy/cybercindy-2025-3.png",
       "assets/images/CyberCindy/cybercindy-2025-4.png",
       "assets/images/CyberCindy/cybercindy-2025-5.png",
@@ -950,10 +947,10 @@
       "assets/images/kunspreisVerleihung-28.jpg",
       "assets/images/kunspreisVerleihung-29.jpg",
       "assets/images/kunspreisVerleihung-30.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle2.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle4.jpg",
-      "assets/images/Memärchen_Bundeskunsthalle5.jpg"
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle.jpg",
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle2.jpg",
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle4.jpg",
+      "assets/images/Memarchen/Memärchen_Bundeskunsthalle5.jpg"
     ],
     "image_credit": "Image: Bundeskunsthalle Bonn",
     "description": "Group exhibition of the 25 winners of the 25th Bundespreis für Kunststudierende at Bundeskunsthalle Bonn, November 12, 2021 – January 30, 2022. Jury statement: 'Die Arbeiten von Nick Schamborski sind auf eine humorvolle Art didaktisch. Sie holen uns dort ab wo wir stehen. Sie sind kritisch, indem sie historische Erzählungen und aktuelle gesellschaftliche Zustände direkt befragen.' Prize includes €30,000 prize money and €18,000 production stipends.",
@@ -1417,12 +1414,10 @@
     "specs": "Das Paradoxon der Kunstvermittlung in den sozialen Medien",
     "institution": "appropriate! Journal, Issue 1",
     "link": "https://www.appropriate-journal.art/schamborski",
-    "image": "assets/images/appropriate.png",
+    "image": null,
     "description": "In this essay, I explore the paradox of art mediation on social media platforms, where the desire for critical engagement and social change is often at odds with the algorithms and dynamics of these platforms. I discuss how artists and mediators navigate this tension, using social media as a tool for activism while also critiquing its limitations and potential harms.",
     "description_de": "In diesem Essay untersuche ich das Paradoxon der Kunstvermittlung auf sozialen Medien, wo der Wunsch nach kritischem Engagement und sozialem Wandel oft im Widerspruch zu den Algorithmen und Dynamiken dieser Plattformen steht. Ich diskutiere, wie Künstler*innen und Vermittler*innen mit dieser Spannung umgehen, indem sie soziale Medien als Werkzeug für Aktivismus nutzen und gleichzeitig ihre Einschränkungen und potenziellen Schäden kritisieren.",
-    "images": [
-      "assets/images/appropriate.png"
-    ],
+    "images": [],
     "related_links": []
   },
   {
@@ -1550,10 +1545,10 @@
     "image": "assets/images/Verwehrte%20Zuflucht/3Z9G0330cccc.jpg",
     "images": [
       "assets/images/Verwehrte%20Zuflucht/3Z9G0330cccc.jpg",
-      "assets/images/Verwehrte%20Zuflucht/Göttingenready.png",
-      "assets/images/Verwehrte%20Zuflucht/Hannover.png",
-      "assets/images/Verwehrte%20Zuflucht/Stendensen.png",
-      "assets/images/Verwehrte%20Zuflucht/Wolfsburg.png"
+      "assets/images/Göttingenready.png",
+      "assets/images/Hannover.png",
+      "assets/images/Stendensen.png",
+      "assets/images/Wolfsburg.png"
     ],
     "related_links": []
   },
@@ -1699,7 +1694,7 @@
       "assets/images/TutorCandiceBreitz/71138886_542161736541756_4748176548869166736_n.jpg",
       "assets/images/TutorCandiceBreitz/73039226_894809994246546_6574415024666533579_n.jpg",
       "assets/images/TutorCandiceBreitz/45708233_576222259515445_7102434439586827717_n.jpg",
-      "assets/images/TutorCandiceBreitz/44858418_257687998242928_5152362549725938126_n.jpg"
+      "assets/images/TutorCandiceBreitz/44858418_257687988242928_5152362549725938126_n.jpg"
     ],
     "description": "Tutor for Prof. Candice Breitz, Eli Cortiñas, and Agnieszka Polska at Braunschweig University of Art, 2018–2020.",
     "related_links": []
@@ -1787,7 +1782,7 @@
     "images": [
       "assets/images/Angels%20Tutorial/AngelsTutorialStill.tiffcc.jpg",
       "assets/images/Angels%20Tutorial/AngelstutorialLVN.png",
-      "assets/images/Angels%20Tutorial/IMG_5071gerade.jpg"
+      "assets/images/IMG_5071gerade.jpg"
     ],
     "related_links": []
   },
@@ -1927,9 +1922,9 @@
     "link": null,
     "description": "A collage to take part in featuring photographed objects from my home. The colours on the backs refer to the particular country of production. A mobile, interactive overview of global connections in a private household.",
     "description_de": "Eine Collage zum Mitmachen mit abfotografierten Gegenständen aus meinem Zuhause. Die Farben auf den Rückseiten verweisen auf das jeweilige Produktionsland. Eine bewegliche Übersicht der globalen Zusammenhänge im privaten Haushalt.",
-    "image": "assets/images/Verstricke%20Verantwortung/IMG_7970.JPG",
+    "image": "assets/images/IMG_7970.JPG",
     "images": [
-      "assets/images/Verstricke%20Verantwortung/IMG_7970.JPG",
+      "assets/images/IMG_7970.JPG",
       "assets/images/Festivals/Biennials/entangled responsibility.png"
     ],
     "related_links": []

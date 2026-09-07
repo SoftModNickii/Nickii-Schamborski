@@ -245,9 +245,11 @@
         }
         
         // Regular card logic (unchanged)
-        // Set background image directly on card
+        // Set background image directly on card.
+        // Absolute URLs must not get the ../ prefix, sonst zeigt der Pfad ins Leere.
         if (item.image) {
-            card.style.backgroundImage = `url(../${item.image})`;
+            const src = item.image.startsWith('http') ? item.image : '../' + item.image;
+            card.style.backgroundImage = `url(${src})`;
         }
         
         const inner = document.createElement('div');
