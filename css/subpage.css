@@ -315,10 +315,30 @@
     transform: translateY(100%);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
+    /* Auf schmalen Kacheln ist der Inhalt hoeher als die Flaeche. Ohne
+       diese Zeile laesst justify-content: center ihn nach oben ueberlaufen,
+       wodurch die Jahreszahl schon vor dem Aufklappen im Bild stand. */
+    overflow: hidden;
 }
 
-.grid-card:hover .card-back {
-    transform: translateY(0);
+/* Nur auf Geraeten mit echtem Zeiger. Auf Beruehrungsgeraeten gibt es kein
+   Hover, dort waere die Schaltflaeche auf der Rueckseite unerreichbar.
+   Ein Tippen auf die Kachel oeffnet stattdessen direkt die Detailansicht. */
+@media (hover: hover) {
+    .grid-card:hover .card-back {
+        transform: translateY(0);
+    }
+}
+
+/* Ohne Zeiger bleibt die Rueckseite ohnehin unerreichbar, ein Tippen
+   oeffnet direkt die Detailansicht. Sie wird deshalb ganz ausgeblendet.
+   Das behebt zugleich, dass ihr backdrop-filter in Chrome dem
+   overflow: hidden der Kachel entkommt und die Jahreszahl unter der
+   Kachel sichtbar wurde. */
+@media (hover: none) {
+    .card-back {
+        display: none;
+    }
 }
 
 .card-back * {
@@ -845,66 +865,84 @@
 }
 
 @media (max-width: 768px) {
+    /* Zwei Spalten. Bei dreien blieben auf einem Telefon rund 119 Pixel je
+       Kachel, worin weder Titel noch Bild zu erkennen waren. */
     .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
-    
+
     .horizontal-nav {
         gap: 1.5rem;
         flex-wrap: wrap;
     }
-    
+
     .horizontal-nav a {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
+        padding-bottom: 0.5rem;
     }
-    
+
     .grid-page {
-        padding: 4vh 2vw;
+        padding: 4vh 5vw;
     }
-    
-    .grid-card {
-        aspect-ratio: 1 / 1;
-    }
-    
-    .card-front h3 {
-        font-size: 0.5rem;
-        letter-spacing: 0.05em;
-        padding: 0 0.3rem;
-        line-height: 1.4;
-    }
-    
+
     .card-front {
-        padding: 0.8rem;
+        padding: 0.6rem;
     }
-    
+
+    .card-front h3 {
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        padding: 0.5rem 0.6rem;
+        line-height: 1.35;
+    }
+
     .card-back {
-        padding: 1rem;
-        justify-content: flex-start;
-        padding-top: 1.5rem;
+        padding: 1rem 0.8rem;
+        justify-content: center;
     }
-    
+
     .card-year {
-        font-size: 0.6rem;
-        margin-bottom: 0.3rem;
-        word-break: break-word;
+        font-size: 0.75rem;
+        margin-bottom: 0.35rem;
         overflow-wrap: break-word;
         max-width: 100%;
     }
-    
+
     .card-type,
     .card-specs,
     .card-institution {
-        font-size: 0.5rem;
+        font-size: 0.65rem;
         line-height: 1.4;
         margin-bottom: 0.3rem;
     }
-    
+
     .detail-btn,
     .cite-btn {
-        font-size: 0.55rem;
-        padding: 0.4rem 0.8rem;
-        margin-top: 0.5rem;
+        font-size: 0.7rem;
+        padding: 0.6rem 1rem;
+        margin-top: 0.6rem;
+    }
+
+    .press-sticker {
+        font-size: 0.5rem;
+        top: 6px;
+        left: 6px;
+        padding: 3px 6px;
+    }
+}
+
+/* Nur sehr schmale Geraete bekommen eine Spalte. Bei 390 Pixeln bleiben
+   zwei Kacheln von je rund 167 Pixeln, was gut lesbar ist und die Liste
+   halb so lang macht. */
+@media (max-width: 359px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .card-front h3 {
+        font-size: 0.85rem;
     }
 }
 /* === SEARCH TOOL (Expanding from Side) === */
@@ -1039,4 +1077,64 @@
 .external-icon {
     font-size: 1.1rem;
     font-weight: bold;
+}
+
+/* === HANDY: DETAILANSICHT === */
+@media (max-width: 768px) {
+    /* Zentriert abgeschnitten: ist der Inhalt hoeher als der Bildschirm,
+       verschwindet bei align-items: center der obere Teil unerreichbar. */
+    .detail-modal {
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .detail-content {
+        padding: 3.5rem 1.25rem 2rem;
+        max-height: 100%;
+        min-height: 100%;
+    }
+
+    .detail-close {
+        top: 0.5rem;
+        right: 0.75rem;
+        width: 44px;
+        height: 44px;
+        font-size: 2rem;
+    }
+
+    .detail-content h2 {
+        font-size: 1.4rem;
+        line-height: 1.25;
+    }
+
+    .gallery-thumbnails {
+        gap: 0.4rem;
+    }
+
+    .gallery-thumb {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Fingerfreundliche Flaechen statt Mausziele */
+    .gallery-prev,
+    .gallery-next,
+    .external-link-btn,
+    .detail-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .detail-gallery img.gallery-image {
+        max-height: 55vh;
+    }
+}
+
+/* === HANDY: SUCHE NICHT UEBER DEN INHALT LEGEN === */
+@media (max-width: 768px) {
+    .search-tool {
+        top: auto;
+        bottom: 5rem;
+        transform: none;
+    }
 }

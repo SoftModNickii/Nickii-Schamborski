@@ -198,6 +198,9 @@
     function createCard(item) {
         const card = document.createElement('div');
         card.className = 'grid-card';
+        // Wird beim Tippen ausgewertet. Ohne Hover gaebe es auf einem
+        // Telefon sonst keinen Weg in die Detailansicht.
+        card.dataset.itemId = item.id;
         
         // Check if this should be a link preview card
         const isLinkPreview = item.categories.includes('press') && 
@@ -320,6 +323,18 @@
 
     // Detail Modal Functions
     document.addEventListener('click', (e) => {
+        // Tippen oder Klicken auf die Kachel selbst. Schaltflaechen und
+        // Links behalten ihr eigenes Verhalten, damit "Cite this" und die
+        // Quellenlinks weiter funktionieren.
+        const card = e.target.closest('.grid-card');
+        if (card && !e.target.closest('button') && !e.target.closest('a')) {
+            const item = allContent.find(i => i.id === card.dataset.itemId);
+            if (item) {
+                showDetailModal(item);
+                return;
+            }
+        }
+
         // Open detail view
         if (e.target.classList.contains('detail-btn')) {
             const itemId = e.target.getAttribute('data-id');
