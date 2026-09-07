@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter - Nickii Schamborski</title>
+
+    <meta name="description" content="Newsletter by Nickii Schamborski. Occasional notes on new works, exhibitions and workshops. No tracking, unsubscribe at any time.">
+    <link rel="canonical" href="https://schamborski.com/newsletter/">
+
+    <meta property="og:title" content="Newsletter - Nickii Schamborski">
+    <meta property="og:description" content="Occasional notes on new works, exhibitions and workshops.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://schamborski.com/newsletter/">
+    <meta property="og:image" content="https://schamborski.com/assets/images/preview.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>N</text></svg>">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: #FAFAF8;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .page {
+            flex: 1;
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 10vh 6vw 6vh;
+        }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .eyebrow a { color: inherit; text-decoration: none; }
+        .eyebrow a:hover { color: #C026D3; }
+
+        h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(1.8rem, 7vw, 2.6rem);
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: 0.02em;
+            color: #C026D3;
+            margin-bottom: 1.5rem;
+        }
+
+        .lead {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 2.5rem;
+        }
+
+        .lead + .lead { margin-top: -1.5rem; }
+
+        /* === FORMULAR === */
+        .signup {
+            background: #fff;
+            border: 1px solid #E8E8E6;
+            padding: 2rem 1.75rem;
+        }
+
+        .field { margin-bottom: 1.25rem; }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="email"],
+        input[type="text"] {
+            width: 100%;
+            /* 16px verhindert, dass iOS beim Antippen hineinzoomt */
+            font-size: 16px;
+            font-family: 'Manrope', sans-serif;
+            padding: 0.85rem 1rem;
+            border: 1px solid #D8D8D4;
+            background: #FAFAF8;
+            color: #000;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        input[type="text"]:focus {
+            border-color: #C026D3;
+            background: #fff;
+        }
+
+        .consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .consent input[type="checkbox"] {
+            /* Grosse Trefferflaeche fuer den Finger */
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            margin-top: 2px;
+            accent-color: #C026D3;
+        }
+
+        .consent label {
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+        }
+
+        .consent a { color: #C026D3; }
+
+        button {
+            width: 100%;
+            min-height: 48px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #fff;
+            background: #C026D3;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover { background: #9333EA; }
+
+        .fineprint {
+            font-size: 0.75rem;
+            line-height: 1.7;
+            color: #888;
+            margin-top: 1.5rem;
+        }
+
+        /* === RECHTLICHES === */
+        .legal {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #E8E8E6;
+        }
+
+        .legal h2 {
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .legal p {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: #444;
+            margin-bottom: 0.85rem;
+        }
+
+        .legal a { color: #C026D3; }
+
+        footer {
+            padding: 3vh 6vw;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #E8E8E6;
+        }
+
+        footer a {
+            color: #999;
+            text-decoration: none;
+            padding: 0.4rem 0;
+            display: inline-block;
+        }
+
+        footer a:hover { color: #C026D3; }
+
+        @media (max-width: 600px) {
+            .page { padding: 6vh 6vw 4vh; }
+            .signup { padding: 1.5rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <p class="eyebrow"><a href="../index.html">← Nickii Schamborski</a></p>
+
+        <h1>Newsletter</h1>
+
+        <p class="lead">
+            Occasional notes from the studio: new works, upcoming exhibitions,
+            workshops and the odd thing I have been building. A few times a year,
+            never more.
+        </p>
+
+        <p class="lead">
+            No tracking pixels, no third-party advertising, no sharing of your
+            address. One click unsubscribes you.
+        </p>
+
+        <!--
+            HINWEIS ZUM FORMULARZIEL
+
+            Uebergangsloesung: das Formular schickt derzeit eine E-Mail an
+            das Studio, die Adresse wird von Hand aufgenommen. Sobald ein
+            Anbieter feststeht, hier dessen Formular-Adresse eintragen und
+            die Feldnamen angleichen. Bewusst ohne eingebettetes Widget,
+            damit kein fremdes Skript laedt und die Seite ohne
+            Cookie-Banner auskommt.
+
+            MailerLite:  action="https://assets.mailerlite.com/jsonp/<ID>/forms/<FORM>/subscribe"
+                         Feldnamen: fields[email], fields[name]
+            Buttondown:  action="https://buttondown.email/api/emails/embed-subscribe/<USER>"
+                         Feldnamen: email
+            Steady:      action="https://steadyhq.com/de/backend/subscriptions/..."
+        -->
+        <form class="signup" action="mailto:studio@schamborski.com"
+              method="post" enctype="text/plain">
+            <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email"
+                       autocomplete="email" inputmode="email"
+                       placeholder="you@example.com" required>
+            </div>
+
+            <div class="field">
+                <label for="name">First name <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+                <input type="text" id="name" name="name" autocomplete="given-name">
+            </div>
+
+            <div class="consent">
+                <input type="checkbox" id="consent" name="consent" value="yes" required>
+                <label for="consent">
+                    I would like to receive the newsletter by email and consent to
+                    my address being stored for this purpose. I can withdraw this
+                    at any time. See the
+                    <a href="../datenschutz.html">privacy policy</a>.
+                </label>
+            </div>
+
+            <button type="submit">Subscribe</button>
+
+            <p class="fineprint">
+                You will receive an email asking you to confirm your address.
+                The subscription only becomes active once you click the link in
+                that email (double opt-in).
+            </p>
+
+            <p class="fineprint">
+                Trouble with the form? Just write to
+                <a href="mailto:studio@schamborski.com?subject=Newsletter"
+                   style="color:#C026D3">studio@schamborski.com</a>
+                with the word &ldquo;newsletter&rdquo; and I will add you.
+            </p>
+        </form>
+
+        <div class="legal">
+            <h2>Datenschutz auf einen Blick</h2>
+            <p>
+                Für den Versand des Newsletters werden Ihre E-Mail-Adresse und,
+                falls angegeben, Ihr Vorname gespeichert. Rechtsgrundlage ist Ihre
+                Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.
+            </p>
+            <p>
+                Nach der Anmeldung erhalten Sie eine E-Mail mit einem
+                Bestätigungslink. Erst mit dem Klick auf diesen Link wird die
+                Anmeldung wirksam (Double-Opt-in). So ist sichergestellt, dass
+                niemand Sie ohne Ihr Wissen anmeldet.
+            </p>
+            <p>
+                Sie können Ihre Einwilligung jederzeit widerrufen, etwa über den
+                Abmeldelink am Ende jeder E-Mail oder formlos an
+                <a href="mailto:studio@schamborski.com">studio@schamborski.com</a>.
+                Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung
+                bleibt davon unberührt. Nach dem Widerruf wird Ihre Adresse
+                gelöscht.
+            </p>
+            <p>
+                Die Adressen werden nicht an Dritte weitergegeben und nicht für
+                Werbung Dritter verwendet. Weitere Angaben finden Sie in der
+                <a href="../datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <a href="../impressum.html">Impressum</a> &nbsp;|&nbsp;
+        <a href="../datenschutz.html">Datenschutz</a> &nbsp;|&nbsp;
+        <a href="mailto:studio@schamborski.com">Contact</a>
+    </footer>
+</body>
+</html>
