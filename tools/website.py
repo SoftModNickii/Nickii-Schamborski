@@ -33,6 +33,12 @@ IMAGE_ROOT = os.path.join(ROOT, "assets", "images")
 NEEDS_FILE = os.path.join(ROOT, "IMAGES-NEEDED.md")
 
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"}
+# Was direkt aus Fotos vom iPhone kommt. Wird beim Einlesen zu JPEG gewandelt,
+# weil Browser HEIC nicht zuverlaessig anzeigen.
+CONVERT_EXT = {".heic", ".heif"}
+INBOX_EXT = IMAGE_EXT | CONVERT_EXT
+# Breite, auf die grosse Aufnahmen heruntergerechnet werden.
+MAX_WIDTH = 2400
 KNOWN_CATEGORIES = {"works", "shows", "practice", "education", "fellowships", "press"}
 
 # Felder, die jedes Item laut bestehendem Schema hat.
@@ -97,6 +103,54 @@ def asset_paths(item):
     for i, p in enumerate(item.get("pdfs") or []):
         out.append((f"pdfs[{i}]", p))
     return out
+
+
+def prepare_image(src, dest):
+    """Legt src als web-taugliches Bild unter dest ab.
+
+    HEIC wird zu JPEG gewandelt, zu breite Aufnahmen werden verkleinert.
+    Beides erledigt sips, das auf jedem Mac vorhanden ist. Fehlt sips oder
+    schlaegt es fehl, wird die Datei unveraendert verschoben.
+    """
+    ext = os.path.splitext(src)[1].lower()
+    needs_convert = ext in CONVERT_EXT
+    if not shutil.which("sips"):
+        shutil.move(src, dest)
+        return "unveraendert (sips nicht gefunden)"
+
+    width = None
+    try:
+        out = subprocess.run(
+            ["sips", "-g", "pixelWidth", src],
+            capture_output=True, text=True, check=True,
+        ).stdout
+        for line in out.splitlines():
+            if "pixelWidth:" in line:
+                width = int(line.split(":")[1].strip())
+    except Exception:
+        pass
+
+    cmd = ["sips"]
+    note = []
+    if needs_convert:
+        cmd += ["-s", "format", "jpeg", "-s", "formatOptions", "85"]
+        note.append("HEIC zu JPEG")
+    if width and width > MAX_WIDTH:
+        cmd += ["--resampleWidth", str(MAX_WIDTH)]
+        note.append(f"{width} auf {MAX_WIDTH} px verkleinert")
+
+    if not note:
+        shutil.move(src, dest)
+        return "unveraendert"
+
+    cmd += [src, "--out", dest]
+    try:
+        subprocess.run(cmd, capture_output=True, check=True)
+        os.remove(src)
+        return ", ".join(note)
+    except Exception:
+        shutil.move(src, dest)
+        return "unveraendert (sips fehlgeschlagen)"
 
 
 def slugify(text):
@@ -362,6 +416,22 @@ def cmd_needs(argv):
             lines.append(f"- `{folder}/` ({len(unused[folder])} Dateien)")
         lines.append("")
 
+    # Leere Ablageordner entfernen, die zu keinem Eintrag mehr passen,
+    # etwa nachdem eine id umbenannt wurde.
+    stale = []
+    if os.path.isdir(INBOX):
+        for name in sorted(os.listdir(INBOX)):
+            d = os.path.join(INBOX, name)
+            if not os.path.isdir(d) or name.startswith("."):
+                continue
+            if name in by_id and any(i["id"] == name for i in no_image):
+                continue
+            leftovers = [f for f in os.listdir(d) if not f.startswith(".")]
+            if leftovers:
+                continue  # nie etwas wegwerfen, worin noch Dateien liegen
+            os.rmdir(d)
+            stale.append(name)
+
     # Beschriftete Ablageordner vorbereiten, damit die Uebergabe eindeutig ist
     prepared = []
     for item in no_image:
@@ -377,6 +447,8 @@ def cmd_needs(argv):
     print(f"  kaputte Verweise: {len(broken)}")
     print(f"  nur ein Bild: {len(thin)}")
     print(f"  ungenutzte Dateien im Repo: {sum(len(v) for v in unused.values())}")
+    if stale:
+        print(f"  leere Altordner entfernt: {', '.join(stale)}")
     if prepared:
         print(f"\nAblageordner angelegt unter {os.path.relpath(INBOX, ROOT)}/:")
         for pid in prepared:
@@ -414,8 +486,16 @@ def cmd_intake(argv):
         src_dir = os.path.join(INBOX, folder)
         files = sorted(
             f for f in os.listdir(src_dir)
-            if os.path.splitext(f)[1].lower() in IMAGE_EXT and not f.startswith(".")
+            if os.path.splitext(f)[1].lower() in INBOX_EXT and not f.startswith(".")
         )
+        skipped = [
+            f for f in os.listdir(src_dir)
+            if not f.startswith(".")
+            and os.path.splitext(f)[1].lower() not in INBOX_EXT
+            and os.path.isfile(os.path.join(src_dir, f))
+        ]
+        for f in skipped:
+            print(f"[{folder}] uebergangen, kein Bild: {f}")
         if not files:
             print(f"[{folder}] leer, uebersprungen")
             continue
@@ -438,13 +518,19 @@ def cmd_intake(argv):
         added = []
         for n, fname in enumerate(files, start=start):
             ext = os.path.splitext(fname)[1].lower()
-            ext = ".jpg" if ext == ".jpeg" else ext
+            if ext in CONVERT_EXT or ext == ".jpeg":
+                ext = ".jpg"
             new_name = f"{folder}-{n:02d}{ext}"
             rel = f"assets/images/{folder}/{new_name}"
-            print(f"[{folder}] {fname}  ->  {rel}")
-            if not dry:
+            if dry:
+                print(f"[{folder}] {fname}  ->  {rel}")
+            else:
                 os.makedirs(dest_dir, exist_ok=True)
-                shutil.move(os.path.join(src_dir, fname), os.path.join(dest_dir, new_name))
+                note = prepare_image(
+                    os.path.join(src_dir, fname), os.path.join(dest_dir, new_name)
+                )
+                size = os.path.getsize(os.path.join(dest_dir, new_name)) // 1024
+                print(f"[{folder}] {fname}  ->  {rel}  [{note}, {size} kB]")
             added.append(rel)
 
         if not dry and added:
