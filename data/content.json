@@ -289,7 +289,7 @@
   },
   {
     "id": "artfacts-profile-2026",
-    "title": "Artist Profile: Nick Schamborski",
+    "title": "Artist Profile: Nickii Schamborski",
     "year": "2026",
     "sort_year": 2026,
     "sort_date": "2026-05",
@@ -420,7 +420,7 @@
   },
   {
     "id": "saic-mfa-2025-2028",
-    "title": "Master of Fine Arts (MFA), Art and Technology Studies",
+    "title": "Master of Fine Arts (MFA), Art and Technology / Sound Practices",
     "year": "2025/2028",
     "sort_year": 2025,
     "sort_date": "2025-08",
@@ -470,7 +470,7 @@
     "institution": "School of the Art Institute of Chicago",
     "link": "https://www.saic.edu/magazine/fall25/meet-the-class",
     "image": "assets/images/Meettheclass.jpg",
-    "description": "Featured profile in SAIC Magazine's Fall 2025 'Meet the Class' series, introducing incoming MFA students in Art and Technology Studies.",
+    "description": "Featured profile in SAIC Magazine's Fall 2025 'Meet the Class' series, introducing incoming MFA students in Art and Technology / Sound Practices.",
     "csl": {
       "type": "webpage",
       "author": [
@@ -762,7 +762,7 @@
   },
   {
     "id": "kunstverein-artist-profile-2023",
-    "title": "Artist Profile: Nick Schamborski",
+    "title": "Artist Profile: Nickii Schamborski",
     "year": "2023",
     "sort_year": 2023,
     "sort_date": "2023-05",
@@ -953,7 +953,7 @@
       "assets/images/Memarchen/Memärchen_Bundeskunsthalle5.jpg"
     ],
     "image_credit": "Image: Bundeskunsthalle Bonn",
-    "description": "Group exhibition of the 25 winners of the 25th Bundespreis für Kunststudierende at Bundeskunsthalle Bonn, November 12, 2021 – January 30, 2022. Jury statement: 'Die Arbeiten von Nick Schamborski sind auf eine humorvolle Art didaktisch. Sie holen uns dort ab wo wir stehen. Sie sind kritisch, indem sie historische Erzählungen und aktuelle gesellschaftliche Zustände direkt befragen.' Prize includes €30,000 prize money and €18,000 production stipends.",
+    "description": "Group exhibition of the 25 winners of the 25th Bundespreis für Kunststudierende at Bundeskunsthalle Bonn, November 12, 2021 – January 30, 2022. Jury statement: 'Die Arbeiten von Nickii Schamborski sind auf eine humorvolle Art didaktisch. Sie holen uns dort ab wo wir stehen. Sie sind kritisch, indem sie historische Erzählungen und aktuelle gesellschaftliche Zustände direkt befragen.' Prize includes €30,000 prize money and €18,000 production stipends.",
     "related_links": [],
     "pdfs": [
       "assets/pdfs/Lexmark_Scan24-08-2021-092429-1.pdf"
@@ -1039,7 +1039,7 @@
   },
   {
     "id": "bundeskunsthalle-video-youtube-2021",
-    "title": "Nick Schamborski - Bundespreis fur Kunststudierende (Video Portrait)",
+    "title": "Nickii Schamborski - Bundespreis fur Kunststudierende (Video Portrait)",
     "year": "2021",
     "sort_year": 2021,
     "sort_date": "2021-11",
@@ -1055,14 +1055,14 @@
     "link": "https://www.youtube.com/watch?v=F3IuoTS9gwM",
     "image": null,
     "images": [],
-    "description": "Official Bundeskunsthalle video portrait of Nick Schamborski.",
+    "description": "Official Bundeskunsthalle video portrait of Nickii Schamborski.",
     "related_links": [
       "https://www.facebook.com/Bundeskunsthalle/videos/nick-schamborski-bundespreis-f%C3%BCr-kunststudierende/271572561577311/"
     ]
   },
   {
     "id": "bundeskunsthalle-video-facebook-2021",
-    "title": "Nick Schamborski - Bundespreis fur Kunststudierende (Video Portrait)",
+    "title": "Nickii Schamborski - Bundespreis fur Kunststudierende (Video Portrait)",
     "year": "2021",
     "sort_year": 2021,
     "sort_date": "2021-11",
@@ -1078,14 +1078,14 @@
     "link": "https://www.facebook.com/Bundeskunsthalle/videos/nick-schamborski-bundespreis-f%C3%BCr-kunststudierende/271572561577311/",
     "image": null,
     "images": [],
-    "description": "Official Bundeskunsthalle video portrait of Nick Schamborski.",
+    "description": "Official Bundeskunsthalle video portrait of Nickii Schamborski.",
     "related_links": [
       "https://www.youtube.com/watch?v=F3IuoTS9gwM"
     ]
   },
   {
     "id": "hbk-bundespreis-news-2021",
-    "title": "HBK-Student Nick Schamborski erhalt Bundespreis fur Kunststudierende 2021",
+    "title": "HBK-Student Nickii Schamborski erhalt Bundespreis fur Kunststudierende 2021",
     "year": "2021",
     "sort_year": 2021,
     "sort_date": "2021-11",
@@ -1105,7 +1105,7 @@
   },
   {
     "id": "shz-interview-2021",
-    "title": "Wie Nick Schamborski aus Osdorf der Sprung in die Welt der Kunst gelingt",
+    "title": "Wie Nickii Schamborski aus Osdorf der Sprung in die Welt der Kunst gelingt",
     "year": "2021",
     "sort_year": 2021,
     "sort_date": "2021-11",
@@ -1120,7 +1120,7 @@
     "link": "https://www.shz.de/lokales/schwansen/artikel/osdorf-nick-schamborski-erhaelt-bundespreis-fuer-kunststudierende-20992681",
     "image": null,
     "images": [],
-    "description": "Interview feature on Nick Schamborski and the Bundespreis fur Kunststudierende.",
+    "description": "Interview feature on Nickii Schamborski and the Bundespreis fur Kunststudierende.",
     "related_links": []
   },
   {
@@ -1145,7 +1145,7 @@
   },
   {
     "id": "kunstforum-profile-2021",
-    "title": "Artist Profile: Nick Schamborski",
+    "title": "Artist Profile: Nickii Schamborski",
     "year": "2021",
     "sort_year": 2021,
     "sort_date": "2021-11",
@@ -1185,7 +1185,7 @@
   },
   {
     "id": "the-things-i-tell-you-artist-page-2021",
-    "title": "Artist Page: Nick Schamborski",
+    "title": "Artist Page: Nickii Schamborski",
     "year": "2021",
     "sort_year": 2021,
     "sort_date": "2021-08",
@@ -1200,12 +1200,12 @@
     "link": "https://www.thethingsitellyou.com/artists/nick-schamborski",
     "image": null,
     "images": [],
-    "description": "Artist page for Nick Schamborski on The Things I Tell You Will Not Be Wrong.",
+    "description": "Artist page for Nickii Schamborski on The Things I Tell You Will Not Be Wrong.",
     "related_links": []
   },
   {
     "id": "zkm-artist-profile-2021",
-    "title": "Artist Profile: Nick Schamborski",
+    "title": "Artist Profile: Nickii Schamborski",
     "year": "2021",
     "sort_year": 2021,
     "sort_date": "2021-03",
@@ -2215,14 +2215,12 @@
   },
   {
     "link": null,
-    "image": "assets/images/funke-2026/funke-2026-01.jpg",
+    "image": "assets/images/funke-2026/funke-2026-05.jpg",
     "images": [
-      "assets/images/funke-2026/funke-2026-01.jpg",
+      "assets/images/funke-2026/funke-2026-05.jpg",
       "assets/images/funke-2026/funke-2026-02.jpg",
       "assets/images/funke-2026/funke-2026-03.jpg",
-      "assets/images/funke-2026/funke-2026-04.jpg",
-      "assets/images/funke-2026/funke-2026-05.jpg",
-      "assets/images/funke-2026/funke-2026-06.jpg",
+      "assets/images/funke-2026/funke-2026-01.jpg",
       "assets/images/funke-2026/funke-2026-07.jpg"
     ],
     "related_links": [],
@@ -2254,14 +2252,14 @@
   },
   {
     "link": null,
-    "image": "assets/images/grain-management-2026/grain-management-2026-01.jpg",
+    "image": "assets/images/grain-management-2026/grain-management-2026-02.jpg",
     "images": [
-      "assets/images/grain-management-2026/grain-management-2026-01.jpg",
       "assets/images/grain-management-2026/grain-management-2026-02.jpg",
-      "assets/images/grain-management-2026/grain-management-2026-03.jpg",
-      "assets/images/grain-management-2026/grain-management-2026-04.jpg",
       "assets/images/grain-management-2026/grain-management-2026-05.jpg",
-      "assets/images/grain-management-2026/grain-management-2026-06.jpg"
+      "assets/images/grain-management-2026/grain-management-2026-03.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-06.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-01.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-04.jpg"
     ],
     "related_links": [],
     "id": "grain-management-2026",

@@ -14,8 +14,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>N</text></svg>">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css?v=20260907-1330">
-    <link rel="stylesheet" href="../css/subpage.css?v=20260907-1330">
+    <link rel="stylesheet" href="../css/style.css?v=20260907-2300">
+    <link rel="stylesheet" href="../css/subpage.css?v=20260907-2300">
 </head>
 <body class="subpage">
     
@@ -210,41 +210,48 @@
         const isWrittenBy = item.categories.includes('press') && item.press_group === 'written_by';
         
         if (isLinkPreview) {
-            // Create link preview card
+            // Presseeintrag ohne eigenes Bild: eine typografische Karte.
+            // Quelle und Jahr oben, der Titel als Hauptelement in der Mitte,
+            // Aktionen unten. So bleibt die Flaeche nicht leer.
             card.classList.add('link-preview-card');
-            if (isWrittenBy) {
-                card.innerHTML = '<span class="press-sticker">Written by Nickii Schamborski</span>';
-            }
-            
-            // Extract domain from link
+            if (isWrittenBy) card.classList.add('is-written-by');
+
             let domain = '';
             try {
                 domain = new URL(item.link).hostname;
             } catch (e) {
                 domain = item.link.split('/')[2] || '';
             }
-            
-            card.innerHTML += `
+            const year = String(item.year || '').split('/')[0];
+            const kicker = item.type && item.type !== 'works' ? item.type : '';
+
+            card.innerHTML = `
                 <div class="link-preview-content">
                     <div class="link-preview-header">
-                        <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" 
-                             class="link-preview-favicon" 
-                             alt="${domain} favicon"
+                        <img src="https://www.google.com/s2/favicons?domain=${domain}&sz=32"
+                             class="link-preview-favicon"
+                             alt=""
                              onerror="this.style.display='none'">
                         <span class="link-preview-domain">${item.institution || domain}</span>
+                        <span class="link-preview-year">${year}</span>
                     </div>
-                    <div class="link-preview-title">${item.title}</div>
-                    ${item.specs ? `<div class="link-preview-specs">${item.specs}</div>` : ''}
-                    
-                    <div class="link-preview-actions">
-                        <button class="detail-btn" data-id="${item.id}">Full Details →</button>
-                        ${(item.categories.includes('press') && item.csl) 
-                          ? `<button class="cite-btn" data-id="${item.id}">Cite this →</button>` 
-                          : ''}
+                    <div class="link-preview-body">
+                        ${kicker ? `<div class="link-preview-kicker">${kicker}</div>` : ''}
+                        <div class="link-preview-title">${item.title}</div>
+                        ${item.specs ? `<div class="link-preview-specs">${item.specs}</div>` : ''}
+                    </div>
+                    <div class="link-preview-footer">
+                        ${isWrittenBy ? '<span class="link-preview-byline">Written by Nickii Schamborski</span>' : ''}
+                        <div class="link-preview-actions">
+                            <button class="detail-btn" data-id="${item.id}">Full Details →</button>
+                            ${(item.categories.includes('press') && item.csl)
+                              ? `<button class="cite-btn" data-id="${item.id}">Cite this →</button>`
+                              : ''}
+                        </div>
                     </div>
                 </div>
             `;
-            
+
             return card;
         }
         
