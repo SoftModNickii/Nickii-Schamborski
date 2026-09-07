@@ -2183,5 +2183,156 @@
       "assets/images/hbk-diploma-2014-2021/hbk-diploma-2014-2021-1778952603481-02.jpg"
     ],
     "sort_date": "2021-08"
+  },
+  {
+    "link": null,
+    "image": null,
+    "images": [],
+    "related_links": [],
+    "id": "funke-2-2026",
+    "title": "Funke 2",
+    "year": "2026",
+    "sort_year": 2026,
+    "sort_date": "2026-06",
+    "categories": [
+      "works"
+    ],
+    "type": "Interactive Object",
+    "specs": "ESP32-S3, LoRa (EBYTE E22-900M22S), round display, two EC11 rotary encoders, DRV2605L haptic driver, custom PCB v7",
+    "institution": "School of the Art Institute of Chicago",
+    "description": "Funke 2 is a handheld LoRa object built around an ESP32-S3 with a round display, two EC11 rotary encoders and a DRV2605L haptic driver on a custom PCB, currently in its seventh revision. Five units hold a shared rhythm through Kuramoto phase coupling exchanged over LoRa, and drop into deep sleep between exchanges.",
+    "description_de": "Funke 2 ist ein handliches LoRa-Objekt auf Basis eines ESP32-S3 mit rundem Display, zwei EC11 Drehgebern und einem DRV2605L Haptiktreiber auf einer eigenen Platine in der siebten Revision. Fuenf Geraete halten ueber Kuramoto-Phasenkopplung einen gemeinsamen Rhythmus, den sie per LoRa austauschen, und gehen zwischen den Austauschen in den Tiefschlaf.",
+    "tags": [
+      "LoRa",
+      "ESP32-S3",
+      "Kuramoto coupling",
+      "Haptics",
+      "PCB design"
+    ]
+  },
+  {
+    "link": null,
+    "image": null,
+    "images": [],
+    "related_links": [],
+    "id": "the-communicator-2026",
+    "title": "The Communicator",
+    "year": "2026",
+    "sort_year": 2026,
+    "sort_date": "2026-06",
+    "categories": [
+      "works"
+    ],
+    "type": "Interactive Object, Edition of 5",
+    "specs": "Custom 46 mm round PCB (KiCad), Seeed XIAO ESP32-S3, SX1262 LoRa, RadioLib mesh firmware; edition of five",
+    "institution": "School of the Art Institute of Chicago",
+    "description": "The Communicator is an edition of five off-grid mesh devices. Each unit sits on a self-designed 46 mm round PCB drawn in KiCad, carrying a Seeed XIAO ESP32-S3 and an SX1262 LoRa radio running RadioLib mesh firmware. Design direction by Helen Sungmin Lee.",
+    "description_de": "The Communicator ist eine Auflage von fuenf netzunabhaengigen Mesh-Geraeten. Jedes Geraet sitzt auf einer selbst gezeichneten, 46 mm grossen runden Platine aus KiCad mit einem Seeed XIAO ESP32-S3 und einem SX1262 LoRa-Funkmodul, das RadioLib-Mesh-Firmware ausfuehrt. Design Direction: Helen Sungmin Lee.",
+    "collaborators": [
+      {
+        "name": "Helen Sungmin Lee",
+        "role": "Design Direction"
+      }
+    ],
+    "tags": [
+      "LoRa",
+      "Mesh networking",
+      "PCB design",
+      "Edition"
+    ]
+  },
+  {
+    "link": null,
+    "image": null,
+    "images": [],
+    "related_links": [],
+    "id": "grain-management-2026",
+    "title": "Grain Management Commission",
+    "year": "2026",
+    "sort_year": 2026,
+    "sort_date": "2026-07",
+    "categories": [
+      "works"
+    ],
+    "type": "Commission, Interactive Objects",
+    "specs": "Approx. 20 units, ESP32-S3 with OLED display, Tamagotchi-style interaction",
+    "institution": "Grain Management, Park Hyatt Chicago",
+    "description": "A series of roughly twenty ESP32-S3 devices with OLED displays, built for an investor event held by Grain Management on 14 July 2026 at the Park Hyatt Chicago on the theme of AI and human collaboration. Each device carries a Tamagotchi-style creature that guests tend to over the course of the evening.",
+    "description_de": "Eine Serie von etwa zwanzig ESP32-S3 Geraeten mit OLED-Display, gebaut fuer ein Investorenevent von Grain Management am 14. Juli 2026 im Park Hyatt Chicago zum Thema AI and Human Collaboration. Jedes Geraet traegt ein Tamagotchi-artiges Wesen, um das sich die Gaeste im Lauf des Abends kuemmern.",
+    "tags": [
+      "ESP32-S3",
+      "Commission",
+      "Tamagotchi",
+      "Interaction design"
+    ]
+  },
+  {
+    "link": "https://www.saic.edu/campus-life/student-government",
+    "image": null,
+    "images": [],
+    "related_links": [],
+    "id": "saic-student-government-2026-2027",
+    "title": "Student Government Representative",
+    "year": "2026/2027",
+    "sort_year": 2026,
+    "sort_date": "2026-08",
+    "categories": [
+      "practice"
+    ],
+    "type": "Elected Position",
+    "specs": "Graduate representative, 2026 to 2027",
+    "institution": "School of the Art Institute of Chicago",
+    "description": "Elected graduate representative in the Student Government of the School of the Art Institute of Chicago. The role covers representation of graduate students, coordination of Student Government communications, and coverage of the graduate, undergraduate and international welcome events. Outreach to F Newsmagazine, SAIC Radio and SAIC Magazine, and production of the Student Government introduction videos.",
+    "tags": [
+      "Student Government",
+      "SAIC",
+      "Representation"
+    ]
+  },
+  {
+    "link": "https://www.saic.edu/academics/departments/low-residency-mfa",
+    "image": null,
+    "images": [],
+    "related_links": [],
+    "id": "saic-lowres-mfa-ta-2026",
+    "title": "Teaching Assistant, Low-Residency MFA Summer Residency",
+    "year": "2026",
+    "sort_year": 2026,
+    "sort_date": "2026-06",
+    "categories": [
+      "practice"
+    ],
+    "type": "Academic Position",
+    "specs": "June to July 2026",
+    "institution": "School of the Art Institute of Chicago",
+    "description": "Teaching assistant for the Low-Residency MFA summer residency at the School of the Art Institute of Chicago. In-class support and individual advising for the Low-Residency MFA cohorts, alongside program-wide support: colloquia setup, accompanying visiting artists, Open Studios and the thesis exhibition.",
+    "tags": [
+      "Teaching",
+      "SAIC",
+      "Low-Residency MFA"
+    ]
+  },
+  {
+    "link": "https://www.saic.edu/profiles/faculty/roberto-sifuentes",
+    "image": null,
+    "images": [],
+    "related_links": [],
+    "id": "saic-ta-performance-studies-2026",
+    "title": "Teaching Assistant, Performance Studies",
+    "year": "2026",
+    "sort_year": 2026,
+    "sort_date": "2026-01",
+    "categories": [
+      "practice"
+    ],
+    "type": "Academic Position",
+    "specs": "Introduction to Performance with Prof. Roberto Sifuentes",
+    "institution": "School of the Art Institute of Chicago",
+    "description": "Teaching assistant in Performance Studies at the School of the Art Institute of Chicago, in the introduction to performance with Prof. Roberto Sifuentes.",
+    "tags": [
+      "Teaching",
+      "SAIC",
+      "Performance Studies"
+    ]
   }
 ]
