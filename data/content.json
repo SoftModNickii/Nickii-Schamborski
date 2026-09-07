@@ -2303,13 +2303,31 @@
       "practice"
     ],
     "type": "Academic Position",
-    "specs": "June to July 2026, with Aliza Shvarts, Asha Iman, Kelly TODO and John TODO",
+    "specs": "June to July 2026, with Aliza Shvarts, Kelly Kaczynski, John Neff and Asha Iman Veal",
     "institution": "School of the Art Institute of Chicago",
-    "description": "Teaching assistant for the Low-Residency MFA summer residency at the School of the Art Institute of Chicago, working with Aliza Shvarts, Asha Iman, Kelly TODO and John TODO. In-class support and individual advising for the Low-Residency MFA cohorts, alongside program-wide support: colloquia setup, accompanying visiting artists, Open Studios and the thesis exhibition.",
+    "description": "Teaching assistant for the Low-Residency MFA summer residency at the School of the Art Institute of Chicago, working with programme director Aliza Shvarts, assistant director Kelly Kaczynski, graduate coordinator John Neff and faculty member Asha Iman Veal. In-class support and individual advising for the Low-Residency MFA cohorts, alongside program-wide support: colloquia setup, accompanying visiting artists, Open Studios and the thesis exhibition.",
     "tags": [
       "Teaching",
       "SAIC",
       "Low-Residency MFA"
+    ],
+    "collaborators": [
+      {
+        "name": "Aliza Shvarts",
+        "role": "Director, Low-Residency MFA"
+      },
+      {
+        "name": "Kelly Kaczynski",
+        "role": "Assistant Director and Graduate Coordinator"
+      },
+      {
+        "name": "John Neff",
+        "role": "Graduate Coordinator"
+      },
+      {
+        "name": "Asha Iman Veal",
+        "role": "Faculty"
+      }
     ]
   },
   {
