@@ -39,7 +39,8 @@ VENV_OSXPHOTOS = os.path.join(ROOT, "tools", ".venv", "bin", "osxphotos")
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"}
 # Was direkt aus Fotos vom iPhone kommt. Wird beim Einlesen zu JPEG gewandelt,
 # weil Browser HEIC nicht zuverlaessig anzeigen.
-CONVERT_EXT = {".heic", ".heif"}
+# Auch Rohdaten aus der Kamera. sips wandelt sie, Browser koennen sie nicht.
+CONVERT_EXT = {".heic", ".heif", ".arw", ".cr2", ".cr3", ".nef", ".dng", ".raf", ".orf"}
 INBOX_EXT = IMAGE_EXT | CONVERT_EXT
 # Breite, auf die grosse Aufnahmen heruntergerechnet werden.
 MAX_WIDTH = 2400
@@ -656,6 +657,36 @@ def cmd_albums(argv):
     if not groups:
         print("Keine Vorschauen in _inbox gefunden.")
         return 1
+
+    # Filme aussortieren. Die Galerie zeigt nur Bilder, und gerade Videos
+    # machen den Loewenanteil der Datenmenge aus, die sonst aus iCloud
+    # geladen werden muesste.
+    movies = set()
+    tool = find_osxphotos()
+    if tool:
+        every = sorted({u for found in groups.values() for u in found})
+        listing = os.path.join(tempfile.gettempdir(), "website-uuids.txt")
+        with open(listing, "w") as fh:
+            fh.write("\n".join(every))
+        res = subprocess.run(
+            [tool, "query", "--uuid-from-file", listing, "--json"],
+            capture_output=True, text=True,
+        )
+        if res.returncode == 0:
+            try:
+                for photo in json.loads(res.stdout):
+                    if photo.get("ismovie"):
+                        movies.add(photo["uuid"])
+            except ValueError:
+                pass
+        os.remove(listing)
+    if movies:
+        print(f"{len(movies)} Filme werden uebergangen, die Galerie zeigt nur Bilder.")
+        for folder in groups:
+            groups[folder] = {
+                u: f for u, f in groups[folder].items() if u not in movies
+            }
+        groups = {f: v for f, v in groups.items() if v}
 
     script = ['tell application "Photos"', "  set report to \"\"" ]
     for folder, found in groups.items():
