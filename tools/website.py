@@ -6,6 +6,7 @@ Alle Befehle sind von der Repo-Wurzel aus zu starten:
 
     python3 tools/website.py check      Prueft content.json und alle Bildpfade
     python3 tools/website.py needs      Schreibt IMAGES-NEEDED.md (Bilder-Checkliste)
+    python3 tools/website.py albums     Legt in Fotos je Eintrag ein Album mit der Auswahl an
     python3 tools/website.py originals  Ersetzt Fotos-Vorschauen durch die Originale
     python3 tools/website.py intake     Holt Bilder aus _inbox/<slug>/ in die Seite
     python3 tools/website.py serve      Startet lokale Vorschau auf Port 8000
@@ -619,6 +620,83 @@ def find_osxphotos():
     )
 
 
+def inbox_uuids():
+    """Je Ablageordner die Asset-Kennungen der abgelegten Vorschauen."""
+    uuid_re = re.compile(
+        r"^([0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}"
+        r"-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12})_"
+    )
+    out = {}
+    if not os.path.isdir(INBOX):
+        return out
+    for folder in sorted(os.listdir(INBOX)):
+        d = os.path.join(INBOX, folder)
+        if not os.path.isdir(d) or folder.startswith("."):
+            continue
+        found = {}
+        for f in os.listdir(d):
+            m = uuid_re.match(f)
+            if m:
+                found[m.group(1)] = f
+        if found:
+            out[folder] = found
+    return out
+
+
+def cmd_albums(argv):
+    """Legt in Fotos je Eintrag ein Album mit der getroffenen Auswahl an.
+
+    Der Weg ueber osxphotos scheitert, solange die Originale nur in iCloud
+    liegen: --download-missing benutzt intern den AppleScript-Export, der
+    nichts schreibt. Photos selbst laedt die Originale aber herunter,
+    sobald man sie ueber das Menu exportiert. Damit die richtigen Bilder
+    dafuer beisammen sind, wandert jede Auswahl in ein eigenes Album.
+    """
+    groups = inbox_uuids()
+    if not groups:
+        print("Keine Vorschauen in _inbox gefunden.")
+        return 1
+
+    script = ['tell application "Photos"', "  set report to \"\"" ]
+    for folder, found in groups.items():
+        name = f"WEB {folder}"
+        script.append(f'  try')
+        script.append(f'    delete album "{name}"')
+        script.append(f'  end try')
+        script.append(f'  set a to make new album named "{name}"')
+        script.append(f'  set picked to {{}}')
+        for uuid in found:
+            script.append(f'  try')
+            script.append(f'    set end of picked to media item id "{uuid}/L0/001"')
+            script.append(f'  end try')
+        script.append(f'  if (count of picked) > 0 then add picked to a')
+        script.append(
+            f'  set report to report & "{name}: " & (count of media items of a) '
+            f'& " von {len(found)}" & linefeed')
+    script.append("  return report")
+    script.append("end tell")
+
+    res = subprocess.run(
+        ["osascript", "-e", "\n".join(script)],
+        capture_output=True, text=True,
+    )
+    if res.returncode != 0:
+        print("Fotos meldet einen Fehler:")
+        print(res.stderr.strip())
+        return 1
+    print(res.stdout.strip())
+    print()
+    print("In Fotos liegen jetzt Alben mit dem Praefix WEB. Fuer jedes:")
+    print("  1. Album oeffnen, Befehl-A")
+    print("  2. Ablage > Exportieren > Originale exportieren fuer X Fotos")
+    print("  3. Unterordner-Format: Keine")
+    print("  4. Ziel: der gleichnamige Ordner unter _inbox/")
+    print()
+    print("Photos laedt die Originale dabei selbst aus iCloud.")
+    print("Danach: python3 tools/website.py intake")
+    return 0
+
+
 def cmd_originals(argv):
     """Ersetzt die Vorschauen in _inbox durch die Originale aus Fotos.
 
@@ -736,6 +814,7 @@ def cmd_originals(argv):
 COMMANDS = {
     "check": cmd_check,
     "originals": cmd_originals,
+    "albums": cmd_albums,
     "needs": cmd_needs,
     "intake": cmd_intake,
     "serve": cmd_serve,
