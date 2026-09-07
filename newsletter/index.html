@@ -156,6 +156,32 @@
 
         button:hover { background: #9333EA; }
 
+        .signup-intro {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 1.75rem;
+        }
+
+        .signup-button {
+            display: block;
+            width: 100%;
+            min-height: 48px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background: #C026D3;
+            padding: 1.1rem 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .signup-button:hover { background: #9333EA; }
+
         .fineprint {
             font-size: 0.75rem;
             line-height: 1.7;
@@ -232,12 +258,16 @@
         <!--
             HINWEIS ZUM FORMULARZIEL
 
-            Uebergangsloesung: das Formular schickt derzeit eine E-Mail an
-            das Studio, die Adresse wird von Hand aufgenommen. Sobald ein
-            Anbieter feststeht, hier dessen Formular-Adresse eintragen und
-            die Feldnamen angleichen. Bewusst ohne eingebettetes Widget,
-            damit kein fremdes Skript laedt und die Seite ohne
-            Cookie-Banner auskommt.
+            Solange kein Versanddienst eingerichtet ist, steht hier bewusst
+            kein Formular. Ein Formular mit action="mailto:" und method="post"
+            quittiert Safari mit "die Adresse ist ungueltig", und ein leeres
+            action-Attribut laedt nur die Seite neu. Beides ist schlechter
+            als ein klarer Link.
+
+            Sobald der Anbieter feststeht, den Abschnitt unten durch ein
+            reines HTML-Formular ersetzen. Kein eingebettetes Widget, damit
+            kein fremdes Skript laedt und die Seite ohne Cookie-Banner
+            auskommt.
 
             MailerLite:  action="https://assets.mailerlite.com/jsonp/<ID>/forms/<FORM>/subscribe"
                          Feldnamen: fields[email], fields[name]
@@ -245,45 +275,26 @@
                          Feldnamen: email
             Steady:      action="https://steadyhq.com/de/backend/subscriptions/..."
         -->
-        <form class="signup" action="mailto:studio@schamborski.com"
-              method="post" enctype="text/plain">
-            <div class="field">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email"
-                       autocomplete="email" inputmode="email"
-                       placeholder="you@example.com" required>
-            </div>
-
-            <div class="field">
-                <label for="name">First name <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
-                <input type="text" id="name" name="name" autocomplete="given-name">
-            </div>
-
-            <div class="consent">
-                <input type="checkbox" id="consent" name="consent" value="yes" required>
-                <label for="consent">
-                    I would like to receive the newsletter by email and consent to
-                    my address being stored for this purpose. I can withdraw this
-                    at any time. See the
-                    <a href="../datenschutz.html">privacy policy</a>.
-                </label>
-            </div>
-
-            <button type="submit">Subscribe</button>
-
-            <p class="fineprint">
-                You will receive an email asking you to confirm your address.
-                The subscription only becomes active once you click the link in
-                that email (double opt-in).
+        <div class="signup">
+            <p class="signup-intro">
+                To subscribe, send me an email with the word
+                &ldquo;newsletter&rdquo;. I will add you to the list and you
+                will receive a short note asking you to confirm.
             </p>
 
+            <a class="signup-button"
+               href="mailto:studio@schamborski.com?subject=Newsletter&amp;body=Please%20add%20me%20to%20the%20newsletter.">
+                Subscribe by email
+            </a>
+
             <p class="fineprint">
-                Trouble with the form? Just write to
-                <a href="mailto:studio@schamborski.com?subject=Newsletter"
-                   style="color:#C026D3">studio@schamborski.com</a>
-                with the word &ldquo;newsletter&rdquo; and I will add you.
+                Or write to
+                <a href="mailto:studio@schamborski.com">studio@schamborski.com</a>
+                from any mail programme. Your address is used for the
+                newsletter only, is never passed on, and one word back from
+                you removes it again.
             </p>
-        </form>
+        </div>
 
         <div class="legal">
             <h2>Datenschutz auf einen Blick</h2>
