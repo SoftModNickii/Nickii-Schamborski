@@ -22,6 +22,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unicodedata
 import urllib.parse
 from collections import Counter, defaultdict
@@ -665,31 +666,64 @@ def cmd_originals(argv):
                 print(f"    {u}  <-  {f}")
             continue
 
-        # Der Originaldateiname ist die Vorgabe, deshalb kein eigener Schalter.
-        cmd = [tool, "export", src_dir, "--download-missing",
-               "--skip-original-if-edited"]
-        for u in previews:
-            cmd += ["--uuid", u]
-        res = subprocess.run(cmd, capture_output=True, text=True)
-        if res.returncode != 0:
-            head = (res.stderr or res.stdout).strip().splitlines()
-            print(f"[{folder}] osxphotos meldet einen Fehler:")
-            for line in head[:6]:
-                print(f"    {line}")
-            if any("Error copying" in l or "Operation not permitted" in l
-                   for l in head):
-                print("    Das ist der fehlende Festplattenvollzugriff.")
-                print("    Systemeinstellungen > Datenschutz & Sicherheit >")
-                print("    Festplattenvollzugriff > Visual Studio Code, dann neu starten.")
-            return 1
+        # In einen Zwischenordner exportieren, damit osxphotos seine
+        # Zustandsdatei nicht in der Ablage hinterlaesst. Der
+        # Originaldateiname ist die Vorgabe, deshalb kein eigener Schalter.
+        stage = tempfile.mkdtemp(prefix="originals-")
+        try:
+            # --use-photokit ist noetig, weil die Originale in iCloud liegen
+            # und nur lokale Vorschauen vorhanden sind. PhotoKit laedt sie
+            # nach, verlangt dafuer aber die Fotos-Freigabe der aufrufenden
+            # Anwendung.
+            cmd = [tool, "export", stage, "--download-missing",
+                   "--use-photokit", "--skip-original-if-edited"]
+            for u in previews:
+                cmd += ["--uuid", u]
+            res = subprocess.run(cmd, capture_output=True, text=True)
+            if res.returncode != 0:
+                head = (res.stderr or res.stdout).strip().splitlines()
+                print(f"[{folder}] osxphotos meldet einen Fehler:")
+                for line in head[:6]:
+                    print(f"    {line}")
+                if any("Error copying" in l or "Operation not permitted" in l
+                       for l in head):
+                    print("    Es fehlt der Festplattenvollzugriff.")
+                if any("authorization" in l or "Privacy" in l for l in head):
+                    print("    Es fehlt die Fotos-Freigabe.")
+                print("    Beides braucht dieselbe Anwendung. Am einfachsten in")
+                print("    Terminal.app: dort ist die Fotos-Freigabe schon erteilt,")
+                print("    der Festplattenvollzugriff muss nur eingeschaltet werden.")
+                return 1
 
-        # Vorschauen entfernen, deren Original jetzt danebenliegt
-        now = set(os.listdir(src_dir))
-        for u, preview in previews.items():
-            if len(now) > len(previews) and preview in now:
-                os.remove(os.path.join(src_dir, preview))
-                total_done += 1
-        print(f"[{folder}] Originale geholt, Vorschauen entfernt")
+            got = [
+                f for f in sorted(os.listdir(stage))
+                if not f.startswith(".")
+                and os.path.splitext(f)[1].lower() in INBOX_EXT
+            ]
+            if not got:
+                print(f"[{folder}] osxphotos lieferte keine Datei, Vorschauen bleiben")
+                if "missing:" in res.stdout:
+                    for line in res.stdout.splitlines():
+                        if "missing:" in line:
+                            print(f"    {line.strip()}")
+                    print("    Die Originale liegen in iCloud, nicht auf dem Mac.")
+                    print("    Dafuer wird die Fotos-Freigabe gebraucht.")
+                continue
+
+            for f in got:
+                dest = os.path.join(src_dir, f)
+                if os.path.exists(dest):
+                    os.remove(dest)
+                shutil.move(os.path.join(stage, f), dest)
+            for preview in previews.values():
+                pp = os.path.join(src_dir, preview)
+                if os.path.exists(pp):
+                    os.remove(pp)
+                    total_done += 1
+            print(f"[{folder}] {len(got)} Originale geholt, "
+                  f"{len(previews)} Vorschauen entfernt")
+        finally:
+            shutil.rmtree(stage, ignore_errors=True)
 
     if dry:
         print(f"\nProbelauf: {total_found} Vorschauen gefunden.")
