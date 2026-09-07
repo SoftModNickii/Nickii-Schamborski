@@ -489,8 +489,21 @@ def cmd_needs(argv):
 # ------------------------------------------------------------------- intake
 
 def cmd_intake(argv):
-    """Uebernimmt Bilder aus _inbox/<item-id>/ in die Seite."""
+    """Uebernimmt Bilder aus _inbox/<item-id>/ in die Seite.
+
+    --min-edge N senkt die Mindestaufloesung fuer diesen einen Lauf. Nur
+    bewusst verwenden: was einmal zu klein hochgeladen ist, faellt spaeter
+    auf jedem guten Bildschirm auf.
+    """
     dry = "--dry-run" in argv
+    min_edge = MIN_LONG_EDGE
+    if "--min-edge" in argv:
+        try:
+            min_edge = int(argv[argv.index("--min-edge") + 1])
+        except (IndexError, ValueError):
+            print("--min-edge braucht eine Zahl, etwa --min-edge 1000")
+            return 1
+        print(f"Mindestkante fuer diesen Lauf: {min_edge} statt {MIN_LONG_EDGE} px")
     items = load()
     by_id = {i["id"]: i for i in items}
 
@@ -541,12 +554,12 @@ def cmd_intake(argv):
         too_small = []
         for fname in list(files):
             edge = long_edge(os.path.join(src_dir, fname))
-            if edge is not None and edge < MIN_LONG_EDGE:
+            if edge is not None and edge < min_edge:
                 too_small.append((fname, edge))
                 files.remove(fname)
         for fname, edge in too_small:
             print(f"[{folder}] ZU KLEIN, bleibt liegen: {fname} "
-                  f"({edge} px, gebraucht werden {MIN_LONG_EDGE})")
+                  f"({edge} px, gebraucht werden {min_edge})")
         if too_small and not files:
             print(f"[{folder}] alle {len(too_small)} Dateien zu klein, "
                   f"nichts uebernommen")

@@ -2186,8 +2186,11 @@
   },
   {
     "link": null,
-    "image": null,
-    "images": [],
+    "image": "assets/images/g-spirit-2026/g-spirit-2026-01.jpg",
+    "images": [
+      "assets/images/g-spirit-2026/g-spirit-2026-01.jpg",
+      "assets/images/g-spirit-2026/g-spirit-2026-02.jpg"
+    ],
     "related_links": [],
     "id": "g-spirit-2026",
     "title": "G-Spirit",
@@ -2212,8 +2215,16 @@
   },
   {
     "link": null,
-    "image": null,
-    "images": [],
+    "image": "assets/images/funke-2026/funke-2026-01.jpg",
+    "images": [
+      "assets/images/funke-2026/funke-2026-01.jpg",
+      "assets/images/funke-2026/funke-2026-02.jpg",
+      "assets/images/funke-2026/funke-2026-03.jpg",
+      "assets/images/funke-2026/funke-2026-04.jpg",
+      "assets/images/funke-2026/funke-2026-05.jpg",
+      "assets/images/funke-2026/funke-2026-06.jpg",
+      "assets/images/funke-2026/funke-2026-07.jpg"
+    ],
     "related_links": [],
     "id": "funke-2026",
     "title": "Funke",
@@ -2243,8 +2254,15 @@
   },
   {
     "link": null,
-    "image": null,
-    "images": [],
+    "image": "assets/images/grain-management-2026/grain-management-2026-01.jpg",
+    "images": [
+      "assets/images/grain-management-2026/grain-management-2026-01.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-02.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-03.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-04.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-05.jpg",
+      "assets/images/grain-management-2026/grain-management-2026-06.jpg"
+    ],
     "related_links": [],
     "id": "grain-management-2026",
     "title": "Grain Management Commission",
@@ -2268,8 +2286,10 @@
   },
   {
     "link": "https://www.saic.edu/campus-life/student-government",
-    "image": null,
-    "images": [],
+    "image": "assets/images/saic-student-government-2026-2027/saic-student-government-2026-2027-01.jpg",
+    "images": [
+      "assets/images/saic-student-government-2026-2027/saic-student-government-2026-2027-01.jpg"
+    ],
     "related_links": [],
     "id": "saic-student-government-2026-2027",
     "title": "Student Government Representative",
@@ -2332,8 +2352,10 @@
   },
   {
     "link": "https://www.saic.edu/profiles/faculty/roberto-sifuentes",
-    "image": null,
-    "images": [],
+    "image": "assets/images/saic-ta-performance-studies-2026/saic-ta-performance-studies-2026-01.jpg",
+    "images": [
+      "assets/images/saic-ta-performance-studies-2026/saic-ta-performance-studies-2026-01.jpg"
+    ],
     "related_links": [],
     "id": "saic-ta-performance-studies-2026",
     "title": "Teaching Assistant, Performance Studies",

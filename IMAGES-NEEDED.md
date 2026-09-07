@@ -17,23 +17,8 @@ Das erste Bild eines Items wird zum Titelbild der Kachel.
 
 Diese Kacheln bleiben im Raster grau. Jeweils mindestens ein Bild noetig.
 
-- [ ] **G-Spirit** (2026)
-      Ablage: `_inbox/g-spirit-2026/`
-
-- [ ] **Funke** (2026)
-      Ablage: `_inbox/funke-2026/`
-
-- [ ] **Grain Management Commission** (2026)
-      Ablage: `_inbox/grain-management-2026/`
-
-- [ ] **Student Government Representative** (2026/2027)
-      Ablage: `_inbox/saic-student-government-2026-2027/`
-
 - [ ] **Teaching Assistant, Low-Residency MFA Summer Residency** (2026)
       Ablage: `_inbox/saic-lowres-mfa-ta-2026/`
-
-- [ ] **Teaching Assistant, Performance Studies** (2026)
-      Ablage: `_inbox/saic-ta-performance-studies-2026/`
 
 - [ ] **Teaching Assistant, Artificial Intelligence** (2026)
       Ablage: `_inbox/saic-ta-ai-2026/`
@@ -144,6 +129,12 @@ Funktioniert, aber die Detailansicht zeigt keine Galerie. Weitere Bilder waeren 
 
 - [ ] **International Semester, Intermedia Contemporary Art** (2021/2022)
       Ablage: `_inbox/itb-semester-2021-2022/`
+
+- [ ] **Student Government Representative** (2026/2027)
+      Ablage: `_inbox/saic-student-government-2026-2027/`
+
+- [ ] **Teaching Assistant, Performance Studies** (2026)
+      Ablage: `_inbox/saic-ta-performance-studies-2026/`
 
 ## Schon im Repo, aber nirgends eingebunden
 
