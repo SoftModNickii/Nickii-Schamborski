@@ -35,6 +35,9 @@ Diese Kacheln bleiben im Raster grau. Jeweils mindestens ein Bild noetig.
 - [ ] **Teaching Assistant, Performance Studies** (2026)
       Ablage: `_inbox/saic-ta-performance-studies-2026/`
 
+- [ ] **Teaching Assistant, Artificial Intelligence** (2026)
+      Ablage: `_inbox/saic-ta-ai-2026/`
+
 ## Mit kaputten Verweisen
 
 Nichts offen.

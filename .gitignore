@@ -34,3 +34,4 @@ _inbox/
 data/.backups/
 __pycache__/
 *.pyc
+tools/.venv/

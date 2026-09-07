@@ -6,6 +6,7 @@ Alle Befehle sind von der Repo-Wurzel aus zu starten:
 
     python3 tools/website.py check      Prueft content.json und alle Bildpfade
     python3 tools/website.py needs      Schreibt IMAGES-NEEDED.md (Bilder-Checkliste)
+    python3 tools/website.py originals  Ersetzt Fotos-Vorschauen durch die Originale
     python3 tools/website.py intake     Holt Bilder aus _inbox/<slug>/ in die Seite
     python3 tools/website.py serve      Startet lokale Vorschau auf Port 8000
 
@@ -31,6 +32,7 @@ BACKUP_DIR = os.path.join(ROOT, "data", ".backups")
 INBOX = os.path.join(ROOT, "_inbox")
 IMAGE_ROOT = os.path.join(ROOT, "assets", "images")
 NEEDS_FILE = os.path.join(ROOT, "IMAGES-NEEDED.md")
+VENV_OSXPHOTOS = os.path.join(ROOT, "tools", ".venv", "bin", "osxphotos")
 
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"}
 # Was direkt aus Fotos vom iPhone kommt. Wird beim Einlesen zu JPEG gewandelt,
@@ -39,6 +41,10 @@ CONVERT_EXT = {".heic", ".heif"}
 INBOX_EXT = IMAGE_EXT | CONVERT_EXT
 # Breite, auf die grosse Aufnahmen heruntergerechnet werden.
 MAX_WIDTH = 2400
+# Kuerzeste zulaessige lange Kante. Wer in Fotos ein Bild einfach herauszieht,
+# bekommt haeufig nur eine Vorschau von 360 bis 1024 Pixel statt des Originals.
+# Solche Dateien sehen auf der Seite matschig aus und werden abgewiesen.
+MIN_LONG_EDGE = 1400
 KNOWN_CATEGORIES = {"works", "shows", "practice", "education", "fellowships", "press"}
 
 # Felder, die jedes Item laut bestehendem Schema hat.
@@ -103,6 +109,26 @@ def asset_paths(item):
     for i, p in enumerate(item.get("pdfs") or []):
         out.append((f"pdfs[{i}]", p))
     return out
+
+
+def long_edge(path):
+    """Laengste Bildkante in Pixeln, oder None wenn nicht ermittelbar."""
+    if not shutil.which("sips"):
+        return None
+    try:
+        out = subprocess.run(
+            ["sips", "-g", "pixelWidth", "-g", "pixelHeight", path],
+            capture_output=True, text=True, check=True,
+        ).stdout
+    except Exception:
+        return None
+    w = h = None
+    for line in out.splitlines():
+        if "pixelWidth:" in line:
+            w = int(line.split(":")[1].strip())
+        elif "pixelHeight:" in line:
+            h = int(line.split(":")[1].strip())
+    return max(w, h) if w and h else None
 
 
 def prepare_image(src, dest):
@@ -506,6 +532,23 @@ def cmd_intake(argv):
             continue
 
         item = by_id[folder]
+
+        # Zu kleine Aufnahmen bleiben liegen, damit sie nicht unbemerkt
+        # auf der Seite landen.
+        too_small = []
+        for fname in list(files):
+            edge = long_edge(os.path.join(src_dir, fname))
+            if edge is not None and edge < MIN_LONG_EDGE:
+                too_small.append((fname, edge))
+                files.remove(fname)
+        for fname, edge in too_small:
+            print(f"[{folder}] ZU KLEIN, bleibt liegen: {fname} "
+                  f"({edge} px, gebraucht werden {MIN_LONG_EDGE})")
+        if too_small and not files:
+            print(f"[{folder}] alle {len(too_small)} Dateien zu klein, "
+                  f"nichts uebernommen")
+            continue
+
         dest_dir = os.path.join(IMAGE_ROOT, folder)
         existing = []
         if os.path.isdir(dest_dir):
@@ -569,8 +612,96 @@ def cmd_serve(argv):
     return 0
 
 
+def find_osxphotos():
+    return shutil.which("osxphotos") or (
+        VENV_OSXPHOTOS if os.path.exists(VENV_OSXPHOTOS) else None
+    )
+
+
+def cmd_originals(argv):
+    """Ersetzt die Vorschauen in _inbox durch die Originale aus Fotos.
+
+    Zieht man ein Bild aus Fotos heraus, bekommt man haeufig nur eine
+    Vorschau von 360 bis 1024 Pixel. Ihr Dateiname traegt aber die
+    Asset-Kennung des Originals, etwa
+
+        183DCF16-02C5-4921-A8B6-D07EE92FBC6E_1_105_c.jpeg
+
+    Der vordere Teil ist die Kennung. Ueber sie holt osxphotos das
+    Original aus der Mediathek und die Vorschau wird geloescht.
+    """
+    dry = "--dry-run" in argv
+    tool = find_osxphotos()
+    if not tool:
+        print("osxphotos nicht gefunden. Einrichten mit:")
+        print("  python3 -m venv tools/.venv")
+        print("  tools/.venv/bin/pip install osxphotos")
+        return 1
+
+    if not os.path.isdir(INBOX):
+        print("_inbox/ existiert nicht. Erst: python3 tools/website.py needs")
+        return 1
+
+    uuid_re = re.compile(
+        r"^([0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}"
+        r"-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12})_"
+    )
+    total_found = total_done = 0
+    for folder in sorted(os.listdir(INBOX)):
+        src_dir = os.path.join(INBOX, folder)
+        if not os.path.isdir(src_dir) or folder.startswith("."):
+            continue
+        previews = {}
+        for f in os.listdir(src_dir):
+            m = uuid_re.match(f)
+            if m:
+                previews[m.group(1)] = f
+        if not previews:
+            continue
+        total_found += len(previews)
+        print(f"[{folder}] {len(previews)} Vorschauen erkannt")
+        if dry:
+            for u, f in previews.items():
+                print(f"    {u}  <-  {f}")
+            continue
+
+        # Der Originaldateiname ist die Vorgabe, deshalb kein eigener Schalter.
+        cmd = [tool, "export", src_dir, "--download-missing",
+               "--skip-original-if-edited"]
+        for u in previews:
+            cmd += ["--uuid", u]
+        res = subprocess.run(cmd, capture_output=True, text=True)
+        if res.returncode != 0:
+            head = (res.stderr or res.stdout).strip().splitlines()
+            print(f"[{folder}] osxphotos meldet einen Fehler:")
+            for line in head[:6]:
+                print(f"    {line}")
+            if any("Error copying" in l or "Operation not permitted" in l
+                   for l in head):
+                print("    Das ist der fehlende Festplattenvollzugriff.")
+                print("    Systemeinstellungen > Datenschutz & Sicherheit >")
+                print("    Festplattenvollzugriff > Visual Studio Code, dann neu starten.")
+            return 1
+
+        # Vorschauen entfernen, deren Original jetzt danebenliegt
+        now = set(os.listdir(src_dir))
+        for u, preview in previews.items():
+            if len(now) > len(previews) and preview in now:
+                os.remove(os.path.join(src_dir, preview))
+                total_done += 1
+        print(f"[{folder}] Originale geholt, Vorschauen entfernt")
+
+    if dry:
+        print(f"\nProbelauf: {total_found} Vorschauen gefunden.")
+    else:
+        print(f"\n{total_done} Vorschauen durch Originale ersetzt.")
+        print("Weiter mit: python3 tools/website.py intake")
+    return 0
+
+
 COMMANDS = {
     "check": cmd_check,
+    "originals": cmd_originals,
     "needs": cmd_needs,
     "intake": cmd_intake,
     "serve": cmd_serve,
