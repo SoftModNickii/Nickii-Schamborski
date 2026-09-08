@@ -129,7 +129,8 @@
     "images": [
       "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-1780351671312-01.jpg"
     ],
-    "related_links": []
+    "related_links": [],
+    "sort_date": "2026-09"
   },
   {
     "title": "Every Node Counts - Meshtastic Mesh Networking Workshop",
@@ -150,7 +151,8 @@
       "assets/images/every-node-counts-workshop-2026/every-node-counts-workshop-2026-1780351080783-01.jpg",
       "assets/images/every-node-counts-workshop-2026/every-node-counts-workshop-2026-1780351602962-01.jpg"
     ],
-    "related_links": []
+    "related_links": [],
+    "sort_date": "2026-05"
   },
   {
     "title": "Whitney Biennial 2026",
@@ -231,7 +233,7 @@
     "title_subtitle": "How SAIC artists are critically approaching AI in their work",
     "year": "2026",
     "sort_year": 2026,
-    "sort_date": "2026-07",
+    "sort_date": "2026-04",
     "categories": [
       "press"
     ],

@@ -109,6 +109,22 @@
     let allContent = [];
     let currentFilter = 'all';
 
+    // Neueste zuerst. Erst nach Jahr, innerhalb eines Jahres nach
+    // sort_date (JJJJ-MM). Ohne sort_date zaehlt ein Eintrag als Anfang
+    // des Jahres und rutscht hinter alle mit bekanntem Monat. Vorher galt
+    // nur das Jahr, und innerhalb eines Jahres blieb die Reihenfolge der
+    // Datei, sodass neu angehaengte Arbeiten unter aelteren standen.
+    function sortKey(item) {
+        const year = parseInt(String(item.year).split('/')[0]) || 0;
+        const date = item.sort_date || (year + '-00');
+        return { year, date };
+    }
+    function newestFirst(a, b) {
+        const ka = sortKey(a), kb = sortKey(b);
+        if (kb.year !== ka.year) return kb.year - ka.year;
+        return kb.date.localeCompare(ka.date);
+    }
+
     // Load JSON data
     fetch('../data/content.json?v=' + Date.now())
         .then(response => {
@@ -165,10 +181,7 @@
                 : allContent.filter(item => item.categories.includes(filter));
             
             // Sort by year (newest first) - ALWAYS chronological
-            filtered.sort((a, b) => {
-                const getYear = (yearStr) => parseInt(yearStr.split('/')[0]);
-                return getYear(b.year) - getYear(a.year);
-            });
+            filtered.sort(newestFirst);
             
             // Clear container
             container.innerHTML = '';
@@ -655,10 +668,7 @@
             }
             
             // Sort by year
-            filtered.sort((a, b) => {
-                const getYear = (yearStr) => parseInt(yearStr.split('/')[0]);
-                return getYear(b.year) - getYear(a.year);
-            });
+            filtered.sort(newestFirst);
             
             container.innerHTML = '';
             
