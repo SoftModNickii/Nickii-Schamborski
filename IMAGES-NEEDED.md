@@ -17,6 +17,12 @@ Das erste Bild eines Items wird zum Titelbild der Kachel.
 
 Diese Kacheln bleiben im Raster grau. Jeweils mindestens ein Bild noetig.
 
+- [ ] **Nomination, 24th Federal Art Prize for Students** (2018)
+      Ablage: `_inbox/bundeskunstpreis-nomination-2018/`
+
+- [ ] **Freelance Artistic Producer** (2015-2020)
+      Ablage: `_inbox/freelance-artistic-producer-2015-2020/`
+
 - [ ] **Teaching Assistant, Low-Residency MFA Summer Residency** (2026)
       Ablage: `_inbox/saic-lowres-mfa-ta-2026/`
 
@@ -32,10 +38,10 @@ Nichts offen.
 Funktioniert, aber die Detailansicht zeigt keine Galerie. Weitere Bilder waeren gut.
 
 - [ ] **We Stay Home** (2017)
-      Ablage: `_inbox/new-entry-1778952939730/`
+      Ablage: `_inbox/we-stay-home-2017/`
 
 - [ ] **Monuments for a Patch of Grass in Wolfsburg** (2018)
-      Ablage: `_inbox/new-entry-1778952795758/`
+      Ablage: `_inbox/monuments-patch-of-grass-wolfsburg-2018/`
 
 - [ ] **Upcoming: AT/SP x Ars Electronica Campus Exhibition** (2026)
       Ablage: `_inbox/at-sp-ars-electronica-campus-exhibition-2026/`
@@ -70,16 +76,10 @@ Funktioniert, aber die Detailansicht zeigt keine Galerie. Weitere Bilder waeren 
 - [ ] **Peer Expert for Internationalisation & Digitalisation** (2023)
       Ablage: `_inbox/udk-berlin-2023/`
 
-- [ ] **European Media Art Festival** (2022)
-      Ablage: `_inbox/emaf-2022/`
-
-- [ ] **familycare** (2021)
-      Ablage: `_inbox/familycare-solo-metavier-2021/`
-
 - [ ] **S.C.O.P.E. Biennale** (2021)
       Ablage: `_inbox/scope-biennale-2021/`
 
-- [ ] **24th Federal Art Prize for Students** (2020)
+- [ ] **25th Federal Art Prize for Students** (2021)
       Ablage: `_inbox/bundeskunstpreis-2021/`
 
 - [ ] **Workshop Series at ZKM** (2021)
@@ -87,12 +87,6 @@ Funktioniert, aber die Detailansicht zeigt keine Galerie. Weitere Bilder waeren 
 
 - [ ] **Verlernen lernen** (2021)
       Ablage: `_inbox/verlernen-lernen-2021/`
-
-- [ ] **Soft Power** (2020)
-      Ablage: `_inbox/soft-power-2020/`
-
-- [ ] **on_desire** (2020)
-      Ablage: `_inbox/on-desire-2020/`
 
 - [ ] **DAAD Promos Scholarship** (2020)
       Ablage: `_inbox/daad-promos-2020/`
@@ -103,23 +97,17 @@ Funktioniert, aber die Detailansicht zeigt keine Galerie. Weitere Bilder waeren 
 - [ ] **Busan International Film Festival** (2019)
       Ablage: `_inbox/busan-iff-2019/`
 
+- [ ] **Germany Scholarship** (2019)
+      Ablage: `_inbox/germany-scholarship-2019/`
+
 - [ ] **Lecture: Fascist Aesthetics** (2019)
       Ablage: `_inbox/hbk-lecture-fascism-2019/`
 
 - [ ] **Media Studio Tutor** (2015-2020)
       Ablage: `_inbox/media-studio-tutor-2015-2020/`
 
-- [ ] **The EMAF Experience** (2018)
-      Ablage: `_inbox/emaf-experience-2018/`
-
-- [ ] **Kombi 5** (2017)
-      Ablage: `_inbox/kombi-5-exhibition-2017/`
-
 - [ ] **Braunschweig International Film Festival** (2017)
       Ablage: `_inbox/biff-braunschweig-2017/`
-
-- [ ] **Catalog: 25th Federal Prize for Art Students** (2022)
-      Ablage: `_inbox/bundeskunstpreis-catalog-2022/`
 
 - [ ] **Catalog: S.C.O.P.E. Biennale** (2021)
       Ablage: `_inbox/scope-catalog-2021/`
@@ -140,7 +128,7 @@ Funktioniert, aber die Detailansicht zeigt keine Galerie. Weitere Bilder waeren 
 
 Diese Dateien liegen bereits im Repo, werden aber von keinem Eintrag verlinkt. Entweder einbinden oder loeschen.
 
-- `assets/images/` (76 Dateien)
+- `assets/images/` (73 Dateien)
 - `assets/images/Arbeiten/AmongUs_UnterUns/` (2 Dateien)
 - `assets/images/Festivals/Biennials/` (1 Dateien)
 - `assets/images/GermanEurofighter/` (1 Dateien)
@@ -148,14 +136,11 @@ Diese Dateien liegen bereits im Repo, werden aber von keinem Eintrag verlinkt. E
 - `assets/images/Nickii_AI/` (3 Dateien)
 - `assets/images/Scope/` (3 Dateien)
 - `assets/images/StillsUntitledResilience/` (3 Dateien)
-- `assets/images/Texte/` (1 Dateien)
 - `assets/images/Untitled Resilience/` (32 Dateien)
-- `assets/images/bundeskunsthalle-2022/` (9 Dateien)
-- `assets/images/bundeskunstpreis-catalog-2022/` (3 Dateien)
+- `assets/images/bundeskunstpreis-catalog-2022/` (1 Dateien)
 - `assets/images/createyoursurrounding/` (2 Dateien)
+- `assets/images/funplastic-2017/` (3 Dateien)
 - `assets/images/germany-scholarship-2019/` (1 Dateien)
 - `assets/images/matara/` (7 Dateien)
-- `assets/images/new-entry-1778952221338/` (3 Dateien)
-- `assets/images/new-entry-1778953439573/` (1 Dateien)
-- `assets/images/represent/` (6 Dateien)
+- `assets/images/represent/` (1 Dateien)
 - `assets/images/supportyourlocalfascist/` (1 Dateien)

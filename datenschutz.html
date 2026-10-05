@@ -4,31 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datenschutzerklärung - Nickii Schamborski</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css?v=20261008">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="css/style.css?v=20261008">
     <style>
         .text-page {
             max-width: 800px;
             margin: 0 auto;
             padding: 8vh 5vw;
-            font-family: 'Source Serif Pro', serif;
+            font-family: var(--font-text);
             line-height: 1.8;
         }
         .text-page h1 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 2rem;
-            font-weight: 300;
+            font-family: var(--font-data);
+            font-size: 1.5rem;
+            font-weight: var(--weight-title);
             margin-bottom: 2rem;
-            color: #C026D3;
+            color: var(--ink);
+            text-transform: uppercase;
+            letter-spacing: var(--track-title);
         }
         .text-page h2 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 1.2rem;
+            font-family: var(--font-data);
+            font-size: 0.8rem;
             font-weight: 400;
             margin-top: 2rem;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: var(--track-data);
+            color: var(--ink);
         }
         .text-page p {
             margin-bottom: 1rem;
@@ -36,10 +43,10 @@
         .back-link {
             display: inline-block;
             margin-top: 3rem;
-            font-family: 'Manrope', sans-serif;
+            font-family: var(--font-data);
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: var(--track-data);
             color: #666;
             text-decoration: none;
         }

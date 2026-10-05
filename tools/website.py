@@ -4,7 +4,15 @@ website.py - Wartungswerkzeug fuer schamborski.com
 
 Alle Befehle sind von der Repo-Wurzel aus zu starten:
 
-    python3 tools/website.py check      Prueft content.json und alle Bildpfade
+    python3 tools/website.py heft       Aufgabenheft im Browser: Aufgabe des Tages, Antwort direkt dort
+    python3 tools/website.py aufgabe    dasselbe im Terminal (--heft, --bonus, --eingang)
+    python3 tools/website.py archiv     Wie vollstaendig das Archiv ist und was am haeufigsten fehlt
+                                        (archiv <id> zeigt die Karteikarte eines Eintrags)
+    python3 tools/website.py build      Erzeugt Startseite, CV, Werkseiten, Vorschaubilder
+    python3 tools/website.py cv-pdf     Druckt den CV als PDF nach assets/pdfs/ (nach build, braucht Chrome)
+    python3 tools/website.py check      Prueft Daten, alle lokalen Verweise in HTML/CSS, CV
+                                        (check --details listet ungenutzte Dateien einzeln)
+    python3 tools/website.py links      Prueft alle externen Links der Eintraege (braucht Netz)
     python3 tools/website.py needs      Schreibt IMAGES-NEEDED.md (Bilder-Checkliste)
     python3 tools/website.py albums     Legt in Fotos je Eintrag ein Album mit der Auswahl an
     python3 tools/website.py originals  Ersetzt Fotos-Vorschauen durch die Originale
@@ -27,6 +35,11 @@ import tempfile
 import unicodedata
 import urllib.parse
 from collections import Counter, defaultdict
+from html.parser import HTMLParser
+
+import archiv
+import aufgabenheft
+import sitebuild
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "data", "content.json")
@@ -272,7 +285,7 @@ def cmd_check(argv):
         # sie als Link-Vorschaukachel mit Favicon statt als Bildkachel.
         is_link_preview = "press" in cats and item.get("link") and not item.get("image")
         if not item.get("image") and not is_link_preview:
-            warnings.append(f"{iid}: kein Titelbild, Kachel bleibt leer")
+            warnings.append(f"{iid}: kein Titelbild, erscheint im Raster als Textkarte")
         if not (item.get("description") or "").strip():
             warnings.append(f"{iid}: keine Beschreibung")
         if not (item.get("type") or "").strip():
@@ -317,7 +330,58 @@ def cmd_check(argv):
             elif name.startswith("new-entry-") and name not in known_ids:
                 warnings.append(f"Ordner '{rel}' gehoert zu keinem Eintrag mehr")
 
-    print(f"{len(items)} Eintraege geprueft.")
+    # Weitere Datenfehler, die bisher unbemerkt blieben
+    for item in items:
+        iid = item.get("id", "<ohne id>")
+        if "[object Object]" in json.dumps(item):
+            errors.append(f"{iid}: enthaelt '[object Object]', ein Rest aus einem Formular")
+        link = item.get("link")
+        if link and not re.match(r"^(https?:|mailto:)", link):
+            warnings.append(f"{iid}: link ist keine Webadresse ({link})")
+        img = item.get("image")
+        gallery = item.get("images") or []
+        if img and gallery and img not in gallery:
+            warnings.append(f"{iid}: Titelbild steht nicht in der Galerie, Detailansicht zeigt andere Bilder")
+        for p in [img] + list(gallery):
+            if p and p.lower().endswith((".tif", ".tiff", ".psd", ".heic")):
+                errors.append(f"{iid}: {p} kann ausser Safari kein Browser anzeigen")
+        if item.get("sort_date") and not re.match(r"^\d{4}-\d{2}(-\d{2})?$", item["sort_date"]):
+            warnings.append(f"{iid}: sort_date '{item['sort_date']}' ist nicht JJJJ-MM")
+        if re.search(r"(^|-)new-entry-|^[A-Z]", iid):
+            warnings.append(f"{iid}: id ist nicht sprechend oder nicht klein geschrieben")
+
+    cv_err, cv_warn = check_cv(items)
+    errors += cv_err
+    warnings += cv_warn
+
+    site_err, site_warn = check_site(items)
+    errors += site_err
+    warnings += site_warn
+
+    html_err, html_warn, html_refs = check_html_refs(tracked, lower)
+    errors += html_err
+    warnings += html_warn
+
+    stale = sitebuild.stale_outputs(items)
+    if stale:
+        errors.append(
+            "Generierte Dateien passen nicht zu data/, bitte 'python3 tools/website.py build': "
+            + ", ".join(stale[:8]) + (" ..." if len(stale) > 8 else ""))
+
+    unlinked = unlinked_assets(items, html_refs)
+    details = "--details" in argv
+    if unlinked:
+        total = sum(len(v) for v in unlinked.values())
+        warnings.append(
+            f"{total} Dateien unter assets/ werden nirgends verwendet "
+            f"(Liste in CONTENT-AUDIT.md, einzeln mit 'check --details')")
+        if details:
+            for folder in sorted(unlinked):
+                for f in sorted(unlinked[folder]):
+                    warnings.append(f"  ungenutzt: {folder}/{f}")
+
+    print(f"{len(items)} Eintraege geprueft, "
+          f"{len(html_refs)} lokale Verweise in HTML und CSS geprueft.")
     print(f"\nFEHLER ({len(errors)}) - bricht die Seite sichtbar:")
     for e in errors or ["  keine"]:
         print(f"  {e}" if e != "  keine" else e)
@@ -325,6 +389,202 @@ def cmd_check(argv):
     for w in warnings or ["  keine"]:
         print(f"  {w}" if w != "  keine" else w)
     return 1 if errors else 0
+
+
+# ---------------------------------------------------------- check: CV
+
+def check_cv(items):
+    """CV und Raster kommen aus derselben Datei. Geprueft wird, dass jede
+    CV-Zeile zu einem Eintrag passt, dessen Jahr sie traegt, und dass
+    Ausbildung und Auszeichnungen im CV nicht fehlen."""
+    errors, warnings = [], []
+    site = sitebuild.load_site()
+    sections = {k for k, _ in site["cv_sections"]}
+    for item in items:
+        iid = item["id"]
+        lo, hi = sitebuild.year_range(item)
+        for row in item.get("cv") or []:
+            if row.get("section") not in sections:
+                errors.append(f"{iid}: CV-Abschnitt '{row.get('section')}' gibt es nicht")
+            if not row.get("lines"):
+                errors.append(f"{iid}: CV-Zeile ohne Text")
+            ry = sitebuild.years(row.get("date"))
+            if not ry:
+                errors.append(f"{iid}: CV-Datum '{row.get('date')}' ohne Jahreszahl")
+            elif lo is not None and not (lo <= min(ry) <= hi):
+                warnings.append(
+                    f"{iid}: CV sagt {row['date']}, Raster sagt {item['year']}")
+        cats = item.get("categories") or []
+        has_cv = bool(item.get("cv"))
+        if not has_cv and ({"education", "fellowships"} & set(cats)):
+            warnings.append(f"{iid}: steht unter Ausbildung/Auszeichnungen, fehlt aber im CV")
+    return errors, warnings
+
+
+def check_site(items):
+    errors, warnings = [], []
+    site = sitebuild.load_site()
+    by_id = {i["id"]: i for i in items}
+    for iid in site.get("featured") or []:
+        item = by_id.get(iid)
+        if not item:
+            errors.append(f"site.json: ausgewaehlte Arbeit '{iid}' gibt es nicht")
+        elif not item.get("image") or item["image"].startswith("http"):
+            errors.append(f"site.json: ausgewaehlte Arbeit '{iid}' hat kein lokales Titelbild")
+        elif "works" not in item.get("categories", []):
+            warnings.append(f"site.json: '{iid}' ist ausgewaehlt, aber keine Arbeit (works)")
+    if resolve(site.get("og_image_source", "")) is None:
+        errors.append("site.json: og_image_source zeigt ins Leere")
+    return errors, warnings
+
+
+# --------------------------------------------------- check: HTML und CSS
+
+SKIP_DIRS = {".git", "_inbox", "tools", "node_modules", "data"}
+URL_RE = re.compile(r"url\(\s*['\"]?([^'\")]+)['\"]?\s*\)")
+
+
+class RefParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.refs = []
+        self.in_style = False
+        self.in_jsonld = False
+        self.jsonld = []
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        for key in ("href", "src", "poster"):
+            if a.get(key):
+                self.refs.append(a[key])
+        if a.get("srcset"):
+            self.refs += [part.strip().split(" ")[0] for part in a["srcset"].split(",")]
+        if tag == "meta" and a.get("content", "").startswith("http"):
+            self.refs.append(a["content"])
+        if a.get("style"):
+            self.refs += URL_RE.findall(a["style"])
+        self.in_style = tag == "style"
+        self.in_jsonld = tag == "script" and a.get("type") == "application/ld+json"
+
+    def handle_endtag(self, tag):
+        self.in_style = False
+        self.in_jsonld = False
+
+    def handle_data(self, data):
+        if self.in_style:
+            self.refs += URL_RE.findall(data)
+        if self.in_jsonld:
+            self.jsonld.append(data)
+
+
+def own_path(ref, page_dir):
+    """Verweis -> Pfad relativ zur Repo-Wurzel, oder None wenn extern."""
+    ref = ref.strip()
+    if not ref or ref.startswith(("#", "mailto:", "tel:", "data:", "javascript:", "//")):
+        return None
+    m = re.match(r"^https?://(www\.)?schamborski\.com(/.*)?$", ref)
+    if ref.startswith("http"):
+        if not m:
+            return None
+        path = (m.group(2) or "/").lstrip("/")
+        base = ROOT
+    else:
+        path = ref
+        base = ROOT if ref.startswith("/") else page_dir
+        path = path.lstrip("/")
+    path = path.split("#")[0].split("?")[0]
+    if not path:
+        return None  # nur ?filter=... oder #anker: dieselbe Seite
+    full = os.path.normpath(os.path.join(base, urllib.parse.unquote(path)))
+    if ref.endswith("/") or os.path.isdir(full):
+        full = os.path.join(full, "index.html")
+    return os.path.relpath(full, ROOT)
+
+
+def check_html_refs(tracked, lower):
+    errors, warnings, refs_seen = [], [], set()
+    pages = []
+    for dirpath, dirs, files in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS and not d.startswith(".")]
+        for f in files:
+            if f.endswith((".html", ".css")):
+                pages.append(os.path.join(dirpath, f))
+    for page in sorted(pages):
+        rel_page = os.path.relpath(page, ROOT)
+        with open(page, encoding="utf-8") as fh:
+            text = fh.read()
+        if page.endswith(".css"):
+            refs = URL_RE.findall(text)
+        else:
+            parser = RefParser()
+            parser.feed(text)
+            refs = parser.refs
+            for block in parser.jsonld:
+                if block.strip():
+                    try:
+                        json.loads(block)
+                    except ValueError as e:
+                        errors.append(f"{rel_page}: JSON-LD ist kein gueltiges JSON ({e})")
+        for ref in refs:
+            target = own_path(ref, os.path.dirname(page))
+            if target is None:
+                continue
+            refs_seen.add(unicodedata.normalize("NFC", target))
+            if not os.path.exists(os.path.join(ROOT, target)):
+                errors.append(f"{rel_page}: Verweis ins Leere -> {ref}")
+                continue
+            real = unicodedata.normalize("NFC", target)
+            if tracked is not None and real not in tracked:
+                if real.lower() in lower:
+                    errors.append(f"{rel_page}: Gross-/Kleinschreibung weicht ab -> {ref}")
+                else:
+                    errors.append(f"{rel_page}: {ref} liegt nicht in Git, live ein 404")
+    return errors, warnings, refs_seen
+
+
+def unlinked_assets(items, html_refs):
+    """Dateien unter assets/, die weder content.json noch eine Seite nutzt."""
+    used = set(html_refs)
+    for item in items:
+        for _, path in asset_paths(item):
+            if path and not path.startswith("http"):
+                used.add(unicodedata.normalize("NFC", urllib.parse.unquote(path)))
+    # Originale, deren Webfassung verwendet wird, gelten als genutzt
+    try:
+        with open(os.path.join(ROOT, "data", "asset-sources.json"), encoding="utf-8") as fh:
+            sources = json.load(fh).get("sources", {})
+    except (OSError, ValueError):
+        sources = {}
+    for derived, original in sources.items():
+        if unicodedata.normalize("NFC", derived) in used:
+            used.add(unicodedata.normalize("NFC", original))
+    out = defaultdict(list)
+    for sub in ("images", "pdfs"):
+        base = os.path.join(ROOT, "assets", sub)
+        for dirpath, _dirs, files in os.walk(base):
+            for f in files:
+                if f.startswith("."):
+                    continue
+                rel = unicodedata.normalize("NFC", os.path.relpath(os.path.join(dirpath, f), ROOT))
+                if rel not in used:
+                    out[os.path.dirname(rel)].append(f)
+    return out
+
+
+# -------------------------------------------------------------------- build
+
+def cmd_build(argv):
+    items = load()
+    written = sitebuild.build(items)
+    if written:
+        print("Geschrieben:")
+        for w in written:
+            print(f"  {w}")
+        print("\nNeue Dateien vor dem Commit mit 'git add' aufnehmen, dann: "
+              "python3 tools/website.py check")
+    else:
+        print("Alles aktuell, nichts zu schreiben.")
+    return 0
 
 
 # -------------------------------------------------------------------- needs
@@ -855,10 +1115,80 @@ def cmd_originals(argv):
     return 0
 
 
+# ------------------------------------------------------------------- links
+
+def cmd_links(argv):
+    """Ruft jede externe Adresse aus content.json einmal auf. Links altern
+    schneller als alles andere auf der Seite, deshalb ein eigener Befehl."""
+    import urllib.request
+    from concurrent.futures import ThreadPoolExecutor
+
+    urls = defaultdict(set)
+    for item in load():
+        refs = [item.get("link"), item.get("video_link")]
+        refs += [r.get("url") if isinstance(r, dict) else r for r in item.get("related_links") or []]
+        for ref in refs:
+            if isinstance(ref, str) and ref.startswith("http"):
+                urls[ref].add(item["id"])
+
+    def probe(url):
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh) schamborski.com link check"})
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return url, resp.status
+        except Exception as exc:
+            return url, getattr(exc, "code", None) or f"{type(exc).__name__}: {str(exc)[:60]}"
+
+    with ThreadPoolExecutor(8) as pool:
+        results = list(pool.map(probe, sorted(urls)))
+    broken = [(u, s) for u, s in results if s != 200]
+    print(f"{len(results)} externe Links geprueft, {len(broken)} auffaellig.")
+    for url, state in broken:
+        # 403 heisst meist nur, dass die Gegenseite Skripte abweist
+        note = " (vermutlich nur Bot-Sperre, im Browser pruefen)" if state == 403 else ""
+        print(f"  {state}{note}\n    {url}\n    in: {', '.join(sorted(urls[url]))}")
+    return 0
+
+
+# ------------------------------------------------------------------ cv-pdf
+
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+CV_PDF = os.path.join(ROOT, "assets", "pdfs", "Nickii-Schamborski-CV.pdf")
+
+
+def cmd_cv_pdf(argv):
+    """Druckt pages/cv.html mit dem Druck-Stylesheet als PDF. Nach jeder
+    Aenderung am CV neu laufen lassen, sonst bietet die Seite ein altes PDF an."""
+    if not os.path.exists(CHROME):
+        print("Google Chrome nicht gefunden. Ersatz: pages/cv.html im Browser oeffnen, "
+              "Drucken, 'Als PDF sichern', nach assets/pdfs/Nickii-Schamborski-CV.pdf.")
+        return 1
+    src = "file://" + urllib.parse.quote(os.path.join(ROOT, "pages", "cv.html"))
+    subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
+                    f"--print-to-pdf={CV_PDF}", src], capture_output=True, check=True, timeout=120)
+    print(f"Geschrieben: {os.path.relpath(CV_PDF, ROOT)} ({os.path.getsize(CV_PDF) // 1024} KB)")
+    return 0
+
+
+def aufgabe(argv):
+    if "--taeglich" in argv:
+        pfad, titel = aufgabenheft.heutige_datei()
+        if pfad:
+            print(f"{pfad}\t{titel}")
+        return 0
+    return aufgabenheft.cmd_aufgabe(argv)
+
+
 COMMANDS = {
+    "aufgabe": lambda argv: aufgabe(argv),
+    "heft": lambda argv: __import__("aufgabenheft_app").cmd_heft(argv),
+    "archiv": archiv.cmd_archiv,
+    "build": cmd_build,
     "check": cmd_check,
+    "cv-pdf": cmd_cv_pdf,
     "originals": cmd_originals,
     "albums": cmd_albums,
+    "links": cmd_links,
     "needs": cmd_needs,
     "intake": cmd_intake,
     "serve": cmd_serve,

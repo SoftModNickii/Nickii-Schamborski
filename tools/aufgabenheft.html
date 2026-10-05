@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aufgabenheft · Archiv schamborski.com</title>
+<link rel="icon" href="/site/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Manrope:wght@300;400;600&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+    --magenta: #C026D3;
+    --violett: #7C3AED;
+    --tinte: #1c1622;
+    --grau: #6b6470;
+    --papier: #FBF7F1;
+    --blatt: #ffffff;
+    --linie: #E9E1F0;
+    --schatten: 0 1px 2px rgba(60, 20, 70, .06), 0 12px 32px rgba(60, 20, 70, .10);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Manrope', sans-serif;
+    color: var(--tinte);
+    background-color: var(--papier);
+    background-image: radial-gradient(#e7dcef 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+    min-height: 100vh;
+    padding: 28px 16px 80px;
+}
+.wrap { max-width: 880px; margin: 0 auto; }
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--magenta); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- Kopf ---------- */
+.kopf { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 18px; }
+.titel { font-family: 'Caveat', cursive; font-weight: 700; font-size: 3.1rem; line-height: .9; color: var(--magenta); transform: rotate(-2deg); }
+.titel small { display: block; font-family: 'Manrope', sans-serif; font-weight: 400; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--grau); transform: rotate(2deg); margin-top: 8px; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { background: var(--blatt); border-radius: 999px; padding: 8px 14px; font-size: .85rem; box-shadow: var(--schatten); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.chip b { font-weight: 600; }
+.chip.stufe { background: linear-gradient(135deg, #fdf0ff, #efe6ff); color: #6b21a8; }
+
+.balken-box { background: var(--blatt); border-radius: 18px; padding: 14px 18px; box-shadow: var(--schatten); margin-bottom: 26px; }
+.balken-text { display: flex; justify-content: space-between; font-size: .85rem; color: var(--grau); margin-bottom: 8px; gap: 12px; flex-wrap: wrap; }
+.balken-text b { color: var(--tinte); }
+.balken { height: 16px; background: #f1eaf6; border-radius: 999px; overflow: hidden; }
+.balken i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--magenta), var(--violett)); transition: width 1.2s cubic-bezier(.2,.8,.2,1); position: relative; }
+.balken i::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(255,255,255,.18) 0 8px, transparent 8px 16px); }
+
+.reiter { display: flex; gap: 8px; margin-bottom: 18px; }
+.reiter button { border: 0; background: transparent; padding: 8px 16px; border-radius: 999px; color: var(--grau); font-size: .9rem; }
+.reiter button[aria-selected="true"] { background: var(--tinte); color: #fff; }
+
+/* ---------- Blatt ---------- */
+.blatt { position: relative; background: var(--blatt); border-radius: 6px 6px 22px 22px; box-shadow: var(--schatten); padding: 44px 40px 36px; transform: rotate(-.35deg); }
+.blatt::before { content: ""; position: absolute; top: -14px; left: 50%; width: 130px; height: 30px; transform: translateX(-50%) rotate(2deg); background: rgba(192, 38, 211, .22); border-left: 2px dashed rgba(255,255,255,.6); border-right: 2px dashed rgba(255,255,255,.6); }
+.blatt-inhalt { transform: rotate(.35deg); }
+.meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; font-size: .82rem; color: var(--grau); }
+.sticker { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-weight: 600; font-size: .78rem; transform: rotate(-3deg); }
+.sterne { color: #f59e0b; letter-spacing: 2px; font-size: 1rem; }
+.sterne .leer { color: #e5dccb; }
+h1.aufgabe { font-family: 'Source Serif Pro', serif; font-weight: 600; font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; margin-bottom: 14px; }
+.frage { font-family: 'Source Serif Pro', serif; font-size: 1.15rem; line-height: 1.7; margin-bottom: 26px; }
+
+.archiv { background: #faf6fd; border: 2px dashed #e4d4ef; border-radius: 16px; padding: 18px 20px; margin-bottom: 26px; }
+.archiv h2, .antwort h2 { font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.7rem; color: var(--violett); margin-bottom: 8px; line-height: 1; }
+.archiv .zeile { font-size: .85rem; color: var(--grau); margin-bottom: 10px; }
+.archiv .zeile b { color: var(--tinte); font-weight: 600; }
+.archiv blockquote { font-family: 'Source Serif Pro', serif; font-size: 1rem; line-height: 1.7; border-left: 3px solid var(--magenta); padding: 4px 0 4px 14px; margin: 10px 0 14px; white-space: pre-wrap; }
+.archiv blockquote[lang="de"] { border-left-color: var(--violett); }
+.sprache { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--grau); margin-top: 12px; }
+.leer-hinweis { font-style: italic; color: var(--grau); font-family: 'Source Serif Pro', serif; }
+.bilder { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin: 12px 0 4px; }
+.bilder button { border: 0; padding: 0; background: #eee; border-radius: 10px; overflow: hidden; aspect-ratio: 1; box-shadow: 0 2px 6px rgba(0,0,0,.08); transition: transform .25s; }
+.bilder button:hover { transform: rotate(-1.5deg) scale(1.03); }
+.bilder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bilder figcaption { font-size: .7rem; color: var(--grau); margin-top: 4px; word-break: break-all; }
+.bilder figure.gross { grid-column: 1 / -1; }
+.bilder figure.gross button { aspect-ratio: auto; max-height: 460px; }
+.bilder figure.gross img { object-fit: contain; max-height: 460px; background: #f6f2f9; }
+.dateilink { display: inline-flex; gap: 6px; align-items: center; background: #fff; border: 1px solid #e4d4ef; border-radius: 10px; padding: 8px 12px; margin: 6px 8px 0 0; color: var(--tinte); text-decoration: none; font-size: .85rem; }
+.dateilink:hover { border-color: var(--magenta); }
+.seitenlink { display: inline-block; margin-top: 12px; color: var(--magenta); font-weight: 600; font-size: .88rem; text-decoration: none; border-bottom: 2px solid rgba(192,38,211,.3); }
+.seitenlink:hover { border-color: var(--magenta); }
+video { width: 100%; border-radius: 10px; margin-top: 8px; }
+
+.antwort .format { font-size: .9rem; color: var(--grau); margin-bottom: 10px; }
+.antwort .format b { color: var(--tinte); }
+textarea {
+    width: 100%; min-height: 220px; resize: vertical; border: 0; outline: none;
+    font-family: 'Source Serif Pro', serif; font-size: 1.12rem; line-height: 32px; color: var(--tinte);
+    padding: 6px 16px 16px 58px; border-radius: 12px;
+    background-color: #fffdf7;
+    background-image:
+        linear-gradient(90deg, transparent 44px, #f3b6c9 44px, #f3b6c9 46px, transparent 46px),
+        repeating-linear-gradient(to bottom, transparent 0 31px, #d9e6f5 31px 32px);
+    background-attachment: local;
+    box-shadow: inset 0 0 0 2px #efe7df;
+}
+.felder { display: grid; gap: 14px; margin-bottom: 14px; }
+.feld label { display: block; font-weight: 600; margin-bottom: 2px; }
+.feld .hilfe { font-size: .85rem; color: var(--grau); margin-bottom: 6px; }
+.feld textarea { min-height: 0; }
+.feld .schnell { margin-top: 4px; display: flex; gap: 6px; flex-wrap: wrap; }
+.feld .schnell button { font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 999px; border: 1px solid #d6d3d1; background: #fff; color: var(--grau); cursor: pointer; }
+.feld .schnell button:hover { border-color: var(--magenta); color: var(--magenta); }
+textarea:focus { box-shadow: inset 0 0 0 2px var(--magenta); }
+.aktionen { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.entwurf { font-size: .8rem; color: var(--grau); }
+.abgeben { border: 0; border-radius: 999px; padding: 15px 30px; font-size: 1.05rem; font-weight: 600; color: #fff; background: linear-gradient(135deg, var(--magenta), var(--violett)); box-shadow: 0 8px 20px rgba(192,38,211,.35); transition: transform .2s, box-shadow .2s; }
+.abgeben:hover { transform: translateY(-2px) rotate(-1deg); box-shadow: 0 12px 26px rgba(192,38,211,.45); }
+.abgeben:disabled { opacity: .55; transform: none; cursor: default; }
+.zweit { border: 2px solid var(--tinte); background: #fff; border-radius: 999px; padding: 12px 22px; font-weight: 600; }
+
+.stempel { position: absolute; top: 26px; right: 26px; border: 3px solid #16a34a; color: #16a34a; font-weight: 700; letter-spacing: .12em; padding: 6px 12px; border-radius: 10px; transform: rotate(8deg); font-size: .85rem; background: rgba(255,255,255,.85); }
+
+/* ---------- Geschafft ---------- */
+.geschafft { text-align: center; padding: 20px 0 6px; }
+.geschafft .gross { font-family: 'Caveat', cursive; font-size: 3.4rem; color: var(--magenta); line-height: 1; transform: rotate(-3deg); display: inline-block; }
+.geschafft p { font-family: 'Source Serif Pro', serif; font-size: 1.1rem; margin: 12px 0 22px; }
+.plus { display: inline-block; font-weight: 700; color: #f59e0b; font-size: 1.4rem; animation: hoch 1.4s ease-out both; }
+.aufstieg { background: linear-gradient(135deg, #fdf0ff, #efe6ff); border-radius: 14px; padding: 12px 18px; margin: 0 auto 20px; max-width: 420px; font-weight: 600; color: #6b21a8; }
+.knoepfe { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+@keyframes hoch { from { transform: translateY(12px) scale(.6); opacity: 0; } 50% { transform: translateY(-6px) scale(1.2); opacity: 1; } to { transform: none; opacity: 1; } }
+
+/* ---------- Heft-Uebersicht ---------- */
+.heft { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.karte { position: relative; text-align: left; border: 0; background: #fff; border-radius: 14px; padding: 14px 14px 12px; box-shadow: var(--schatten); min-height: 120px; display: flex; flex-direction: column; gap: 8px; transition: transform .2s; }
+.karte:nth-child(3n) { transform: rotate(.6deg); }
+.karte:nth-child(3n+1) { transform: rotate(-.5deg); }
+.karte:hover { transform: translateY(-3px) rotate(-1deg); }
+.karte .nr { font-size: .72rem; color: var(--grau); display: flex; justify-content: space-between; }
+.karte .t { font-family: 'Source Serif Pro', serif; font-size: 1rem; line-height: 1.3; }
+.karte.erledigt { background: #f3fbf5; }
+.karte.erledigt .t { color: #5b6b60; }
+.karte.erledigt::after { content: "✓ erledigt"; position: absolute; right: 10px; bottom: 10px; color: #16a34a; border: 2px solid #16a34a; border-radius: 8px; padding: 1px 6px; font-size: .68rem; font-weight: 700; transform: rotate(-8deg); }
+.karte.heute { box-shadow: 0 0 0 3px var(--magenta), var(--schatten); }
+
+/* ---------- Lightbox ---------- */
+.lightbox { position: fixed; inset: 0; background: rgba(28, 22, 34, .88); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; }
+.lightbox.offen { display: flex; }
+.lightbox img { max-width: 100%; max-height: 88vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.lightbox button { position: absolute; top: 16px; right: 20px; background: #fff; border: 0; border-radius: 999px; width: 44px; height: 44px; font-size: 1.4rem; }
+
+.fehler { background: #fff1f2; color: #9f1239; border-radius: 12px; padding: 12px 16px; margin-top: 12px; }
+canvas#konfetti { position: fixed; inset: 0; pointer-events: none; z-index: 60; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+@media (max-width: 640px) {
+    .blatt { padding: 36px 20px 26px; }
+    .titel { font-size: 2.5rem; }
+    .stempel { top: 14px; right: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<canvas id="konfetti" aria-hidden="true"></canvas>
+<div class="wrap">
+    <header class="kopf">
+        <div class="titel">Aufgabenheft<small>Archiv schamborski.com · <span id="datum"></span></small></div>
+        <div class="chips" id="chips"></div>
+    </header>
+
+    <section class="balken-box" aria-label="Fortschritt">
+        <div class="balken-text"><span id="balken-links"></span><span id="balken-rechts"></span></div>
+        <div class="balken" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="balken"><i id="balken-fuellung"></i></div>
+    </section>
+
+    <nav class="reiter" role="tablist" aria-label="Ansicht">
+        <button role="tab" aria-selected="true" data-ansicht="aufgabe" id="tab-aufgabe">Heute</button>
+        <button role="tab" aria-selected="false" data-ansicht="heft" id="tab-heft">Ganzes Heft</button>
+    </nav>
+
+    <main id="haupt"></main>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bild groß">
+    <button type="button" aria-label="Schließen">×</button>
+    <img alt="">
+</div>
+
+<script>
+const ARTEN = {
+    bestaetigen:  ['✅', '#F3E8FF', '#7E22CE'],
+    verbinden:    ['🔗', '#E0F2FE', '#0369A1'],
+    beschreiben:  ['🖼️', '#FEF3C7', '#B45309'],
+    schreiben:    ['✍️', '#FCE7F3', '#BE185D'],
+    zuordnen:     ['🧩', '#DCFCE7', '#15803D'],
+    fotografieren:['📷', '#FFE4E6', '#BE123C'],
+    erinnern:     ['💭', '#EDE9FE', '#6D28D9'],
+    erledigen:    ['🔧', '#E2E8F0', '#334155'],
+    karteikarte:  ['🗂️', '#FFEDD5', '#C2410C'],
+    gegenlesen:   ['👀', '#CCFBF1', '#0F766E'],
+};
+const REDUZIERT = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const haupt = document.getElementById('haupt');
+let aktuell = null;
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const bild = (pfad, w = 500) => `/bild?w=${w}&pfad=${encodeURIComponent(pfad)}`;
+const datei = pfad => `/datei?pfad=${encodeURIComponent(pfad)}`;
+
+document.getElementById('datum').textContent =
+    new Date().toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long' });
+
+async function api(url, opts) {
+    const r = await fetch(url, opts);
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.fehler || 'Fehler');
+    return d;
+}
+
+function zeigeStatus(s) {
+    const pct = Math.round(s.anteil * 100);
+    document.getElementById('chips').innerHTML = `
+        <span class="chip" title="Tage am Stück">🔥 <b>${s.serie}</b> ${s.serie === 1 ? 'Tag' : 'Tage'}</span>
+        <span class="chip" title="Punkte">⭐ <b>${s.punkte}</b> Punkte</span>
+        <span class="chip stufe" title="Deine Stufe">🎓 ${esc(s.stufe)}</span>`;
+    document.getElementById('balken-links').innerHTML = `Archiv zu <b>${pct} %</b> vollständig · ${s.geloest} von ${s.gesamt} Aufgaben`;
+    document.getElementById('balken-rechts').innerHTML = s.naechste_stufe
+        ? `noch <b>${s.punkte_bis}</b> Punkte bis ${esc(s.naechste_stufe)}` : 'Höchste Stufe erreicht ✨';
+    document.getElementById('balken').setAttribute('aria-valuenow', pct);
+    requestAnimationFrame(() => { document.getElementById('balken-fuellung').style.width = Math.max(pct, 2) + '%'; });
+}
+
+function sterne(n) {
+    return `<span class="sterne" aria-label="${n} von 3 Sternen">${'★'.repeat(n)}<span class="leer">${'★'.repeat(3 - n)}</span></span>`;
+}
+
+function sticker(art, name) {
+    const [emoji, bg, fg] = ARTEN[art] || ['📌', '#eee', '#333'];
+    return `<span class="sticker" style="background:${bg};color:${fg}">${emoji} ${esc(name)}</span>`;
+}
+
+function bilderHtml(pfade, erstesGross) {
+    return `<div class="bilder">` + pfade.map((p, i) => `
+        <figure class="${erstesGross && i === 0 ? 'gross' : ''}">
+            <button type="button" data-gross="${esc(bild(p, 1800))}" aria-label="Bild ${i + 1} groß ansehen">
+                <img src="${esc(bild(p, erstesGross && i === 0 ? 1100 : 400))}" alt="" loading="lazy">
+            </button>
+        </figure>`).join('') + `</div>`;
+}
+
+function archivHtml(k, aufgabe) {
+    let h = '';
+    if (k.statement) {
+        h += `<p class="zeile">So steht es gerade auf der Startseite:</p>`;
+        h += k.statement.map(p => `<blockquote>${esc(p)}</blockquote>`).join('');
+    }
+    if (k.auswahl) {
+        h += `<div class="bilder">` + k.auswahl.map((w, i) => `
+            <figure><button type="button" data-gross="${esc(bild(w.bild, 1800))}" aria-label="${esc(w.titel)} groß ansehen">
+                <img src="${esc(bild(w.bild, 400))}" alt=""></button>
+                <figcaption>${i + 1}. ${esc(w.titel)} (${esc(w.jahr)})</figcaption></figure>`).join('') + `</div>`;
+    }
+    if (k.eintrag) {
+        const e = k.eintrag;
+        h += `<p class="zeile"><b>${esc(e.titel)}</b>${e.jahr ? ' · ' + esc(e.jahr) : ''}${e.typ ? ' · ' + esc(e.typ) : ''}</p>`;
+        if (e.ort) h += `<p class="zeile">Ort / Institution: <b>${esc(e.ort)}</b></p>`;
+        if (e.specs) h += `<p class="zeile">Angaben: <b>${esc(e.specs)}</b></p>`;
+        h += `<div class="sprache">Text auf der Seite (Englisch)</div>`;
+        h += e.text_en ? `<blockquote lang="en">${esc(e.text_en)}</blockquote>` : `<p class="leer-hinweis">Noch kein englischer Text.</p>`;
+        if (e.text_de || aufgabe.art === 'schreiben') {
+            h += `<div class="sprache">Text auf der Seite (Deutsch)</div>`;
+            h += e.text_de ? `<blockquote lang="de">${esc(e.text_de)}</blockquote>` : `<p class="leer-hinweis">Noch kein deutscher Text.</p>`;
+        }
+        if (e.bilder.length) {
+            h += bilderHtml(e.bilder, aufgabe.art === 'beschreiben');
+            if (e.mehr_bilder) h += `<p class="zeile">… und ${e.mehr_bilder} weitere Bilder</p>`;
+        }
+    }
+    if (k.hinweis && !(k.eintrag && k.hinweis === k.eintrag.text_en)) {
+        h += `<p class="zeile" style="margin-top:12px;white-space:pre-line">💡 ${esc(k.hinweis)}</p>`;
+    }
+    const zeigen = (k.dateien || []).filter(d => !(k.eintrag && k.eintrag.bilder.includes(d.pfad)));
+    const bilder = zeigen.filter(d => d.art === 'bild' && d.da).map(d => d.pfad);
+    if (bilder.length) h += bilderHtml(bilder, bilder.length === 1);
+    zeigen.filter(d => d.art === 'video' && d.da).forEach(d => {
+        h += `<video src="${esc(datei(d.pfad))}" controls preload="metadata"></video>`;
+    });
+    zeigen.filter(d => d.art === 'datei' && d.da).forEach(d => {
+        h += `<a class="dateilink" href="${esc(datei(d.pfad))}" target="_blank" rel="noopener">📄 ${esc(d.name)} öffnen</a>`;
+    });
+    if (k.seite) h += `<br><a class="seitenlink" href="${esc(k.seite)}" target="_blank" rel="noopener">So sieht es auf der Webseite aus ↗</a>`;
+    return h ? `<section class="archiv"><h2>Was im Archiv steht</h2>${h}</section>` : '';
+}
+
+function entwurfKey(id) { return 'aufgabenheft-entwurf-' + id; }
+function leseEntwurf(id) { try { return localStorage.getItem(entwurfKey(id)) || ''; } catch (e) { return ''; } }
+function schreibeEntwurf(id, t) { try { localStorage.setItem(entwurfKey(id), t); } catch (e) {} }
+function leseFelder(id) { try { return JSON.parse(leseEntwurf(id)) || {}; } catch (e) { return {}; } }
+// Die Felder einer Karteikarte als Text, eine Angabe je Absatz. So bleibt
+// die Antwortdatei lesbar und laesst sich Feld fuer Feld einarbeiten.
+function felderText() {
+    const teile = [];
+    document.querySelectorAll('.felder [data-feld]').forEach(t => {
+        const wert = t.value.trim();
+        if (!wert) return;
+        teile.push(t.dataset.feld === '_sonst' ? `Sonst:\n${wert}` : `${t.dataset.label} [${t.dataset.feld}]:\n${wert}`);
+    });
+    return teile.join('\n\n');
+}
+function loescheEntwurf(id) { try { localStorage.removeItem(entwurfKey(id)); } catch (e) {} }
+
+function zeigeAufgabe(d) {
+    zeigeStatus(d.status);
+    if (d.fertig) {
+        haupt.innerHTML = `<article class="blatt"><div class="blatt-inhalt geschafft">
+            <div class="gross">Das Heft ist voll!</div>
+            <p>Alle Lücken sind gefüllt. Das Archiv ist vollständig. 🎉</p></div></article>`;
+        konfetti();
+        return;
+    }
+    aktuell = d;
+    const a = d.aufgabe;
+    const text = d.antwort || leseEntwurf(a.id);
+    // Karteikarte: je fehlender Angabe ein Feld. Ist schon abgegeben, steht
+    // die Antwort als Text da und laesst sich dort aendern.
+    const alsFelder = a.felder && a.felder.length && !d.antwort;
+    const entwurf = alsFelder ? leseFelder(a.id) : {};
+    const eingabe = alsFelder ? `<div class="felder">` + a.felder.map(fd => `
+        <div class="feld">
+            <label for="feld-${esc(fd.key)}">${esc(fd.label)}</label>
+            ${fd.hilfe ? `<div class="hilfe">${esc(fd.hilfe)}</div>` : ''}
+            <textarea id="feld-${esc(fd.key)}" data-feld="${esc(fd.key)}" data-label="${esc(fd.label)}" rows="2">${esc(entwurf[fd.key] || '')}</textarea>
+            <div class="schnell">
+                <button type="button" data-setze="weiß nicht">weiß nicht</button>
+                <button type="button" data-setze="gibt es nicht">gibt es nicht</button>
+            </div>
+        </div>`).join('') + `
+        <div class="feld">
+            <label for="antwort">Sonst noch etwas zu diesem Eintrag?</label>
+            <textarea id="antwort" data-feld="_sonst" rows="2" placeholder="Stimmt etwas nicht, fehlt etwas, das hier nicht gefragt wird?">${esc(entwurf._sonst || '')}</textarea>
+        </div></div>`
+        : `<textarea id="antwort" placeholder="Einfach losschreiben. Stichpunkte reichen, Deutsch oder Englisch.">${esc(text)}</textarea>`;
+    haupt.innerHTML = `
+    <article class="blatt">
+        ${d.geloest ? '<div class="stempel">GELÖST</div>' : ''}
+        <div class="blatt-inhalt">
+            <div class="meta">${sticker(a.art, a.art_name)} ${sterne(a.sterne)} <span>Aufgabe ${a.nummer} von ${d.status.gesamt}</span></div>
+            <h1 class="aufgabe">${esc(a.titel)}</h1>
+            <p class="frage">${esc(a.frage)}</p>
+            ${archivHtml(d.kontext, a)}
+            <section class="antwort">
+                <h2><label for="antwort">Deine Antwort</label></h2>
+                ${a.format ? `<p class="format"><b>So reicht es:</b> ${esc(a.format)}</p>` : ''}
+                ${eingabe}
+                <div class="aktionen">
+                    <span class="entwurf" id="entwurf" aria-live="polite">${d.geloest ? 'Schon abgegeben, du kannst sie noch ändern.' : ''}</span>
+                    <button class="abgeben" id="abgeben" type="button">${d.geloest ? 'Änderung speichern' : 'Abgeben ✨'}</button>
+                </div>
+                <div id="meldung"></div>
+            </section>
+        </div>
+    </article>`;
+    const ta = document.getElementById('antwort');
+    if (alsFelder) {
+        const merke = () => {
+            const werte = {};
+            document.querySelectorAll('[data-feld]').forEach(t => { werte[t.dataset.feld] = t.value; });
+            schreibeEntwurf(a.id, JSON.stringify(werte));
+            document.getElementById('entwurf').textContent = 'Entwurf gemerkt ✓';
+        };
+        document.querySelector('.felder').addEventListener('input', merke);
+        document.querySelector('.felder').addEventListener('click', e => {
+            const b = e.target.closest('[data-setze]');
+            if (!b) return;
+            b.closest('.feld').querySelector('textarea').value = b.dataset.setze;
+            merke();
+        });
+    } else {
+        ta.addEventListener('input', () => {
+            schreibeEntwurf(a.id, ta.value);
+            document.getElementById('entwurf').textContent = 'Entwurf gemerkt ✓';
+        });
+    }
+    document.getElementById('abgeben').addEventListener('click', abgeben);
+}
+
+async function abgeben() {
+    const a = aktuell.aufgabe;
+    const ta = document.getElementById('antwort');
+    const knopf = document.getElementById('abgeben');
+    const meldung = document.getElementById('meldung');
+    const antwort = document.querySelector('.felder') ? felderText() : ta.value;
+    if (!antwort.trim()) {
+        meldung.innerHTML = `<div class="fehler">Schreib erst etwas hinein, ein Stichwort reicht.</div>`;
+        ta.focus();
+        return;
+    }
+    knopf.disabled = true;
+    try {
+        const r = await api('/api/antwort', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: a.id, text: antwort }),
+        });
+        loescheEntwurf(a.id);
+        zeigeStatus(r.status);
+        if (!r.neu) {
+            meldung.innerHTML = `<p class="entwurf" style="margin-top:10px">Gespeichert ✓</p>`;
+            knopf.disabled = false;
+            return;
+        }
+        konfetti();
+        const lob = ['Großartig!', 'Stark!', 'Wunderbar!', 'Genau so!', 'Yes!', 'Bravo!'][Math.floor(Math.random() * 6)];
+        haupt.innerHTML = `
+        <article class="blatt"><div class="blatt-inhalt geschafft">
+            <div class="gross">${lob}</div>
+            <p>„${esc(a.titel)}“ ist erledigt. <span class="plus">+${r.plus} ⭐</span></p>
+            ${r.aufgestiegen ? `<div class="aufstieg">🎓 Neue Stufe: ${esc(r.status.stufe)}</div>` : ''}
+            <p style="font-size:.95rem;color:var(--grau)">Ich arbeite deine Antwort ein, sobald du sagst: „Arbeite die Antworten aus dem Aufgabenheft ein.“</p>
+            <div class="knoepfe">
+                <button class="abgeben" type="button" id="bonus">Noch eine? 🎁</button>
+                <button class="zweit" type="button" id="zum-heft">Ganzes Heft ansehen</button>
+            </div>
+        </div></article>`;
+        document.getElementById('bonus').addEventListener('click', () => ladeHeute(true));
+        document.getElementById('zum-heft').addEventListener('click', () => ansicht('heft'));
+    } catch (e) {
+        meldung.innerHTML = `<div class="fehler">Speichern ging nicht: ${esc(e.message)}. Läuft das Heft noch?</div>`;
+        knopf.disabled = false;
+    }
+}
+
+async function ladeHeute(bonus) {
+    try {
+        zeigeAufgabe(await api('/api/heute' + (bonus ? '?bonus=1' : '')));
+        window.scrollTo({ top: 0, behavior: REDUZIERT ? 'auto' : 'smooth' });
+    } catch (e) {
+        haupt.innerHTML = `<div class="fehler">Das Heft konnte nicht laden: ${esc(e.message)}</div>`;
+    }
+}
+
+async function ladeAufgabe(id) {
+    ansichtTabs('aufgabe');
+    zeigeAufgabe(await api('/api/aufgabe?id=' + encodeURIComponent(id)));
+    window.scrollTo({ top: 0, behavior: REDUZIERT ? 'auto' : 'smooth' });
+}
+
+async function ladeHeft() {
+    const d = await api('/api/heft');
+    zeigeStatus(d.status);
+    haupt.innerHTML = `<div class="heft">` + d.aufgaben.map(a => `
+        <button type="button" class="karte${a.geloest ? ' erledigt' : ''}${a.heute ? ' heute' : ''}" data-id="${esc(a.id)}">
+            <span class="nr"><span>${a.nummer}${a.heute ? ' · heute' : ''}</span>${sterne(a.sterne)}</span>
+            ${sticker(a.art, a.art_name)}
+            <span class="t">${esc(a.titel)}</span>
+        </button>`).join('') + `</div>`;
+}
+
+function ansichtTabs(name) {
+    document.querySelectorAll('.reiter button').forEach(b =>
+        b.setAttribute('aria-selected', b.dataset.ansicht === name ? 'true' : 'false'));
+}
+
+function ansicht(name) {
+    ansichtTabs(name);
+    if (name === 'heft') ladeHeft(); else ladeHeute(false);
+}
+
+document.querySelector('.reiter').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (b) ansicht(b.dataset.ansicht);
+});
+
+haupt.addEventListener('click', e => {
+    const karte = e.target.closest('.karte');
+    if (karte) return ladeAufgabe(karte.dataset.id);
+    const gross = e.target.closest('[data-gross]');
+    if (gross) {
+        const lb = document.getElementById('lightbox');
+        lb.querySelector('img').src = gross.dataset.gross;
+        lb.classList.add('offen');
+        lb.querySelector('button').focus();
+    }
+});
+
+const lightbox = document.getElementById('lightbox');
+lightbox.addEventListener('click', e => { if (e.target !== lightbox.querySelector('img')) lightbox.classList.remove('offen'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('offen'); });
+
+// ---------- Konfetti ----------
+function konfetti() {
+    if (REDUZIERT) return;
+    const c = document.getElementById('konfetti');
+    const ctx = c.getContext('2d');
+    c.width = innerWidth; c.height = innerHeight;
+    const farben = ['#C026D3', '#7C3AED', '#F59E0B', '#10B981', '#3B82F6', '#F472B6'];
+    const teile = Array.from({ length: 160 }, () => ({
+        x: innerWidth / 2 + (Math.random() - .5) * 200, y: innerHeight * .35,
+        vx: (Math.random() - .5) * 14, vy: -Math.random() * 14 - 4,
+        r: Math.random() * 6 + 4, f: farben[Math.floor(Math.random() * farben.length)],
+        w: Math.random() * Math.PI, dw: (Math.random() - .5) * .3,
+    }));
+    let t = 0;
+    (function tick() {
+        ctx.clearRect(0, 0, c.width, c.height);
+        teile.forEach(p => {
+            p.vy += .35; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.w += p.dw;
+            ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.w);
+            ctx.fillStyle = p.f; ctx.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2); ctx.restore();
+        });
+        if (++t < 170) requestAnimationFrame(tick); else ctx.clearRect(0, 0, c.width, c.height);
+    })();
+}
+
+const start = new URLSearchParams(location.search).get('aufgabe');
+if (start) ladeAufgabe(start); else ladeHeute(false);
+</script>
+</body>
+</html>

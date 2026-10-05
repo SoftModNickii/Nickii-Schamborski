@@ -1,0 +1,42 @@
+{
+  "_hinweis": "Seitenweite Angaben. Wird von 'python3 tools/website.py build' in index.html, pages/cv.html und works/ eingesetzt. Das Statement ist Nickiis eigener Text vom 29.09.2026, nur Rechtschreibung korrigiert.",
+  "name": "Nickii Schamborski",
+  "base_url": "https://www.schamborski.com",
+  "email": "studio@schamborski.com",
+  "instagram": "https://www.instagram.com/nickiischamborski",
+  "job_title": "Media artist",
+  "meta_description": "Nickii Schamborski is a media artist working with video, installation, performance and self-built networked devices. MFA candidate in Art and Technology / Sound Practices at the School of the Art Institute of Chicago. Recipient of the 25th Federal Art Prize for Students.",
+  "statement": [
+    "Thank you for passing by my webpage.",
+    "Presenting the vast majority of my different practices allows me to show how I have been working, all around my beloved artistic spaces. It highlights my work, starting as a video and performance artist looking for meaning in existence, while operating as a fictional documentarist and manipulating images via commercial VFX productions. Then turning to screenplay: films that happen within screens, like phones and other devices, to question our digital environments and their consequences (like Angels Tutorial or CyberCindy). Gadgets that narrate digital autonomy have interested me since developing the Instrument of Public Critique, and maybe it is the same interest now in building LoRa communication devices that allow self-sustaining communication networks, independent from outside control. Overall, you could summarize my work as fixating on systems of interaction and political power, but also on systems on PCB boards and urban systems, and on what those systems ask of us, especially in times where the ideas in our heads and on our screens more and more merge into one.",
+    "Dwelling on the experiences that really drive my work, while researching and listening to texts and voices, it is the art world events in themselves that create moments of interaction: organizing field trips and exhibitions, or volunteering at events that I care about and am interested in. It is a vast collection showing affiliations, achievements and creations. Thank you for taking a look."
+  ],
+  "featured": [
+    "funke-2026",
+    "nickii-ai-2026",
+    "cybercindy-2025",
+    "untitled-resilience-2024",
+    "among-us-2021",
+    "testing-trixi-2020",
+    "denied-refuge-2019",
+    "familycare-2019"
+  ],
+  "og_image_source": "assets/images/CyberCindy/cybercindy-2025.jpg",
+  "cv_sections": [
+    ["education", "Education"],
+    ["recognition", "Recognition"],
+    ["exhibitions", "Selected Exhibitions"],
+    ["workshops", "Workshops and Lectures"],
+    ["publishing", "Publishing, Lectures & Workshops"],
+    ["experience", "Working Experience"]
+  ],
+  "contact": [
+    "School of the Art Institute of Chicago",
+    "36 South Wabash, Studio 240, Chicago, IL 60603, USA"
+  ],
+  "affiliation": "School of the Art Institute of Chicago",
+  "alumni_of": [
+    ["Braunschweig University of Art", "DE"],
+    ["Institut Teknologi Bandung", "ID"]
+  ]
+}

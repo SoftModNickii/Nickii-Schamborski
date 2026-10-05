@@ -6,25 +6,26 @@
     <title>Newsletter - Nickii Schamborski</title>
 
     <meta name="description" content="Newsletter by Nickii Schamborski. Occasional notes on new works, exhibitions and workshops. No tracking, unsubscribe at any time.">
-    <link rel="canonical" href="https://schamborski.com/newsletter/">
+    <link rel="canonical" href="https://www.schamborski.com/newsletter/">
 
     <meta property="og:title" content="Newsletter - Nickii Schamborski">
     <meta property="og:description" content="Occasional notes on new works, exhibitions and workshops.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://schamborski.com/newsletter/">
-    <meta property="og:image" content="https://schamborski.com/assets/images/preview.jpg">
+    <meta property="og:url" content="https://www.schamborski.com/newsletter/">
+    <meta property="og:image" content="https://www.schamborski.com/assets/og/preview.jpg">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/fonts.css?v=20261008">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>N</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Manrope', sans-serif;
+            font-family: var(--font-text);
             background: #FAFAF8;
             color: #000;
             min-height: 100vh;
@@ -43,9 +44,10 @@
 
         .eyebrow {
             font-size: 0.75rem;
-            font-weight: 300;
+            font-weight: 400;
+            font-family: var(--font-data);
             text-transform: uppercase;
-            letter-spacing: 0.25em;
+            letter-spacing: var(--track-data);
             color: #999;
             margin-bottom: 1.5rem;
         }
@@ -54,17 +56,18 @@
         .eyebrow a:hover { color: #C026D3; }
 
         h1 {
-            font-family: 'Manrope', sans-serif;
-            font-size: clamp(1.8rem, 7vw, 2.6rem);
-            font-weight: 300;
+            font-family: var(--font-data);
+            font-size: clamp(1.4rem, 5vw, 2rem);
+            font-weight: var(--weight-title);
             line-height: 1.15;
-            letter-spacing: 0.02em;
-            color: #C026D3;
+            letter-spacing: var(--track-title);
+            color: var(--ink);
             margin-bottom: 1.5rem;
+            text-transform: uppercase;
         }
 
         .lead {
-            font-family: 'Source Serif Pro', serif;
+            font-family: var(--font-text);
             font-size: 1.05rem;
             line-height: 1.75;
             margin-bottom: 2.5rem;
@@ -85,8 +88,9 @@
             display: block;
             font-size: 0.75rem;
             font-weight: 400;
+            font-family: var(--font-data);
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: var(--track-data);
             color: #666;
             margin-bottom: 0.5rem;
         }
@@ -96,7 +100,7 @@
             width: 100%;
             /* 16px verhindert, dass iOS beim Antippen hineinzoomt */
             font-size: 16px;
-            font-family: 'Manrope', sans-serif;
+            font-family: var(--font-data);
             padding: 0.85rem 1rem;
             border: 1px solid #D8D8D4;
             background: #FAFAF8;
@@ -141,11 +145,11 @@
         button {
             width: 100%;
             min-height: 48px;
-            font-family: 'Manrope', sans-serif;
+            font-family: var(--font-data);
             font-size: 0.8rem;
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: var(--track-data);
             color: #fff;
             background: #C026D3;
             border: none;
@@ -154,10 +158,10 @@
             transition: background 0.3s ease;
         }
 
-        button:hover { background: #9333EA; }
+        button:hover { background: #111; }
 
         .signup-intro {
-            font-family: 'Source Serif Pro', serif;
+            font-family: var(--font-text);
             font-size: 1rem;
             line-height: 1.75;
             margin-bottom: 1.75rem;
@@ -167,11 +171,11 @@
             display: block;
             width: 100%;
             min-height: 48px;
-            font-family: 'Manrope', sans-serif;
+            font-family: var(--font-data);
             font-size: 0.8rem;
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: var(--track-data);
             text-align: center;
             text-decoration: none;
             color: #fff;
@@ -180,7 +184,7 @@
             transition: background 0.3s ease;
         }
 
-        .signup-button:hover { background: #9333EA; }
+        .signup-button:hover { background: #111; }
 
         .fineprint {
             font-size: 0.75rem;
@@ -199,14 +203,15 @@
         .legal h2 {
             font-size: 0.75rem;
             font-weight: 400;
+            font-family: var(--font-data);
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: var(--track-data);
             color: #999;
             margin-bottom: 1rem;
         }
 
         .legal p {
-            font-family: 'Source Serif Pro', serif;
+            font-family: var(--font-text);
             font-size: 0.9rem;
             line-height: 1.75;
             color: #444;
