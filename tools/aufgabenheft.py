@@ -383,7 +383,7 @@ def daten_aufgaben():
                 i.get("description", ""), format_="Deine deutsche Fassung.")
 
     # Konzepttexte zu den Geraetearbeiten, die bisher nur Technik beschreiben
-    for iid in ("g-spirit-2026", "funke-2026", "grain-management-2026"):
+    for iid in ("g-spirit-2026", "funke-2026"):
         if iid in by_id:
             add(f"konzept-{iid}", "schreiben", 3, f"Das Warum von {by_id[iid]['title']}",
                 f"Der Text zu {by_id[iid]['title']} beschreibt, wie das Gerät gebaut ist. "

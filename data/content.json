@@ -3220,28 +3220,29 @@
         "image_alt": "Six round devices on a table: three closed, in sage green, coral and purple, and three opened to show wiring and circuit boards; a dried rose lies between them.",
         "city": "Chicago",
         "country": "US",
-        "text_status": "entwurf"
+        "text_status": "entwurf",
+        "exhibited_at": [
+            "project-pathways-2026"
+        ]
     },
     {
-        "title": "Grain Management Commission",
+        "title": "Project Pathways",
         "year": "2026",
         "sort_year": 2026,
         "sort_date": "2026-07",
         "categories": [
-            "works"
+            "shows"
         ],
-        "type": "Commission, Interactive Objects",
-        "specs": "Approx. 20 units, ESP32-S3 with OLED display, Tamagotchi-style interaction",
+        "type": "Event and Exhibition",
+        "specs": "July 14, 2026",
         "institution": "Grain Management, Park Hyatt Chicago",
-        "description": "A series of roughly twenty ESP32-S3 devices with OLED displays, built for an investor event held by Grain Management on 14 July 2026 at the Park Hyatt Chicago on the theme of AI and human collaboration. Each device carries a Tamagotchi-style creature that guests tend to over the course of the evening.",
-        "description_de": "Eine Serie von etwa zwanzig ESP32-S3 Geräten mit OLED-Display, gebaut für ein Investorenevent von Grain Management am 14. Juli 2026 im Park Hyatt Chicago zum Thema AI and Human Collaboration. Jedes Gerät trägt ein Tamagotchi-artiges Wesen, um das sich die Gäste im Lauf des Abends kümmern.",
+        "description": "Project Pathways was an evening hosted by Grain Management on the intersection of art, technology, infrastructure and leadership. Nickii Schamborski showed a set of small communication devices developed together with Leena Mahmood and Janjaa Lee. The devices run on LoRa radio. Instead of sending text or audio messages, they let people look after one another through digital spirits: each person tends to a small creature that lives on the device, and its state travels across the network.",
+        "description_de": "Project Pathways war ein Abend von Grain Management an der Schnittstelle von Kunst, Technologie, Infrastruktur und Führung. Nickii Schamborski zeigte dort eine Reihe kleiner Kommunikationsgeräte, entwickelt zusammen mit Leena Mahmood und Janjaa Lee. Die Geräte funken über LoRa. Statt Text- oder Sprachnachrichten zu senden, kümmern sich die Menschen über digitale Geister umeinander: Jede Person versorgt ein kleines Wesen, das auf dem Gerät lebt, und sein Zustand wandert durch das Netz.",
         "tags": [
-            "ESP32-S3",
-            "Commission",
-            "Tamagotchi",
+            "LoRa",
             "Interaction design"
         ],
-        "id": "grain-management-2026",
+        "id": "project-pathways-2026",
         "link": null,
         "image": "assets/images/grain-management-2026/grain-management-2026-02.jpg",
         "images": [
@@ -3264,7 +3265,15 @@
         "image_alt": "Two small round devices, one olive green and one orange, sit on a marble console table above a bed of dark pebbles.",
         "city": "Chicago",
         "country": "US",
-        "text_status": "entwurf"
+        "text_status": "entwurf",
+        "credits": {
+            "venue": "Park Hyatt Chicago",
+            "organizers": "Grain Management",
+            "collaborators": "Leena Mahmood, Janjaa Lee"
+        },
+        "exhibited_works": [
+            "funke-2026"
+        ]
     },
     {
         "title": "Student Government Representative",

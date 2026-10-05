@@ -556,8 +556,12 @@ def outputs(items, site, manifest):
     with open(idx_path, encoding="utf-8") as fh:
         idx = fh.read()
     idx = replace_block(idx, "jsonld", person_jsonld(items, site), idx_path)
-    idx = replace_block(idx, "statement", render_statement(site), idx_path)
-    idx = replace_block(idx, "featured", render_featured(items, site, manifest), idx_path)
+    # Statement und Auswahl stehen nur auf der Startseite, wenn die
+    # Markierungen dort vorhanden sind. Ohne sie bleibt sie bei Name und Menue.
+    if "<!-- build:statement -->" in idx:
+        idx = replace_block(idx, "statement", render_statement(site), idx_path)
+    if "<!-- build:featured -->" in idx:
+        idx = replace_block(idx, "featured", render_featured(items, site, manifest), idx_path)
     out[idx_path] = idx
 
     cv_path = os.path.join(ROOT, "pages", "cv.html")

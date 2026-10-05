@@ -154,11 +154,6 @@
   "w": 1000,
   "h": 663
  },
- "grain-management-2026": {
-  "src": "assets/images/grain-management-2026/grain-management-2026-02.jpg",
-  "w": 1000,
-  "h": 750
- },
  "hbk-diploma-2014-2021": {
   "src": "assets/images/hbk-diploma-2014-2021/hbk-diploma-2014-2021-hbk-bs-2021-schamborski-002-web.jpg",
   "w": 1000,
@@ -258,6 +253,11 @@
   "src": "assets/images/open-studios-saic-2025/open-studios-saic-2025-saicopenstudios-web.jpg",
   "w": 563,
   "h": 1000
+ },
+ "project-pathways-2026": {
+  "src": "assets/images/grain-management-2026/grain-management-2026-02.jpg",
+  "w": 1000,
+  "h": 750
  },
  "represent-2022": {
   "src": "assets/images/represent-2022/represent-2022-image13-web.jpg",
