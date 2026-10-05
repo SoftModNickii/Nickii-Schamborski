@@ -156,12 +156,11 @@
         "description": "Campus exhibition of Art and Technology / Sound Practices (SAIC) at Ars Electronica 2026 in Linz, Austria. CyberCindy and Nickii AI were shown.",
         "id": "at-sp-ars-electronica-campus-exhibition-2026",
         "link": null,
-        "image": "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-02.jpg",
+        "image": "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-03.jpg",
         "images": [
-            "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-02.jpg",
             "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-03.jpg",
+            "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-02.jpg",
             "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-04.jpg",
-            "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-05.jpg",
             "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-1780351671312-01.jpg"
         ],
         "related_links": [],
@@ -186,10 +185,9 @@
         "image_alts": {
             "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-02.jpg": "Exhibition room with a concrete wall: three screens on stands, the nearest in portrait format showing a child in silver armour riding a pink dinosaur on a beach.",
             "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-03.jpg": "A tablet mounted on a glass wall shows a face with a pink cap and glasses on a pink background, above the words \"Speak to Nickii AI\".",
-            "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-04.jpg": "Wide view of the room: a large screen with colourful cubes on a tripod stand, two smaller screens on stands along a concrete wall, and a glass wall with more works behind it.",
-            "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-05.jpg": "Four screens on stands in front of a concrete wall, one of them switched off; a blue seat and a yellow pole in the foreground."
+            "assets/images/at-sp-ars-electronica-campus-exhibition-2026/at-sp-ars-electronica-campus-exhibition-2026-04.jpg": "Wide view of the room: a large screen with colourful cubes on a tripod stand, two smaller screens on stands along a concrete wall, and a glass wall with more works behind it."
         },
-        "image_alt": "Exhibition room with a concrete wall: three screens on stands, the nearest in portrait format showing a child in silver armour riding a pink dinosaur on a beach."
+        "image_alt": "A tablet mounted on a glass wall shows a face with a pink cap and glasses on a pink background, above the words \"Speak to Nickii AI\"."
     },
     {
         "title": "Every Node Counts - Meshtastic Mesh Networking Workshop",
@@ -3294,8 +3292,9 @@
         ],
         "id": "saic-student-government-2026-2027",
         "link": "https://www.saic.edu/campus-life/student-government",
-        "image": "assets/images/saic-student-government-2026-2027/saic-student-government-2026-2027-01.jpg",
+        "image": "assets/images/saic-student-government-2026-2027/saic-student-government-2026-2027-02.jpg",
         "images": [
+            "assets/images/saic-student-government-2026-2027/saic-student-government-2026-2027-02.jpg",
             "assets/images/saic-student-government-2026-2027/saic-student-government-2026-2027-01.jpg"
         ],
         "related_links": [],
@@ -3313,7 +3312,11 @@
         ],
         "city": "Chicago",
         "country": "US",
-        "text_status": "entwurf"
+        "text_status": "entwurf",
+        "image_alts": {
+            "assets/images/saic-student-government-2026-2027/saic-student-government-2026-2027-02.jpg": "A ballroom with chandeliers during graduate orientation: people sit at round tables in front of a projection reading \"Welcome to Graduate Orientation\"."
+        },
+        "image_alt": "A ballroom with chandeliers during graduate orientation: people sit at round tables in front of a projection reading \"Welcome to Graduate Orientation\"."
     },
     {
         "title": "Teaching Assistant, Low-Residency MFA Summer Residency",

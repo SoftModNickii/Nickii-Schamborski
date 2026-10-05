@@ -534,7 +534,7 @@ def works_in_order(items):
 def render_sitemap(items, site):
     base = site["base_url"]
     urls = ["/", "/pages/all.html", "/pages/cv.html", "/newsletter/",
-            "/impressum.html", "/datenschutz.html"]
+            "/statement.html", "/impressum.html", "/datenschutz.html"]
     urls += [f"/works/{w['id']}.html" for w in works_in_order(items)]
     body = "\n".join(f"  <url><loc>{base}{u}</loc></url>" for u in urls)
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -563,6 +563,13 @@ def outputs(items, site, manifest):
     if "<!-- build:featured -->" in idx:
         idx = replace_block(idx, "featured", render_featured(items, site, manifest), idx_path)
     out[idx_path] = idx
+
+    # Das Statement steht auf einer eigenen Seite, die Startseite verlinkt sie.
+    st_path = os.path.join(ROOT, "statement.html")
+    if os.path.exists(st_path):
+        with open(st_path, encoding="utf-8") as fh:
+            st = fh.read()
+        out[st_path] = replace_block(st, "statement", render_statement(site).replace("            <p>", "        <p>"), st_path)
 
     cv_path = os.path.join(ROOT, "pages", "cv.html")
     with open(cv_path, encoding="utf-8") as fh:
